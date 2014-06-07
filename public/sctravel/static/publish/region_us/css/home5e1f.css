@@ -1,9 +1,9 @@
 #belowColWide { width: 992px; margin:0; padding:1px 18px 0; clear:both; }
-@import url(../../../../../external.html?link=http://fonts.googleapis.com/css?family=Signika+Negative:400,700);
+@import url(../../../http://fonts.googleapis.com/css?family=Signika+Negative:400,700);
 
 #subCol1,#subCol2 { width: 972px; height: auto; margin:0; padding: 27px 0 0 18px; margin-bottom: 0px; }
 #subColDeal,#subColValue { display: inline-block; }
-#dealsleftarrow,#dealsrightarrow,#valueleftarrow,#valuerightarrow { position: relative; float: left; display: inline-block; background: url('../../../../../external.html?link=http://media.expedia.com/media/content/expus/graphics/launch/home/homepagespritesv2.png') no-repeat; width: 36px; height: 79px; margin: 36px 16px 0 16px; padding-bottom: 4px; cursor: pointer; }
+#dealsleftarrow,#dealsrightarrow,#valueleftarrow,#valuerightarrow { position: relative; float: left; display: inline-block; background: url('../../../http://media.expedia.com/media/content/expus/graphics/launch/home/homepagespritesv2.png') no-repeat; width: 36px; height: 79px; margin: 36px 16px 0 16px; padding-bottom: 4px; cursor: pointer; }
 #dealsleftarrow,#valueleftarrow { background-position: 0px 0px; }
 #dealsrightarrow,#valuerightarrow { background-position: -36px 0px; }
 
@@ -77,12 +77,12 @@ div.bottomTextSection { margin-top: 9px; }
 
 /*newsletter modue*/
 .HPnewsLetterText { float: left; margin-top: 7px; display: inline-block; font-size:18px; font-weight:600; font-family: 'Signika Negative', Arial, serif; letter-spacing: -1px; color:#00436E; top: -8px; margin-right: 16px; }
-#HPnewsLetterIcon { float: left; height: 30px; width: 42px; background-image:url('../../../../../external.html?link=http://media.expedia.com/media/content/expus/graphics/launch/home/20120511_hp_mail.png'); margin-right: 11px; }
+#HPnewsLetterIcon { float: left; height: 30px; width: 42px; background-image:url('../../../http://media.expedia.com/media/content/expus/graphics/launch/home/20120511_hp_mail.png'); margin-right: 11px; }
 .HPnewsLetterForm { float: left; display: inline-block; }
 .HPnewsLetterForm .emailField {font-weight:normal; font-size: 14px; float:left;display:inline-block;border:1px solid #ccc;color:#8f8f8f;padding:3px 3px 3px 7px;width:600px; height:28px;margin-right: 6px;}
-.HPnewsLetterForm .submitButton {float:right; display:inline-block; height:36px; width: 78px; background:url('../../../../../external.html?link=http://media.expedia.com/media/content/expus/graphics/launch/home/homepagespritesv2.png') no-repeat -216px -36px; margin:0; padding:2px 0 4px 6px; border:0; color:#fff; text-transform:uppercase; font-size:11px; cursor:pointer; outline:none; font-weight:bold;}
+.HPnewsLetterForm .submitButton {float:right; display:inline-block; height:36px; width: 78px; background:url('../../../http://media.expedia.com/media/content/expus/graphics/launch/home/homepagespritesv2.png') no-repeat -216px -36px; margin:0; padding:2px 0 4px 6px; border:0; color:#fff; text-transform:uppercase; font-size:11px; cursor:pointer; outline:none; font-weight:bold;}
 .HPnewsLetterForm .submitButton:hover { background-position: -216px 0px; }
-.HPnewsLetterForm .errorMsg { position: relative; display:none;padding-left:20px;color:#df3400; background:url(../../../../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/home/graphics/travelAlert.gif) no-repeat left center}
+.HPnewsLetterForm .errorMsg { position: relative; display:none;padding-left:20px;color:#df3400; background:url(../../../http://media.expedia.com/media/content/shared/graphics/home/graphics/travelAlert.gif) no-repeat left center}
 .HPnewsLetterForm .errorEmail {border:1px solid red;background-color:#ffe8ed;color:#df3400}
 #HPnewsLetterContent { width: 954px; height: 36px; }
 
@@ -211,7 +211,7 @@ body.homepage #xp_hp_aCol {
 	position: relative;
 	top: 10px;
 	padding-right: 20px;
-	background: url(../../../../../external.html?link=http://www.expedia.com/static/default/default/images/icon-feedback-banner-close.png) 100% 6px no-repeat;
+	background: url(../../../http://www.expedia.com/static/default/default/images/icon-feedback-banner-close.png) 100% 6px no-repeat;
 
 }
 

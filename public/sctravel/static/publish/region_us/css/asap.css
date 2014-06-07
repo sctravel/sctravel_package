@@ -82,7 +82,7 @@ span.arrow {font-size:60px;font-family:Courier New; vertical-align:top; position
 #countdown-outer {position:absolute; top:36px; right:30px; height:100px; text-align:right;}
 #clockText {text-transform:uppercase;font-size:10px; color:#00335f; margin-bottom:5px;}
 #divDisplayClock {font-size:48px; line-height:59px;color:#ecc216;z-index:1; }
-.n-tickerBG {float:right;width:43px; height:60px;margin-right:4px; text-align:center;background: url(../../../../../external.html?link=http://media.expedia.com/media/content/expus/graphics/icons/11152013asap-ticker2.png) no-repeat center top;}
+.n-tickerBG {float:right;width:43px; height:60px;margin-right:4px; text-align:center;background: url(../../../http://media.expedia.com/media/content/expus/graphics/icons/11152013asap-ticker2.png) no-repeat center top;}
 .n-blue-dots {color:#00335f; margin:0px;float:left;}
 .whiteLine {position:relative;height:3px; width:297px; background-color: white; z-index:100; margin-top:-32px;}
 
@@ -97,7 +97,7 @@ span.arrow {font-size:60px;font-family:Courier New; vertical-align:top; position
 	position:absolute; 
 	top:-34px; 
 	left:30px;
-	background: url('../../../../../external.html?link=http://media.expedia.com/media/content/expus/graphics/promos/deals/asap_packagesredesign_newicon.png');
+	background: url('../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/asap_packagesredesign_newicon.png');
 }
 .deal-details span {padding-top:20px;font-weight:bold;display:block;}
 ul {padding: 3px 0px 0px 15px; margin: 0px;}
@@ -200,7 +200,7 @@ ul.sort li {float:left;list-style-type:none; padding-right:20px; display:inline;
 		color:#f06601;
 }
 #package-deals .template1 .deal-savings {width:108px;left: 90px;}
-#package-deals .template1 .package-icon {z-index:100; background: #ecc216 url('../../../../../external.html?link=http://media.expedia.com/media/content/expus/graphics/promos/deals/asap_packagesredesign_packagesicon_blue_vertical.png') no-repeat 7px 40px;position:absolute; top:0px; right:0px; width:40px; height:144px;}
+#package-deals .template1 .package-icon {z-index:100; background: #ecc216 url('../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/asap_packagesredesign_packagesicon_blue_vertical.png') no-repeat 7px 40px;position:absolute; top:0px; right:0px; width:40px; height:144px;}
 .feat-package-icon {
 	z-index:100; 
 	background: #ecc216; 
@@ -292,7 +292,7 @@ span.textSM2 {font-size:18px; line-height:2;}
 td {border-bottom:none;}
 td.border-bot-grey {border-bottom:1px solid #E0DFDF;}
 td.asap-date {text-align:left;width:200px;padding-left:20px; vertical-align: middle; }
-td.asap-dest { background: url('../../../../../external.gif?link=http://media.expedia.com/media/content/expus/graphics/promos/deals/asap_arrow_28x53.jpg') no-repeat left top; padding-left:50px; vertical-align:middle;}
+td.asap-dest { background: url('../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/asap_arrow_28x53.jpg') no-repeat left top; padding-left:50px; vertical-align:middle;}
 .preview_txt {font-size:14px;line-height:19px; padding:5px 16px 0px 16px;}
 .preview_txt a:link, .preview_txt a:visited {color:white;text-decoration:underline;}
 #cityName {bottom:2px; width:800px;height:33px;z-index:1; }

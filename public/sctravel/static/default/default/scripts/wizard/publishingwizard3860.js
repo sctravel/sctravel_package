@@ -205,7 +205,7 @@ publishing.wizard.addPackageLobFields = function(lob, form) {
 publishing.wizard.turnOnInterstitial = function(button, config) {
 button.width(button.outerWidth());
 button.parent().parent().addClass("interstitial");
-button.html(config.searchingText + "<img src=\"/static/fusion/v2.3/images/ajax-loader.gif\" style=\"vertical-align:-4px;margin-left:6px;\" height=\"16\" width=\"16\">");
+button.html(config.searchingText + "<img src=\"/sctravel/static/fusion/v2.3/images/ajax-loader.gif\" style=\"vertical-align:-4px;margin-left:6px;\" height=\"16\" width=\"16\">");
 button.attr("disabled", "disabled");
 }
 
@@ -230,7 +230,7 @@ publishing.wizard.setSearchButtonToInterstitial = function(ev, opts) {
   button.css("background-position", "left -145px");
   left.css("background-position", "left -87px");
   right.css("background-position", "left -116px");
-  button.html("<span style=\"color:#4c3900\">" + opts.searchingText + "<img src=\"/static/fusion/v2.3/images/ajax-loader.gif\" style=\"vertical-align:-4px;margin-left:6px;\" height=\"16\" width=\"16\"></span>");
+  button.html("<span style=\"color:#4c3900\">" + opts.searchingText + "<img src=\"/sctravel/static/fusion/v2.3/images/ajax-loader.gif\" style=\"vertical-align:-4px;margin-left:6px;\" height=\"16\" width=\"16\"></span>");
 }
 
 publishing.wizard.hasBrowserVersionBeenChecked = false;
@@ -790,7 +790,7 @@ publishing.wizard.calInit = function() {
       ol = 0;
       ot = 2;
     }
-    var defaultPublishWizardCalendarUrl = '/static/default/default/html/calendar/v3.0.0/calendar.html';
+    var defaultPublishWizardCalendarUrl = '../../html/calendar/v3.0.0/calendar.html';
     if((typeof publishWizardCalendarUrl !== "undefined" ) && publishWizardCalendarUrl.length > 0){
     	defaultPublishWizardCalendarUrl = publishWizardCalendarUrl;
     }

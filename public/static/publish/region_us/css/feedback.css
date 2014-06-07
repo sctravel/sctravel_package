@@ -1,0 +1,76 @@
+   body {padding:0px; margin:6px 2px;} 		
+   #headerFeedback *{
+    margin:0;
+    padding:0;
+   }
+   #headerFeedback {
+    text-align:center;
+    width:630px;
+		height:267px;
+		font-family:arial; 
+		font-size:12px; 
+		font-weight:bold; 
+		color: #00335f; 
+		background:  url('../../../http://media.expedia.com/media/content/expus/graphics/promos/tools/101812_stor-8755_lightbox.jpg')
+		
+   }  
+	
+	 #headerFeedback .close {
+		width:12px; 
+		height:12px; 
+		position:absolute; 
+		left:612px; 
+		top:14px;
+		cursor: pointer;
+	 }
+   #headerFeedback div {
+    display:inline-block;
+    text-align:left;
+   }
+   #headerFeedback .customersupport {
+    display:inline-block;
+    *display:inline;
+    text-align:left;
+    width:207px;
+    height:267px;
+    margin-left:-2px;
+    cursor: pointer;
+   }
+   
+   #headerFeedback .customersupport div {
+    position: relative;
+    text-align: center;
+    top: 230px;
+    width: 207px;
+   }
+       
+   #headerFeedback .hotelreviews {
+    display:inline-block;
+    *display:inline;
+    text-align:left;
+    width:207px;
+    height:267px;
+    margin-left: -2px;
+    cursor: pointer;
+   }
+   #headerFeedback .hotelreviews div {
+    position: relative;
+    text-align: center;
+    top: 230px;
+    width: 207px;
+   }
+   #headerFeedback .websitefeedback {
+    display:inline-block;
+    *display:inline;
+    text-align:left;
+    width:206px;
+    height:267px;
+    margin-left: -1px;
+    cursor: pointer;
+   }
+   #headerFeedback .websitefeedback div {
+    position: relative;
+    text-align: center;
+    top: 230px;
+    width: 207px;
+   }

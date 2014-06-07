@@ -1,0 +1,393 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* hide modules on load */
+#more-deals-container, #terms, #feat-deal-outer, #feat-deal-outer-single, .terms-onefeatdeal, .terms-twofeatdeal, .terms-onefeatpackdeal, .terms-twofeatpackdeal, #feat-headline, #feat-pack-headline, #moreHotelLink, #morePackLink, #sorting-bar, #sorting-bar-pack, #more-pack-deals-container, #featured-pack-deals, #feat-pack-deal-outer-single, #feat-pack-deal-outer, #cruiseDeal-single, #feat-deal-outer-single-cruise, #cruiseTermsTitle, #cruiseTerms, #nodeals, #feat-head-cruisehotel, #featured-cruise-hotel, #moreHotelLink-weekend, #feat-headline-weekend {display:none;}
+
+/* all page styles */
+body {color:#333;
+	    font-family: Arial,Helvetica,Sans Serif;
+	    font-size: 12px;
+	}
+.floatL {float:left;}
+.floatR {float:right;}
+.grey-border 
+{
+border: 1px solid #E0DFDF;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background:white;
+}
+.black {color:#000;}
+.grey {color:#999;}
+.inline		{display:inline;}
+.inlineblock	{display:inline-block;zoom:1;*display:inline;}
+.block {display:block;}
+.vtop {vertical-align: top;}
+.top {padding-top:10px;}
+.bot {margin-top:-20px;}
+#page-wrapper {
+width:992px;
+/*
+background: 
+-moz-radial-gradient(100% 50%, circle, transparent 20%, #02B3FD 21%, #02B3FD 34%, transparent 35%, transparent), 
+-moz-radial-gradient(0% 50%, circle, transparent 20%, #02B3FD 21%, #02B3FD 34%, transparent 35%, transparent) 0 -50px; 
+*/
+background-color: #f0f0f0;
+}
+#main-col {width:950px; margin-left:auto;margin-right:auto;position:relative;padding-top:20px;}
+.main-deals 
+{
+background:white; 
+margin-bottom:36px;
+border: 0px solid #dbdbdb;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+-moz-box-shadow:    0px 0px 3px 3px #dbdbdb;
+-webkit-box-shadow: 0px 0px 3px 3px #dbdbdb;
+box-shadow: 0px 0px 3px 3px #dbdbdb;
+}
+
+/* hero module styles */
+div.logo {width:700px; position:relative;}
+div.logo img {float:left; margin: 0px; padding: 22px 30px; }
+.introTextSm {color:#666666; font-size:12px; position:absolute; bottom:23px; left:185px;}
+.introTextLg {color:#003050; font-weight:bold; font-size:16px; line-height:1.3; position:absolute; left:185px; bottom:40px; }
+
+/* headline styles */
+.headline {
+	background: #00335f;
+	display:block; 
+	background-image: -moz-linear-gradient(left , rgb(0,48,80) 16%, rgb(0,78,126) 58%, rgb(0,102,153) 100%);
+	background-image: -webkit-linear-gradient(left , rgb(0,48,80) 16%, rgb(0,78,126) 58%, rgb(0,102,153) 100%);
+	background-image: linear-gradient(left , rgb(0,48,80) 16%, rgb(0,78,126) 58%, rgb(0,102,153) 100%);
+	
+	}
+.headline h1, .headline h4 {font-size: 22px; line-height: 1.8; font-weight:normal; color:white; }
+.headline h1 {float:left; }
+.h-icon {float:left;margin:10px 16px 0px 30px;}
+.p-icon {float:left;margin:8px 16px 0px 30px;}
+h2 {font-size:18px; font-weight:normal;}
+h4.other {margin-left:30px;}
+
+/* deal module styles */
+.percent-savings {font-size:18px;color: #FFCB00;text-transform:uppercase; line-height:1.4;}
+.oldprice {color:#757575;text-decoration: line-through;}
+.percent {display:inline-block; vertical-align:top; position: relative; top: 3px; font-size: 50%;padding-right:5px; }
+span.arrow {font-size:60px;font-family:Courier New; vertical-align:top; position: relative; top: -12px; margin-left:-10px; }
+
+/* countdown module */
+#countdown-outer {position:absolute; top:36px; right:30px; height:100px; text-align:right;}
+#clockText {text-transform:uppercase;font-size:10px; color:#00335f; margin-bottom:5px;}
+#divDisplayClock {font-size:48px; line-height:59px;color:#ecc216;z-index:1; }
+.n-tickerBG {float:right;width:43px; height:60px;margin-right:4px; text-align:center;background: url(../../../http://media.expedia.com/media/content/expus/graphics/icons/11152013asap-ticker2.png) no-repeat center top;}
+.n-blue-dots {color:#00335f; margin:0px;float:left;}
+.whiteLine {position:relative;height:3px; width:297px; background-color: white; z-index:100; margin-top:-32px;}
+
+/* Featured Deals Module */
+#feat-pack-headline {position:relative;}
+#feat-pack-deal-head sup {vertical-align:10px;font-size:12px;}
+#featured-deals, #featured-pack-deals, #featured-cruise-hotel {margin:32px 16px;}
+#featured-deals a:hover, #featured-pack-deals a:hover, #featured-cruise-hotel a:hover {text-decoration:none; cursor: hand;}
+.newIcon {
+	width:82px;
+	height:34px;
+	position:absolute; 
+	top:-34px; 
+	left:30px;
+	background: url('../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/asap_packagesredesign_newicon.png');
+}
+.deal-details span {padding-top:20px;font-weight:bold;display:block;}
+ul {padding: 3px 0px 0px 15px; margin: 0px;}
+li {line-height:1.3;}
+.feat-deal-one {position:relative;padding:0px;margin-left:150px;margin-right:0px;margin-bottom:20px;}
+.feat-price-details
+{
+background:#003050;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+-moz-box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+-webkit-box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+position:absolute;
+color:white;
+z-index:1;
+text-align:center;
+padding:10px 0px;
+}
+#featured-deals .feat-price-details, #featured-cruise-hotel .feat-price-details {width:145px;}
+#featured-pack-deals .feat-price-details {	padding:10px;}
+.feat-pack-text-bot {padding-bottom:40px; font-size:10px;}
+.feat-price-details p.percent-savings, .feat-price-details p.oldprice {font-size:22px;  }
+.feat-price-details p.more-deals-text {font-size:12px; line-height:1.1; }
+.feat-deal-content, .feat-deal-content-2 {color:#333;}
+.feat-deal-content {margin-left:16px;margin-top:16px;width:308px;}
+.feat-deal-content a:link, .feat-deal-content a:visited, .feat-deal-content-2 a:link, .feat-deal-content-2 a:visited {color:#006699;}
+.feat-deal-content a:hover, .feat-deal-content-2 a:hover {color:#02B3FD; text-decoration:underline;}
+.feat-deal-city {font-size:16px; line-height:1;display:inline; float:left;margin:6px 0px;}
+.feat-deal-city p {margin-left:5px;}
+.feat-stars {display:inline;float:left;padding:6px 0 0 5px;}
+.feat-deal-rating {clear:both;}
+.guest-rating {float:left;}
+.feat-rating-bar {float:left;padding:2px 0 0 5px;}
+.feat-deal {position:relative;padding:0px;}			
+.feat-deal-content-2 {padding:16px 8px;}	
+.feat-deal-content-2 span {font-weight:bold;}
+.feat-deal-two {width:50%;padding-bottom:20px;}
+#featured-deals .feat-deal-two .feat-price-details, #featured-cruise-hotel .feat-deal-two .feat-price-details {top:120px; right:-50px; width:138px; }
+#featured-deals .feat-deal-one .feat-price-details, #featured-cruise-hotel .feat-deal-one .feat-price-details {top:60px; left:-110px;}
+#featured-pack-deals .feat-deal-two .feat-price-details {top:120px; right:-50px;  }
+#featured-pack-deals .feat-deal-one .feat-price-details {top:60px; left:-110px;}
+.moreDealsLinks {display: inline-block; font-size:20px; line-height:47px;float:right;}
+.moreDealsLinkImg {float:right;padding-left:5px;}
+
+/* error module */
+#nodeals-headline {height:40px;}
+.alert-error {
+    background: none repeat scroll 0 0 #F5D7D7;
+	color: #B80000;
+	margin:20px;
+	font-size:15px;
+	padding:15px;
+    position: relative;
+	border-left: 3px solid #B80000;
+}
+.alert-message img {margin-bottom:-2px;margin-right:20px;}
+
+/* More Deals Module */
+#more-deals {margin-bottom:24px; color:white;}
+.more-deals-text {font-size:10px; line-height:1.2;}
+.more-deals-price {font-size:3.66em;line-height:1.1;}
+.more-deals-price span.superscript {display:inline-block; vertical-align:top; position: relative; top: 0.2em; font-size: 60%; }
+.more-deals-price:hover {color:#FFCB00; text-decoration:none;}
+.more-guest-rating {position:absolute; top:233px;left:12px; font-size:11px; line-height:1.3em; color: #888;}
+.sorting-bar {background:#f0f0f0; line-height:35px; font-size:14px;}
+.sorting-bar-head {font-weight:bold; text-transform:uppercase;padding:0px 30px;float:left;line-height:35px;}
+#more-deals-container a:hover, #more-pack-deals-container a:hover {text-decoration:none;color:#006699;}
+ul.sort {list-style-type:none; float:left;display:inline; margin:0px; padding:0px;}
+ul.sort li {float:left;list-style-type:none; padding-right:20px; display:inline;line-height:35px;}
+.selected, .selected:hover {
+	color:#333 !important;
+  	pointer-events: none;
+  	cursor: default;
+}
+#more-pack-deals-container .headline h4 sup {vertical-align:10px;font-size:12px;}
+
+/* Package Deals module */
+#package-deals {margin-bottom:24px; }
+
+/* overwriting styles from deals framework stylesheet */
+.template1 .deal-savings {
+    background-color: #f0f0f0;
+    bottom: 0;
+    display: none;
+    float: none;
+    font-size: 18px;
+		line-height:32px;
+    font-weight: normal;
+    height: 32px;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter: alpha(opacity=100);
+		opacity:1;
+    left: 144px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    width: 94px;
+		color:#f06601;
+}
+#package-deals .template1 .deal-savings {width:108px;left: 90px;}
+#package-deals .template1 .package-icon {z-index:100; background: #ecc216 url('../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/asap_packagesredesign_packagesicon_blue_vertical.png') no-repeat 7px 40px;position:absolute; top:0px; right:0px; width:40px; height:144px;}
+.feat-package-icon {
+	z-index:100; 
+	background: #ecc216; 
+	position:absolute; 
+	bottom:0px; 
+	right:0px; 
+	width:100%; 
+	height:40px;
+	-moz-border-radius: 0px 0px 5px 5px;	
+	-webkit-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+}
+.feat-package-icon  img {
+	margin-top:7px;
+}
+.template1 .deal-stars { margin-top: 8px;}
+.template1 .deal-dates { padding-top: 8px;margin-right:12px;}
+.template1 .deal-per-night { margin-top: 14px;}
+#package-deals .template1 .deal-per-night { margin-top: 8px;}
+.template1.deal-box {
+    margin: 24px 0 0 27px;
+	border:2px solid white;
+	box-shadow:none;
+}
+.template1.deal-box:hover {
+	background-color:#f0f0f0;
+	-moz-box-shadow:    0px 0px 3px 3px #f0f0f0;
+  	-webkit-box-shadow: 0px 0px 3px 3px #f0f0f0;
+	box-shadow: 0px 0px 3px 3px #f0f0f0;
+}
+.template1 .deal-dest, .template1 .deal-hotel-name {font-size:14px; line-height:1.1;}
+
+/*dcol Ads */
+.dcolAd-300x250 {
+	height:250px;
+	left: 1008px; 
+	top: 100px;
+	position: absolute;
+	width: 300px;
+}
+
+.dcolAd {
+	height: 600px;
+	left: 1008px; 
+	top: 100px; /*366px when second ad */
+	position: absolute; 
+	width: 300px;
+}
+
+/* Other Travel Deals Module */
+#other-deals {padding:16px 40px; }
+.cross-sell, img.cross-sell-last {border:none; height:150px; width:180px;float:left;margin-right:50px;}
+.cross-sell-last {float:right;margin-right:0px;}
+
+/* Terms Module */
+#terms {margin:16px 40px;}
+#terms p {font-size:11px; line-height:1.3; padding-bottom:11px;}
+#terms p.title {font-weight:bold; padding-bottom:0px;}
+
+
+/* CRUISE STYLES */
+h1.cruise  {}
+p.featured {line-height:16px;padding-top:16px;}
+#cruiseDeal {display:none;}
+
+
+/* SOLD OUT AND AFTER 9PM STYLES */
+#afterhoursBlock {display:none;}
+.soldOut {width:740px; text-align:center;}
+.soldOutImg {border-bottom: 1px solid #CECECE; margin-left:10px; width:720px; padding-bottom:15px;}
+.soldOutTxt {margin-left:10px; width:720px; padding-top:15px;}
+span.textLG {font-size:24px;}
+span.textSM {font-size:20px;}
+span.textSM2 {font-size:18px; line-height:2;}
+
+
+/* NEW AFTER DESIGN HOURS STYLES */
+.grey-border-2 {border: 1px solid #E0DFDF;}
+#AH-shell {width:800px;	margin: 10px auto;
+      position: relative;
+  }
+#AH-feat-deals {position:relative;width:800px;}
+#AH-Upcoming {width:100%;margin-top:-2px; padding-top:0px;cellpadding:0px; cellspacing:0px;}	
+#AH-Upcoming tr {height:53px;text-transform: uppercase; font-size:14px; color:#666;}
+.AH_ASAP_txt {color:white;text-align:center;padding:19px 0px; }
+.AH_ASAP_txt img {margin-bottom:-7px;}
+.AH-feat-img {z-index:-1;}
+.AH-text {z-index:1;top:10px; width:800px;}
+td {border-bottom:none;}
+td.border-bot-grey {border-bottom:1px solid #E0DFDF;}
+td.asap-date {text-align:left;width:200px;padding-left:20px; vertical-align: middle; }
+td.asap-dest { background: url('../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/asap_arrow_28x53.jpg') no-repeat left top; padding-left:50px; vertical-align:middle;}
+.preview_txt {font-size:14px;line-height:19px; padding:5px 16px 0px 16px;}
+.preview_txt a:link, .preview_txt a:visited {color:white;text-decoration:underline;}
+#cityName {bottom:2px; width:800px;height:33px;z-index:1; }
+.bannerItem{visibility:hidden;height:1px;}
+.op_container_top {height:135px; top:0px; left:0px;}
+.op_container_bot {width:800px;height:34px;left:0px;  }
+.sneakpeak {font-size:32px;}
+#cityName_txt_show {padding-right:40px;}
+#circle1 {position:absolute; top:5px; right:25px;}
+#circle2 {position:absolute; top:5px; right:10px;}
+#circle1:hover, #circle2:hover {cursor:pointer;}
+.cityName_txt {color:white;position:relative;text-align:right;}
+.cityName_txt p {font-size:24px;padding-top:6px;padding-right:10px;}
+.cityName_txt p span {font-family:arial;}
+
+
+.strong {font-weight:bold;}	
+.rel {position:relative;}
+.abs {position:absolute;}
+.dark_opacity {opacity:0.7;  filter:alpha(opacity=70);  background-color:#000000; width:800px; }
+.opacity_circle_off {color:#777;}
+.uppercase {text-transform:uppercase;}
+.myriad {font-family:Myriad Pro, Trebuchet MS, sans-serif;}
+.font_40px {font-size:40px;}
+.d_none {display:none;}
+
+.sectionHeader {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left:16px;
+    padding-bottom: 5px;
+		padding-top:16px;
+}
+
+/***** begin: clearfix css *****/
+.clearfix_2:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;}
+.clearfix_2 {
+    display: inline-block;}
+* html .clearfix_2 {
+    height: 1%;}
+.clearfix_2 {
+    display: block;}
+.clearfix DIV {float:left;}
+.clearfix:after
+	{
+	    display: block;
+	    clear: both;
+	    content: ".";
+	    height:0;
+	    visibility:hidden;
+	}
+.clearfix {display:inline-block;}
+* html .clearfix {height:1%;}
+.clearfix {display:block;}
+/***** end: clearfix css *****/
+
+
+/* facebook like */
+.ie7 .asap_fb_like {display:none;}
+.ie8 .asap_fb_like {display:none;}
+.asap_fb_like {
+    text-align: left;
+    width: 190px;
+	float:left;
+
+}
+.asap_fb_text {
+    float: left;
+    font-size: 11px;
+		line-height:20px;
+		color:white;
+}
+.asap_fb_like {
+    text-align: left;
+	margin-top:10px;
+}
+
+.cityText {
+	position: absolute;
+	left: 330px;
+	top: 50px;
+	line-height: 19px;
+}
+.cityTextLg {
+	color: #00335f;
+	font-weight: bold;
+	font-size: 14px;
+}
+.cityTextSm {
+	color: gray;
+	font-size: 12px;
+}

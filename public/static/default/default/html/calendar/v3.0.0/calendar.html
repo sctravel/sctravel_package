@@ -1,0 +1,705 @@
+<!DOCTYPE HTML>
+<html>
+    
+<!-- Mirrored from www.expedia.com/static/default/default/html/calendar/v3.0.0/calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2014 20:07:51 GMT -->
+<head>
+        <META http-equiv=Content-Type content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="/media.expedia.com/media/content/shared/scripts/external/jquery/1.6.1/jquery.min.js"></script>
+        <style type="text/css">
+            * {margin:0;padding:0;font:11px arial;}
+            a {color:#006699;}
+            a:link {color:#006699;}
+            a:hover {color:#FFF;}
+
+            .pointer {cursor:pointer;cursor:hand;color:#006699}
+            .invalid {color:#CECECE;cursor:default;}
+            .hover {background-color:#006699;color:#FFF;}
+            .highlight {background-color:#FFEEB3;}
+            .end,.start{background-color:#006699;color:#FFF}
+                        
+            #OutBdr {position:absolute; top:0px; left:0px; height:186px; overflow:hidden; background-color:#336699;}
+            #InBdr {position:absolute; top:1px; left:1px; height:184px; overflow:hidden; background-color:white;}
+
+            #BotNav {position:absolute; top:161px; width:297px; text-align:center; border-top:solid 1px #D7DCE8; overflow:hidden;}
+            #BotNav #Close {position:relative;top:1px;text-decoration:none; height:20px; line-height:20px;}
+            #Close {color:#006699;}
+
+            .navControl {position:absolute;height:22px; width:19px; z-index:50; background-color:#006699;}
+            .navImg {position:relative;top:2px;cursor:pointer;cursor:hand;}
+            #PImg {left:4px;}
+            #NImg {left:0px;}
+
+            #monthcontainer {position:absolute; width:288px; height:162px; overflow:hidden; background-color:white;}
+            #monthlist {position:relative; left:0px; top:0px; height:162px;}
+            .month {position:absolute;width:148px; height:166px; overflow:hidden;}
+            .month .title {position:relative; width:148px; height:22px; overflow:hidden; color:white; text-align:center; line-height:22px; background:#006699; font-weight: bold;}
+            .month .weekdays_top {width:148x; height:4px; overflow:hidden;}
+            .month .body {width:140px; height:136px; overflow:hidden; padding-right:4px; padding-left:4px;}
+            .month .weekdays {width:148px; height:16px; overflow:hidden;}
+            .month .weekday {position:relative; float:left; top:-4px; width:20px; height:16px; overflow:hidden; text-align:center; font-weight:bold; line-height:20px; color:#333;}
+            .month .dates {width:148px; height:120px; overflow:hidden;}
+            .month .bottom {width:148px; height:8px; overflow:hidden;}
+            .month .dates div {float:left; width:20px; height:20px; overflow:hidden; text-align:center; font-weight:bold; line-height:20px;}
+            .titleFill {height:22px; width:1px; background-color:#7694BF;}
+            .calendarFill {height:139px; width:1px; background-color:#D7DCE8;}
+        </style>
+    </head>
+
+    <body text="black" bgColor="white" onload="DoLoad();">
+        <div id="OutBdr">
+            <div id="InBdr">
+                <div id="NavPrev" class="navControl">
+                    <img id="PImg" class="navImg" alt="Previous Month" src="../../../../../../../external.gif?link=http://www.expedia.com/static/default/default/images/bubble_left_onblue.gif" />
+                </div>
+                <div id="NavNext" class="navControl">
+                    <img id="NImg" class="navImg" alt="Next Month" src="../../../../../../../external.gif?link=http://www.expedia.com/static/default/default/images/bubble_right_onblue.gif" />
+                </div>
+                <div>
+                    <div id="monthcontainer">
+                        <div id="monthlist"></div>
+                    </div>
+                </div>
+                <div id="BotNav"><a id="Close" class="pointer"><span id="closeText">Close</span></a></div>
+            </div><!--"InBdr"-->
+        </div><!--"OutBdr"-->
+
+        <script type="text/javascript">
+            function atoi(a){var i=parseInt(a);return isNaN(i)?0:i;}
+
+            var g_calMonthList = null;
+
+            function calMonth(m,y,$obj,pxLeft,startDate,endDate,calendar)
+            {
+                this.m_month = m;
+                this.m_year = y;
+                this.m_pxLeft = pxLeft;
+                this.$m_domElement = null;
+
+                this.getMonth = function(){return this.m_month;}
+                this.getYear = function(){return this.m_year;}
+                this.getPxLeft = function(){return this.m_pxLeft;}
+                this.getDomElement = function(){return this.$m_domElement;}
+
+                this.createDomElement = function(m,y,startDate,endDate,calendar)
+                {
+                    var mty=DOW(1,m,y);
+                    var c=calendar.getMonthCount(m,y);
+
+                    // Draw current month?
+                    var thisIsTheCurrentMonth=(y==new Date().getFullYear()&&m==new Date().getMonth());
+
+                    // Draw selected month?
+                    var startDateIsThisMonth=(startDate&&y==startDate.getFullYear()&&m==startDate.getMonth());
+
+                    // Draw tipCap month?
+                    var endDateIsThisMonth=(endDate&&y==endDate.getFullYear()&&m==endDate.getMonth());
+
+                    $datesE = $("<div />",{"class":"dates"});
+
+                    var szDays="";
+                    var dayE=null;
+                    
+                    for(i=0;i<mty;i++)
+                    {
+                        $dayE = $("<div />",{"class":"invalid"});        
+                        $datesE.append($dayE);
+                    }
+                    for(i=1;i<c+1;i++)
+                    {
+                        var d=new Date(y,m,i);
+                        g_staticHighlightedDate = [];
+                        if((!g_dtMin||d>=g_dtMin)&&(!g_dtMax||d<=g_dtMax)) // Valid date?
+                        {
+                            var $dayE = $("<div />",{"class":"pointer","data-year":y,"data-month":m,"data-day":i});
+                            if(startDateIsThisMonth && i==startDate.getDate()) $dayE.addClass("start");
+                            if(endDateIsThisMonth && i==endDate.getDate()) $dayE.addClass("end");
+
+                            if(startDate && endDate && ((d > startDate && d < endDate) || (d < startDate && d > endDate)))
+                            {
+                              $dayE.addClass("highlight");
+                              g_highlightedDate.push($dayE);
+                              g_staticHighlightedDate.push($dayE);
+                            }
+
+                            $dayE.bind("click",DtClk);
+                            $dayE.bind("mousemove",DtHvr);
+                            $dayE.bind("mouseout",DtExt);
+
+                            $dayE.text(i);
+                            $datesE.append($dayE);
+                        }
+                        else
+                        {
+                            var $dayE=document.createElement('div');
+                            
+                            $dayE = $("<div />",{"class":"invalid"});
+                            if(startDateIsThisMonth && i==startDate.getDate()) $dayE.addClass("start");
+                            if(endDateIsThisMonth && i==endDate.getDate()) $dayE.addClass("end");
+                            $dayE.text(i);
+                            $datesE.append($dayE);
+                        }
+                    }
+
+                    var $titleE=$("<div />",{"class":"title"});
+                    $titleE.append(document.createTextNode(FmtTitle(m,y)));
+
+                    var $monthTopE=$("<div />",{"class":"weekdays_top"});
+                    var $weekdaysE=$("<div />",{"class":"weekdays"});
+
+                    for(i=0;i<7;i++)
+                    {
+                        var $weekdayE = $("<div />",{"class":"weekday"});        
+                        $weekdayE.append(document.createTextNode(rW[(i+parseInt(calendar.getStartOfWeek()))%7]));
+                        $weekdaysE.append($weekdayE);
+                    }
+
+                    var $monthBodyE = $("<div />",{"class":"body"});
+
+                    $monthBodyE.append($weekdaysE);
+                    $monthBodyE.append($datesE);
+
+                    var $monthBotE = $("<div />",{"class":"bottom"});
+                    var $monthE = $("<div />",{"class":"month"});
+
+                    $monthE.append($titleE);
+                    $monthE.append($monthTopE);
+                    $monthE.append($monthBodyE);
+                    $monthE.append($monthBotE);
+
+                    return $monthE[0];
+                }
+
+                var $verticalDiv = $("<div />");
+
+                var $tFill=$("<div />",{"class":"titleFill"}); // title fill
+                $verticalDiv.append($tFill);
+
+                var $cFill=$("<div />",{"class":"calendarFill"}); // calendar fill
+                $verticalDiv.append($cFill);
+
+                $verticalDiv.css("left",pxLeft-1+"px");
+                $verticalDiv.css("position","absolute");
+                $obj.append($verticalDiv[0]);
+
+                this.$m_domElement = this.createDomElement(this.m_month, this.m_year, startDate, endDate, calendar);
+
+                // Position and insert
+                this.$m_domElement.style.left=pxLeft+"px";
+                $obj.append(this.$m_domElement);
+
+                return this;
+            }
+
+            var g_cMonthSpacing=1;
+            var g_cMonthWidth=148;
+
+            function calMonthList(cM,m,y)
+            {
+                this.m_pxLeft=0;
+                this.m_pxLeftShift=g_cMonthWidth+g_cMonthSpacing;
+                this.m_cMonths=cM; // # visible months
+                this.m_rgcalMonths=new Array();
+                this.m_bPrev=false;
+                this.m_bNext=false;
+                this.m_bReady=true;
+                this.m_lowIndex=0;
+
+                this.getFirstMonth = function(){return (this.m_rgcalMonths&&this.m_rgcalMonths.length>0)?this.m_rgcalMonths[0]:null;}
+                this.getLastMonth = function(){return (this.m_rgcalMonths&&this.m_rgcalMonths.length>0)?this.m_rgcalMonths[this.m_rgcalMonths.length-1]:null;}
+
+                this.init = function(m,y)
+                {
+                    // Reset what we currently have
+                    this.m_pxLeft=0;
+                    var $monthlist = $("#monthlist");
+                    
+                    while( $monthlist[0].childNodes.length )
+                        $monthlist[0].removeChild($monthlist[0].childNodes[0]);
+                    $monthlist.css("left",this.m_pxLeft+"px");
+                    $monthlist.css("top","0px"); // set this so it can be accessed via script
+
+                    this.m_bPrev=false;
+                    this.m_bNext=false;
+
+                    for(var i=0;i<this.m_cMonths;i++)
+                    {
+                        this.m_rgcalMonths[i] = new calMonth(m,y,$monthlist,(i*this.m_pxLeftShift),g_startDate,g_endDate,g_calendar);
+
+                        // increment month
+                        y=y+(m==11?1:0);
+                        m=(m+1)%12;
+                    }
+                }
+
+                this.navPrev = function()
+                {
+                    if(this.m_bReady)    this.m_bReady = false;
+                    else                 return null;
+
+                    var cM=this.getFirstMonth().getMonth();
+                    var cY=this.getFirstMonth().getYear();
+                    var pY=cY-(cM==0?1:0);
+                    var pM=(cM+11)%12;
+
+                    var $monthlist = $("#monthlist");
+                    
+                    // Create and draw the new month
+                    var cPxLeft = this.getFirstMonth().getPxLeft();
+                    var prevMonth = new calMonth(pM,pY,$monthlist,cPxLeft-this.m_pxLeftShift,g_startDate,g_endDate,g_calendar);
+
+                    // Update visible month array
+                    for(var i=this.m_cMonths-1;i>0;i--)
+                        this.m_rgcalMonths[i]=this.m_rgcalMonths[i-1];
+                    this.m_rgcalMonths[i] = prevMonth;
+
+                    // Scroll the new month into view
+                    this.m_pxLeft += this.m_pxLeftShift;
+                    scrollAction($monthlist, null, new position(this.m_pxLeft,null), null);
+                    this.m_bPrev = true;
+                }
+
+                this.navNext = function()
+                {
+                    if(this.m_bReady)    this.m_bReady = false;
+                    else                 return null;
+
+                    var cM=this.getLastMonth().getMonth();
+                    var cY=this.getLastMonth().getYear();
+                    var nY=cY+(cM==11?1:0);
+                    var nM=(cM+1)%12;
+
+                    $monthlist = $("#monthlist");
+                    
+                    // Create and draw the new month
+                    var cPxLeft = this.getLastMonth().getPxLeft();
+                    var nextMonth = new calMonth(nM,nY,$monthlist,cPxLeft+this.m_pxLeftShift,g_startDate,g_endDate,g_calendar);
+
+                    // Update visible month array
+                    for(var i=0;i<this.m_cMonths-1;i++) this.m_rgcalMonths[i]=this.m_rgcalMonths[i+1];
+                    this.m_rgcalMonths[i] = nextMonth;
+
+                    // Scroll the new month into view
+                    this.m_pxLeft -= this.m_pxLeftShift;
+                    scrollAction($monthlist, null, new position(this.m_pxLeft,null), null);
+                    this.m_bNext = true;
+                }
+
+                this.cleanList = function()
+                {
+                    $monthlist = $("#monthlist");
+                    if(this.m_bPrev)
+                    {
+                        // remove month & fill
+                        if(this.m_lowIndex == 0)
+                        {
+                            $monthlist[0].removeChild($monthlist[0].childNodes[2]);
+                            $monthlist[0].removeChild($monthlist[0].childNodes[2]);
+                        }
+                        else
+                        {
+                            $monthlist[0].removeChild($monthlist[0].firstChild);
+                            $monthlist[0].removeChild($monthlist[0].firstChild);
+                        }
+                        this.m_lowIndex = 1;
+                        this.m_bPrev = false;
+                    }
+                    else if(this.m_bNext)
+                    {
+                        // remove month & fill
+                        if(this.m_lowIndex == 0)
+                        {
+                            $monthlist[0].removeChild($monthlist[0].firstChild);
+                            $monthlist[0].removeChild($monthlist[0].firstChild);
+                        }
+                        else
+                        {
+                            $monthlist[0].removeChild($monthlist[0].childNodes[2]);
+                            $monthlist[0].removeChild($monthlist[0].childNodes[2]);
+                        }
+                        this.m_lowIndex = 0;
+                        this.m_bNext = false;
+                    }
+                    this.m_bReady = true;
+                }
+
+                this.init(m,y);
+                return this;
+            }
+
+
+            function handlePrev()
+            {
+                g_calMonthList.navPrev();
+                UpdPrev();
+                UpdNext();
+            }
+
+            function handleNext()
+            {
+                g_calMonthList.navNext();
+                UpdNext();
+                UpdPrev();
+            }
+
+            function position(x,y)
+            {
+                this.m_x=x;
+                this.m_y=y;
+
+                this.getX=function(){return this.m_x;}
+                this.getY=function(){return this.m_y;}
+
+                return this;
+            }
+
+            function scrollAction($domElement,startPos,endPos,duration,iterCount)
+            {
+                this.$m_domElement = $domElement;
+                this.m_startPos = startPos;
+                this.m_endPos = endPos;
+                this.m_duration = duration;
+                this.m_iterCount = iterCount;
+
+                var eL=atoi(this.$m_domElement.css('left'));
+                var eT=atoi(this.$m_domElement.css('top'));
+
+                // Default startPos to current position
+                if(null==this.m_startPos || (null==this.m_startPos.getX() && null==this.m_startPos.getY()))
+                    this.m_startPos = new position(eL,eT);
+                else
+                {
+                    if(null==this.m_startPos.getX()) this.m_startPos = new position(eL,this.m_startPos.getY());
+                    if(null==this.m_startPos.getY()) this.m_startPos = new position(this.m_startPos.getX(),eT);
+                }
+
+                // Default endPos to current position
+                if(null==this.m_endPos)
+                    this.m_endPos = new position(eL,eT);
+                else
+                {
+                    if(null==this.m_endPos.getX()) this.m_endPos = new position(eL,this.m_endPos.getY());
+                    if(null==this.m_endPos.getY()) this.m_endPos = new position(this.m_endPos.getX(),eT);
+                }
+
+                if(null==this.m_duration) this.m_duration=200;    // Default is 1/5 sec
+                if(null==this.m_iterCount) this.m_iterCount=10;    // Move element 10 times
+
+                // Calc pixels/iteration
+                this.m_incX = (this.m_endPos.getX()-this.m_startPos.getX())/this.m_iterCount;
+                this.m_incY = (this.m_endPos.getY()-this.m_startPos.getY())/this.m_iterCount;
+
+                this.nextIter = function()
+                {
+                    this.m_iter++;
+                    this.$m_domElement.css("left",(this.m_startPos.getX()+Math.floor(this.m_iter*this.m_incX))+"px");
+                    this.$m_domElement.css("top",(this.m_startPos.getY()+Math.floor(this.m_iter*this.m_incY))+"px");
+                    if(this.m_iter<this.m_iterCount) setTimeout("this.nextIter();",this.m_duration/this.m_iterCount);
+                    else                             setTimeout("g_calMonthList.cleanList();",this.m_duration/this.m_iterCount);
+                }
+
+                this.m_iter = 0;
+                this.nextIter();
+
+                return this;
+            }
+        </script>
+
+        <script type="text/javascript">
+            var wp=window.parent;
+            var cf=null;
+            var g_fCL=false;
+            var g_eInp=0;
+            var g_dtMin,g_dtMax;
+            var g_startDate;
+            var g_highlightedDate = [];
+            var g_staticHighlightedDate = [];
+            var g_endDate;
+            var g_return = false;
+            var g_calendar;
+            var g_calFrame;
+            var g_calConfig;
+            var g_cancelCallback;
+            var g_selectCallback;
+            var rN,rW
+
+            function SteupCal(calendar,calFrame,calConfig,cancelCallback,selectCallback)
+            {
+                g_calendar = calendar;
+                g_calFrame = calFrame;
+                g_calConfig = calConfig;
+                g_cancelCallback = cancelCallback ? cancelCallback : function(){};
+                g_selectCallback = selectCallback ? selectCallback : function(){};
+                
+                // LOC Comment: Month name.
+                rN = g_calConfig.getMonths();
+                // LOC Comment: Weekday abbrv.
+                rW = calConfig.getDayAbbrs();
+                // LOC Comment: Close text
+                $('#closeText').html(g_calConfig.getCloseText());
+            }
+
+            function GetCF(){
+                return g_calFrame;
+            }
+
+            function DoLoad(){
+                g_fCL=true;
+                $('#Close').click(CloseCal);
+                $('#PImg').click(handlePrev);
+                $('#NImg').click(handleNext);
+            }
+
+            function DoCal(eStartDate,eEndDate,dmin,dmax,range,dDefaultPos,ret)
+            {
+                g_return = ret;
+                g_dtMin = dmin?g_calendar.getDateFromString(dmin):null;
+                g_dtMax = dmax?g_calendar.getDateFromString(dmax):null;
+                // create a date object for today without a time
+                var today = new Date();
+                today = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+                g_startDate=g_calendar.getDateFromString(eStartDate.value);
+                g_endDate = eEndDate ? g_calendar.getDateFromString(eEndDate.value) : null;
+                // the date currently selected in this field
+                var currentSelectedDate = ret ? g_endDate : g_startDate;
+                if(dmin&&""==dmin)dmin=null;
+                if(dmax&&""==dmax)dmax=null;
+
+                if (ret && range && g_startDate)
+                {
+                  var maxRange = new Date(g_startDate.getTime());
+                  maxRange.setDate(maxRange.getDate() + range);
+                  if (maxRange < g_dtMax)
+                  {
+                    g_dtMax = maxRange;
+                  }
+                }
+                // if we are on the return field don't let the min date be more than the start
+                if (ret && g_dtMin < g_startDate)
+                {
+                  g_dtMin = g_startDate;
+                }
+                // set the min today to today if it is less than today
+                if(today > g_dtMin)
+                {
+                    g_dtMin = today;
+                }
+                
+                // set the max to 180 days past min if it is equil or less than the min
+                if(g_dtMin >= g_dtMax)
+                {
+                    g_dtMax.setDate(g_dtMin.getDate()+180);
+                }
+                
+                // set the start date to null if it is less than the min
+                if(dmin&&g_startDate&&g_startDate<g_calendar.getDateFromString(dmin))g_startDate=null;
+                // set the end date to null if it is greater than the max
+                if(dmax&&g_endDate&&g_endDate>g_calendar.getDateFromString(dmax))g_endDate=null;
+                
+                // if there is no default possition use the start date or the current date
+                var dtPos = dDefaultPos;
+                if (!dtPos && currentSelectedDate){
+                  dtPos = currentSelectedDate;
+                } else if (!dtPos && !currentSelectedDate){
+                  dtPos = today;
+                }
+                
+                // if the date is not in the current view (does not equal the possition month
+                // or position month +1 and year
+                if (currentSelectedDate &&
+                  !((currentSelectedDate.getMonth() == dtPos.getMonth() ||
+                     currentSelectedDate.getMonth() == dtPos.getMonth() + 1))){
+                      if (ret && g_endDate){
+                        dtPos = new Date(g_endDate);
+                        dtPos = g_calendar.decrementMonth(dtPos);
+                      }else if (g_startDate) {
+                        dtPos = new Date(g_startDate);
+                      }                
+                }
+                                
+                // use twp month Calendar
+                UpdCal(2,dtPos.getMonth(),dtPos.getFullYear());
+
+                // if it's a return field use the end date filed otherwise use the start date
+                g_eInp= (ret) ? eEndDate : eStartDate;
+                setTimeout("ShowCal()",1);
+            }
+
+            function ShowCal()
+            {
+                var el = GetCF();
+                if(el!=null)
+                {
+                    el.css("display","block");
+                    el.css("visibility","visible");
+                }
+            }
+
+            function UpdCal(cM,m,y)
+            {
+                // Size the frame
+                var pxSpacing = g_cMonthSpacing*(cM-1);
+                $("#OutBdr").css("width",((g_cMonthWidth*cM)+2+pxSpacing)+"px");
+                $("#InBdr").css("width",((g_cMonthWidth*cM)+pxSpacing)+"px");
+                $("#monthcontainer").css("width",((g_cMonthWidth*cM)+pxSpacing)+"px");
+                $("#NavNext").css("left",((g_cMonthWidth*cM)+pxSpacing-19)+"px");
+                GetCF().css("width",((g_cMonthWidth*cM)+2+pxSpacing)+"px");
+                GetCF().css("height",186+"px");
+                
+                g_calMonthList = null;
+                g_calMonthList = new calMonthList(cM,m,y);
+
+                UpdNext();
+                UpdPrev();
+            }
+
+            function UpdNext()
+            {
+                var currMonth=g_calMonthList.getLastMonth();
+                var nm=currMonth.getMonth();
+                var ny=currMonth.getYear();
+
+                var hd=(!g_dtMax||!(ny>g_dtMax.getFullYear()||(ny==g_dtMax.getFullYear()&&parseInt(nm)>=g_dtMax.getMonth())));
+                $("#NImg").css("visibility",hd?"visible":"hidden");
+            }
+
+            function UpdPrev()
+            {
+                var currMonth=g_calMonthList.getFirstMonth();
+                var pm=currMonth.getMonth();
+                var py=currMonth.getYear();
+
+                var hd=(!g_dtMin||!(py<g_dtMin.getFullYear()||(py==g_dtMin.getFullYear()&&parseInt(pm)<=g_dtMin.getMonth())));
+                $("#PImg").css("visibility",hd?"visible":"hidden");
+            }
+
+            function clearHighlights(list)
+            {
+                while(list.length)
+                {
+                    list.pop().removeClass("highlight");
+                }
+            }
+
+            function addHighlight(date, list)
+            {
+                date.addClass("highlight");
+                list.push(date);
+            }
+            
+            function getDateCell(date)
+            {
+                return $("[data-day=\"" + date.getDate() + "\"][data-month=\"" + date.getMonth() + "\"][data-year=\"" + date.getFullYear() + "\"]")[0]
+            }
+            
+            function highlightRange(rangeCapA, rangeCapB, highlightedDateList, getCell)
+            {
+                clearHighlights(highlightedDateList);
+                if (rangeCapA && rangeCapB)
+                {
+                    var oneDay = 1000 * 60 * 60 * 24;
+                    while (rangeCapB.getTime() > rangeCapA.getTime() + oneDay)
+                    {
+                        rangeCapB.setDate(rangeCapB.getDate() -1);
+                        var dc = getCell(rangeCapB);
+                        if (dc)
+                        {
+                            addHighlight($(dc), highlightedDateList);
+                        }
+                    }
+                    while (rangeCapB.getTime() < rangeCapA.getTime() - oneDay)
+                    {
+                        rangeCapB.setDate(rangeCapB.getDate() +1);
+                        var dc = getCell(rangeCapB);
+                        if (dc)
+                        {
+                            addHighlight($(dc), highlightedDateList);
+                        }
+                    }
+
+                }
+            }
+            
+            function DtHvr(evt){
+                var $target=$(evt.target);
+                $target.addClass("hover");
+                var hoverDate = new Date($target.data("year"),$target.data("month"),$target.data("day"));
+                if (g_return){
+                  if (g_endDate){
+                    $(getDateCell(g_endDate)).removeClass("end");
+                  }
+                  if (g_startDate){
+                    highlightRange(g_startDate, hoverDate, g_highlightedDate, getDateCell);
+                  }
+                }else{
+                  if (g_startDate){
+                    $(getDateCell(g_startDate)).removeClass("start");
+                  }
+                  if (g_endDate){
+                    if (hoverDate < g_endDate){
+                      highlightRange(g_endDate, hoverDate, g_highlightedDate, getDateCell);
+                    }else{
+                      clearHighlights(g_highlightedDate);
+                      $(getDateCell(g_endDate)).removeClass("end");
+                    }
+                  }
+                }
+            }
+
+            function DtExt(evt){
+                $(evt.target).removeClass("hover");
+                if (g_endDate)
+                    $(getDateCell(g_endDate)).addClass("end");
+                if (g_startDate)
+                    $(getDateCell(g_startDate)).addClass("start");
+                if (g_startDate && g_endDate)
+                {
+                  highlightRange(g_startDate, new Date(g_endDate), g_highlightedDate, getDateCell);
+                }
+            }
+
+            function DtClk(evt){
+                var $target=$(evt.target);
+                g_selectCallback(g_eInp,$target.data("day"),$target.data("month")+1,$target.data("year"));
+                if(g_eInp.onblur){
+                    g_eInp.onblur();
+                }
+                g_cancelCallback(FirstMonthDate());
+            }
+
+            function CloseCal(){
+                wp.CalSetFocus(g_eInp);
+                g_cancelCallback(FirstMonthDate());
+            }
+
+            function FirstMonthDate() {
+                var d;
+                  if (g_calMonthList) {
+                  var month = g_calMonthList.getFirstMonth().getMonth();
+                  var year = g_calMonthList.getFirstMonth().getYear();
+                  d = new Date(year, month, 1);
+                }
+                return d;
+            }
+
+            function SetMinMax(n,x){
+                g_dtMin=n;g_dtMax=x;
+            }
+            
+            function FmtTitle(m,y){
+                if('28' == g_calConfig.getLocaleConfig()){
+                    return y.toString()+"\u00a0?\u00a0"+ rN[m];
+                }
+                else{
+                    return rN[m]+"\u00a0\u00a0"+y.toString();
+                }
+            }
+            function DOW(d,m,y){
+                var dt=new Date(y,m,d);
+                return(dt.getDay()+(7-g_calendar.getStartOfWeek()))%7;
+            }
+        </script>
+    </body>
+
+<!-- Mirrored from www.expedia.com/static/default/default/html/calendar/v3.0.0/calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2014 20:07:51 GMT -->
+</html>

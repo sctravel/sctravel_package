@@ -125,15 +125,15 @@ These values can than be override by global CSS
 }
 #type-ahead .plane
 {
-    background:url(../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/iconsSprites.png) -64px -142px;
+    background:url(http://www.expedia.com/static/fusion/v2.3/images/iconsSprites.png) -64px -142px;
 }
 #type-ahead.thick .plane
 {
-    background:url(../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/typeahead/icon_flight_dgrey.png) 0px 0px no-repeat;
+    background:url(http://www.expedia.com/static/fusion/v2.3/images/typeahead/icon_flight_dgrey.png) 0px 0px no-repeat;
 }
 #type-ahead .cx
 {
-    background:url(../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/iconsSprites.png) -91px 0px;
+    background:url(http://www.expedia.com/static/fusion/v2.3/images/iconsSprites.png) -91px 0px;
     font-size:10px;
 }
 
@@ -220,7 +220,7 @@ body{margin:0;padding:0;}
 #widgetcatalogWizard .xp-l-il a:hover {text-decoration: none;}
 #widgetcatalogWizard .xp-l-text:hover {color: #02b3fd; text-decoration: underline;cursor:pointer;}
 #widgetcatalogWizard .xp-l-icn:hover {cursor:pointer;}
-#widgetcatalogWizard .xp-l-il .xp-l-icn {display:inline-block; background-color:transparent; background-image:url(../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/iconsSprites.png);overflow:hidden; margin-left:5px;}
+#widgetcatalogWizard .xp-l-il .xp-l-icn {display:inline-block; background-color:transparent; background-image:url(http://www.expedia.com/static/fusion/v2.3/images/iconsSprites.png);overflow:hidden; margin-left:5px;}
 #widgetcatalogWizard .xp-l-il .xp-l-left .xp-l-icn {margin-right:5px; margin-left:0px;}
 #widgetcatalogWizard .xp-l-more-2nd .xp-l-icn{width:6px; height:6px; margin-top:3px; background-position:-59px -74px;}
 #widgetcatalogWizard .xp-l-more-2nd:hover .xp-l-icn{background-position:-66px -74px;}
@@ -309,7 +309,7 @@ body{margin:0;padding:0;}
 /* IE7 SUCKS UPGRADE NOW! */
 .ie6 .tooltip, .ie7 .tooltip {
 	padding-right: 14px; 
-	background: url(../../external.html?link=http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-commonicons.png) 100% -144px no-repeat;
+	background: url(http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-commonicons.png) 100% -144px no-repeat;
 }
 
 .ie7 #widgetcatalogWizard.tabbed-wiz .fields br {
@@ -322,15 +322,15 @@ body{margin:0;padding:0;}
 }
 
 .no-datauri .expand:after, .ie6 .expand, .ie7 .expand {
-	background: url(../../external.html?link=http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-sprite.png) -45px 136px no-repeat;
+	background: url(http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-sprite.png) -45px 136px no-repeat;
 }
 
 .no-datauri .collapse:after, .ie6 .collapse, .ie7 .collapse {
-	background: url(../../external.html?link=http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-sprite.png) -56px -136px no-repeat;
+	background: url(http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-sprite.png) -56px -136px no-repeat;
 }
 	
 .ie6 .expand, .ie7 .expand, .ie6 .collapse, .ie7 .collapse { 
-	padding-right: 14px; background-image: url(../../external.html?link=http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-commonicons.png); background-repeat: no-repeat;
+	padding-right: 14px; background-image: url(http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-commonicons.png); background-repeat: no-repeat;
 }
 
 .ie6 .expand, .ie7 .expand {
@@ -362,7 +362,7 @@ body{margin:0;padding:0;}
 }
 #widgetcatalogWizard.horizontal-wizard {
   width:auto;
-  background-image:url(../../external.html?link=http://www.expedia.com/static/default/default/images/wizard/greyStripe.png);
+  background-image:url(http://www.expedia.com/static/default/default/images/wizard/greyStripe.png);
   background-repeat:repeat-y;
 }
 .wizTitle {
@@ -558,13 +558,13 @@ body{margin:0;padding:0;}
 #widgetcatalogWizard .lob-carrot {
   width:100px;
   height:13px;
-  background: white url(../../external.html?link=http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) 0px -546px no-repeat;
+  background: white url(http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) 0px -546px no-repeat;
 }
 #widgetcatalogWizard .lob-link {
   display:block;
   height:26px;
   width:100px;
-  background: url(../../external.html?link=http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) top left no-repeat;
+  background: url(http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) top left no-repeat;
   text-align:center;
   padding-top:60px;
   text-decoration:none;
@@ -1027,7 +1027,7 @@ body{margin:0;padding:0;}
 }
 
 #widgetcatalogWizard ul.errors li .icon {
-    background: url("../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/iconsSprites.png") no-repeat scroll -92px -45px transparent;
+    background: url("http://www.expedia.com/static/fusion/v2.3/images/iconsSprites.png") no-repeat scroll -92px -45px transparent;
     display: block;
     float: left;
     height: 15px;
@@ -1068,12 +1068,12 @@ body{margin:0;padding:0;}
 }
 
 #widgetcatalogWizard.original-recipe .bannerUpsell{
-	background:url(../../external.html?link=http://media.expedia.com/media/content/expus/graphics/launch/home/2011-wizard_yellowtag.png) no-repeat left center;
+	background:url(http://media.expedia.com/media/content/expus/graphics/launch/home/2011-wizard_yellowtag.png) no-repeat left center;
 }
 
 * html #widgetcatalogWizard.original-recipe .bannerUpsell {
 	background:none;
-	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/homepage/Wizard_YellowTag.png',sizingMethod='scale');
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.expedia.com/static/fusion/v2.3/images/homepage/Wizard_YellowTag.png',sizingMethod='scale');
 }
 
 /* BANNERS */
@@ -1454,7 +1454,7 @@ removing border from radio buttons
 
 /* GRADIENT SKIN */
 #widgetcatalogWizard .gradient .outer {
-    background: url("../../external.gif?link=http://www.expedia.com/static/fusion/v2.3/images/wizard/wizard_out_bg.gif") repeat-x scroll left center #00355D;
+    background: url("http://www.expedia.com/static/fusion/v2.3/images/wizard/wizard_out_bg.gif") repeat-x scroll left center #00355D;
     border: 1px solid #00355D;
     padding: 0; 
     -webkit-border-radius: 10px;
@@ -1463,7 +1463,7 @@ removing border from radio buttons
 }
 
 #widgetcatalogWizard .gradient .background {
-    background: url("../../external.gif?link=http://www.expedia.com/static/fusion/v2.3/images/wizard/wizard_out_bg.gif") repeat-x scroll left center #00355D;    
+    background: url("http://www.expedia.com/static/fusion/v2.3/images/wizard/wizard_out_bg.gif") repeat-x scroll left center #00355D;    
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border-radius: 7px;
@@ -1513,14 +1513,14 @@ removing border from radio buttons
 }
 
 #widgetcatalogWizard .gradient .lobForm .buttons .submitWrapper {
-    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat scroll left top transparent;
+    background: url('http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat scroll left top transparent;
 }
 
 #widgetcatalogWizard .gradient .lobForm .buttons input {
     border: none;
     height: 32px;
     padding: 0 32px 6px 16px;
-    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top right;
+    background: url('http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top right;
     color: #036;
 } 
 
@@ -1588,14 +1588,14 @@ removing border from radio buttons
 }
 
 #widgetcatalogWizard .aarp .lobForm .buttons .submitWrapper {
-    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat scroll left top transparent;
+    background: url('http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat scroll left top transparent;
 }
 
 #widgetcatalogWizard .aarp .lobForm .buttons input {
     border: none;
     height: 32px;
     padding: 0 32px 6px 16px;
-    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top right;
+    background: url('http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top right;
     color: #036;
 } 
 
@@ -1640,14 +1640,14 @@ removing border from radio buttons
 }
 
 #widgetcatalogWizard .blue .lobForm .buttons .submitWrapper {
-    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top left;
+    background: url('http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top left;
 }
 
 #widgetcatalogWizard .blue .lobForm .buttons input {
     border: none;
     height: 32px;
     padding: 0 36px 3px 20px;
-    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top right;
+    background: url('http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top right;
     color: #036;
 }
 
@@ -1684,14 +1684,14 @@ removing border from radio buttons
 }
 
 #widgetcatalogWizard .white .lobForm .buttons .submitWrapper {
-    background: url('../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/buttonBG.png') no-repeat left 50%;
+    background: url('http://www.expedia.com/static/fusion/v2.3/images/buttonBG.png') no-repeat left 50%;
 }
 
 #widgetcatalogWizard .white .lobForm .buttons input {
     border: none;
     height: 19px;
     padding: 0 12px 0 10px;
-    background: url('../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/buttonBG.png') no-repeat right 50%;
+    background: url('http://www.expedia.com/static/fusion/v2.3/images/buttonBG.png') no-repeat right 50%;
     color: #FFF;
 }
 
@@ -1718,7 +1718,7 @@ removing border from radio buttons
     position: absolute;
     top: -32px;
     left: 140px;
-    background: url('../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/homepage/Wizard_YellowTag.png');
+    background: url('http://www.expedia.com/static/fusion/v2.3/images/homepage/Wizard_YellowTag.png');
     height: 150px;
     width: 230px;
 }
@@ -1743,7 +1743,7 @@ removing border from radio buttons
 }
 
 #widgetcatalogWizard .medium .bannerUpsell .com .default .mediumOnly .base .banner {
-    background: url('../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/wizard/promo_bg.png');
+    background: url('http://www.expedia.com/static/fusion/v2.3/images/wizard/promo_bg.png');
     height: 92px;
     width: 129px;
     text-align: center;
@@ -1759,7 +1759,7 @@ removing border from radio buttons
 /* footer banner for com - start */
 #widgetcatalogWizard .bannerFooter .com .default {
     height: 57px;
-    background: #D4E9EE url('../../external.gif?link=http://www.expedia.com/static/fusion/v2.3/images/customersupport/lady78x78.gif') no-repeat left top;
+    background: #D4E9EE url('http://www.expedia.com/static/fusion/v2.3/images/customersupport/lady78x78.gif') no-repeat left top;
     padding: 10px 5px 5px 95px;
 }
 
@@ -1787,7 +1787,7 @@ removing border from radio buttons
 #widgetcatalogWizard .xp-b-submit-large, 
 #widgetcatalogWizard .xp-b-submit-large .xp-b-leftSide, 
 #widgetcatalogWizard .xp-b-rightSide{
-	background: url(../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/buttonBG.png) no-repeat; 
+	background: url(http://www.expedia.com/static/fusion/v2.3/images/buttonBG.png) no-repeat; 
 	display: inline-block; 
 	cursor:pointer;
 }
@@ -1818,7 +1818,7 @@ removing border from radio buttons
 #widgetcatalogWizard .xp-b-leftSubmit1,
 #widgetcatalogWizard .xp-b-rightSubmit2,
 #widgetcatalogWizard .xp-b-rightSubmit1 {
-	background: url(../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/buttonBG2.png) no-repeat; 
+	background: url(http://www.expedia.com/static/fusion/v2.3/images/buttonBG2.png) no-repeat; 
 	display: block;
 	height:29px;
 	float:left;
@@ -1865,7 +1865,7 @@ removing border from radio buttons
 }
 
 #widgetcatalogWizard.tabbed-wiz .xp-b-submit2,#widgetcatalogWizard.tabbed-wiz .xp-b-leftSubmit2,#widgetcatalogWizard.tabbed-wiz .xp-b-rightSubmit2 {
-	background: url(../../external.html?link=http://www.expedia.com/static/default/default/images/buttonBG2.png) no-repeat; 
+	background: url(http://www.expedia.com/static/default/default/images/buttonBG2.png) no-repeat; 
 	display: block;
 	height:45px;
 	float:left;
@@ -1958,7 +1958,7 @@ removing border from radio buttons
   display:block;
   height:20px;
   width:13px;
-  background: #CCC url(../../external.html?link=http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) 0px -559px no-repeat;
+  background: #CCC url(http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) 0px -559px no-repeat;
 }
 #widgetcatalogWizard .fieldOuterDate .icon {
   position:absolute;
@@ -1967,7 +1967,7 @@ removing border from radio buttons
   display:block;
   height:17px;
   width:21px;
-  background: #CCC url(../../external.html?link=http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) -13px -558px no-repeat;
+  background: #CCC url(http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) -13px -558px no-repeat;
 }
 #widgetcatalogWizard .fieldOuterDrop .icon {
   position:absolute;
@@ -1976,7 +1976,7 @@ removing border from radio buttons
   display:block;
   height:8px;
   width:13px;
-  background: #CCC url(../../external.html?link=http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) -34px -559px no-repeat;
+  background: #CCC url(http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) -34px -559px no-repeat;
 }
 #widgetcatalogWizard .fieldOuterDate,#widgetcatalogWizard.tabbed-wiz .lobForm .halfWidth .fieldOuterDrop,#widgetcatalogWizard.tabbed-wiz .lobForm .halfWidth .fieldOuter {
   width:230px;
@@ -2247,14 +2247,14 @@ margin:0 0 6px 0;
 }
 .ui-autocomplete li.airport a {
     padding-left: 20px;
-    background-image: url(../../external.html?link=http://www.expedia.com/static/default/default/images/flight.png);
+    background-image: url(http://www.expedia.com/static/default/default/images/flight.png);
 }
 
 /* jqueryui calendar css */
 
 /* STYLES FOR POP UP CALENDAR */
-.ui-datepicker .ui-datepicker-prev { position: absolute; right:121px; top: 3px; cursor: pointer !important; height: 16px; width: 15px; text-indent: -99999px; overflow: hidden; background: url('../../external.gif?link=http://www.expedia.com/static/default/default/images/bubble_left_onblue.gif') no-repeat top left;}
-.ui-datepicker .ui-datepicker-next { position: absolute; right:6px; top: 3px; cursor: pointer !important; height: 16px; width: 15px; text-indent: -99999px; overflow: hidden; background: url('../../external.gif?link=http://www.expedia.com/static/default/default/images/bubble_right_onblue.gif') no-repeat top left; }
+.ui-datepicker .ui-datepicker-prev { position: absolute; right:121px; top: 3px; cursor: pointer !important; height: 16px; width: 15px; text-indent: -99999px; overflow: hidden; background: url('http://www.expedia.com/static/default/default/images/bubble_left_onblue.gif') no-repeat top left;}
+.ui-datepicker .ui-datepicker-next { position: absolute; right:6px; top: 3px; cursor: pointer !important; height: 16px; width: 15px; text-indent: -99999px; overflow: hidden; background: url('http://www.expedia.com/static/default/default/images/bubble_right_onblue.gif') no-repeat top left; }
 .ui-datepicker .ui-datepicker-prev-hover { right:120px; top: 4px;  }
 .ui-datepicker .ui-datepicker-next-hover { right:5px; top: 4px; }
 .ui-datepicker .ui-datepicker-title { margin: 0 2.3em; line-height: 1.8em; text-align: center; }

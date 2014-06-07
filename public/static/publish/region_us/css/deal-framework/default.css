@@ -1,0 +1,540 @@
+#mainContainer					{width:992px;}
+#overlay { height: 100%; width: 100%; position: fixed; top: 0; left: 0; background-color: black; opacity: .3; z-index: 1000; filter: alpha(opacity = 30);}
+#updateInterstitial				{display: none;}
+#mileageInterstitial			{display:none;}
+.error-message					{float:left;width:992px;text-align:center;color:#333;font-size:14px;padding:8px 0;margin-top:16px;background:none;clear:both;}
+.error-message p				{font-size:18px;}
+.error-message .gray-italic,    {color:#ccc;font-style:italic;}
+.error-message .gray-line		{border-bottom:1px solid #999;width:20px;height:2px;display:inline;}
+.fyi-ribbon						{position:relative;background:url(../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/fyi-ribbon-middle.gif) repeat-x top left;text-align:left;width:650px;padding:10px 0 10px 0;margin-right:auto;margin-left:auto;margin-bottom:24px;z-index:80;}
+.fyi-ribbon	p					{font-size:14px;padding:0 0 0 38px;margin:0;}
+.fyi-ribbon-left, .fyi-ribbon-right	{position:absolute;display:block;top:0px;width:20px;height:52px;z-index:90;}
+.fyi-ribbon-left 				{left:-18px;background:url(../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/fyi-ribbon-left.gif) no-repeat top left;}
+.fyi-ribbon-right				{right:-18px;background:url(../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/fyi-ribbon-right.gif) no-repeat top left;}
+.fyi-ribbon .icon				{height: 32px;width: 16px;position: absolute;top:6px;left:15px;overflow: hidden;background: url(http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-sprite.png) -4px -100px no-repeat;z-index:90;background-position: -32px -100px;}
+.gde-error						{color:#ba4a49;background:#f2dedf;}
+.hero-graphic					{position:relative;width:992px;}
+.hero150						{height:150px;}
+.hero-graphic #breadcrumbs		{position:absolute;top:0;left:0;}
+.hero-graphic #sponsorship		{position:absolute;bottom:10px;right:16px;}
+.hero-graphic #sponsorship img	{margin-bottom:5px;}
+.ie7 .hero-graphic #sponsorship	{bottom:5px;}
+.ie7 .hero-graphic #sponsorship img	{margin-bottom:-1px;}
+.tab-link						{position:absolute;display:block;}
+.intro-copy						{width:992px;padding-top:16px;border-right:1px solid #eaebeb;}
+.intro-copy h1					{margin:0;}
+.intro-copy h1.orange			{color: #F06601;}
+#hotels-headline				{background:url(../../../../http://media.expedia.com/media/content/expus/graphics/icons/111124_hotel_icon_31x18.gif) no-repeat center left;padding-left:40px;}
+.intro-copy h1, .intro-copy p	{margin-left:35px;}
+.intro-copy p					{margin-bottom:0;padding-bottom:0px;}
+#dealContent, .terms, #mapContainer 			{width:992px;background:#fbfbfb url('../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/120502_pattern_bkgd_78x76.gif');border-right:1px solid #eaebeb;padding-bottom:24px;clear:both;overflow:hidden;}
+.terms p						{margin-left:35px;margin-right:16px;font-size:11px;}
+.terms p.terms-hdr				{margin-bottom:0;padding-bottom:0px;}
+.terms-alone					{margin:8px 0 0 35px;}
+.terms-headline					{margin:0px 0 0 35px;padding-bottom:8px;}
+.deal-finder-terms 				{color:#999999;}
+.in-line-link 					{text-decoration:underline;}
+.font14 						{font-size:14px; line-height:22px;}
+.scrollToTop 					{width:64px; padding:10px 0; text-align:center; position:fixed; bottom:0; left:902px; z-index:999; background:#fff; border-top:2px solid #ccc; border-right:2px solid #ccc; border-left:2px solid #ccc; border-top-left-radius: 5px; -moz-border-radius-topleft: 5px; border-top-right-radius: 5px; -moz-border-radius-topright: 5px; font-weight:bold; color:#333333; cursor:pointer;}
+#dcol-ad						{position:absolute;top:0;left:1010px;}
+.dcol-xsell						{margin-top:24px;width:160px;}
+.dcol-xsell	.btn-alt-gray		{width:160px;margin-top:10px;}
+.dcol-xsell	.btn span			{padding:3px 8px;}
+.dcol-xsell	.btn span img		{float:left;margin-bottom:5px;}
+.dcol-xsell	.btn span span		{float:left;padding:8px 0 0 5px;}
+.dcol-ad						{position: absolute; left: 992px; top: 231px; }
+.dcolbot-ad						{margin: 18px 0 0 18px;}
+
+#display-wrap				{float:left;}
+#filters-wrap			    {float:left;width:992px;padding-bottom:16px;border-right:1px solid #eaebeb;}
+#sort-wrap					{float:left;border-right:1px solid #eaebeb;}
+#filters-wrap ul,
+#filters-wrap ol,
+#sort-wrap ul,
+#sort-wrap ol,
+#lob-wrap ul,
+#lob-wrap ol				{margin:0;list-style:none;}
+#filters-wrap li,
+#sort-wrap li
+#lob-wrap ul,
+#lob-wrap ol				{line-height:19px;list-style:none;}
+
+ul.filters					{position:relative;padding:0 0 0 35px;float:left;z-index:110;/*fix IE7 zindex bug*/clear:both;}
+ul.filters.lower-row		{z-index:90;padding-top:10px;}
+ul.filters h5				{font-weight:bold;margin:10px 0 2px 0;text-transform:uppercase;}
+ul.filters li 				{float:left;margin-right:18px;}
+ul.filters li a 			{position:relative;display:block;color:#888;padding:5px 0 5px 8px;background:#fff;text-decoration:none;}
+ul.filters li a:hover		{color:#333;background:#fff;}
+ul.filters #dd-location		{width:208px;}
+ul.filters #dd-dates		{width:140px;}
+ul.filters #dd-star			{width:142px;}
+ul.filters #dd-staylength	{width:107px;}
+ul.filters #dd-dow			{width:110px;}
+ul.filters li.dd-open		{position:relative;background:#fff;}
+ul.filters .dropdown		{position:relative;border:1px solid #bbb;}
+ul.filters .textbox			{position:relative;}
+input#suggest				{border:1px solid #bbb;width:200px;height:27px;color:#888;padding-left:8px;font-family:arial,sans-serif;}
+.ie8 input#suggest,
+.ie7 input#suggest			{padding-top:4px;height:23px;}
+input#suggest:focus 		{outline:none;}
+ul.filters a.dd-show,
+ul.filters a.dd-show:hover,
+ul.filters a.dd-submit,
+ul.filters a.dd-submit:hover {width:26px;position:absolute;top:0;right:0;border-left:1px solid #bbb;text-align:center;padding:6px 0 4px 0;color:#006699;
+background:#e5e5e5; /* Old browsers */
+background: -moz-linear-gradient(top, #f3f3f3 0%, #ebebeb 37%, #e5e5e5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3f3f3), color-stop(37%,#ebebeb), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #f3f3f3 0%,#ebebeb 37%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #f3f3f3 0%,#ebebeb 37%,#e5e5e5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #f3f3f3 0%,#ebebeb 37%,#e5e5e5 100%); /* IE10+ */
+background: linear-gradient(top, #f3f3f3 0%,#ebebeb 37%,#e5e5e5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */}
+ul.filters a.dd-submit,
+ul.filters a.dd-submit:hover 		{top:1px;right:1px;}
+.ie7 ul.filters a.dd-submit,
+.ie7 ul.filters a.dd-submit:hover 	{top:2px;padding:5px 0 4px 0;}
+.ie8 ul.filters a.dd-submit,
+.ie8 ul.filters a.dd-submit:hover	{padding:5px 0 4px 0;}
+
+.sr-search-button {margin-top:30px;display:none;}
+#sr-search-button:hover {border-color:#b89300 #8a6e00 #8a6e00;background:#ffcb00;}
+
+ul.filters li.sr-search-button a {padding:0;}
+
+/* sub-menus */
+ul.filters ul				{position:absolute;top:100%;left:0;z-index:100;}
+ul.filters ul.dd-menu		{visibility:hidden;}
+ul.filters ul li			{float:none;}
+ul.filters ul li a			{display:inline-block;width:100%;border-bottom:1px solid #ccc;border-left:1px solid #ccc;border-right:1px solid #ccc;}
+ul.filters ul li a:hover	{background:#e5e5e5;}
+ul.filters ul#location li a		{width:173px;}
+ul.filters ul#dateRanges li a	{width:105px;}
+ul.filters ul#starRating li a	{width:107px;}
+ul.filters ul#staylength li a	{width:72px;}
+ul.filters ul#dayOfWeek li a	{width:75px;}
+/* autocomplete sub-menus */
+ul.filters #dest-choices ul		{background:transparent;border:none;}
+ul.filters #dest-choices ul li a,
+ul.filters #dest-choices ul li a.ui-state-hover	{width:200px;}
+ul.filters #dest-choices ul li a				{background:#e6f2f5;}
+ul.filters #dest-choices ul li a.ui-state-hover	{background:#d0e6eb;color:#333;}
+
+/* sliders */
+#destination-filters	{width:100%}
+ul.filters .price-filter	{width:120px;}
+#miles			{width:162px;}
+#price_label	{margin-top:2px;font-size:10px;}
+#miles_label	{margin-top:2px;font-size:10px;text-align:center;width:100%;}
+.min_slider		{float:left;margin-bottom:0;}
+.max_slider		{margin-bottom:0;}
+#price_label .max_slider	{float:right;}
+.city-filter	{display:none;}
+#destDistFilter {display: none;}
+#destDistFilter h5	{float:left;;margin:0;}
+#destDistFilter .radius	{float:left;margin-left:16px;}
+
+/*!
+ * jQuery UI Slider 1.8.19
+ *
+ * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Slider#theming
+ */
+
+ul.filters .ui-slider	{position: relative;text-align: left;}
+ul.filters .ui-slider.ui-widget-content	{border:1px solid #e9e9e9;border-top: 1px solid #b4b4b4; background: #f5f5f5 url(http://media.expedia.com/media/content/expus/graphics/promos/common/slider/ui-bg_flat_75_f5f5f5_40x100.png) 50% 50% repeat-x; color: #222222;}
+ul.filters .ui-slider .ui-widget-header {background: #006699 url(http://media.expedia.com/media/content/expus/graphics/promos/common/slider/ui-bg_flat_75_006699_40x100.png) 50% 50% repeat-x; color: #222222; font-weight: bold;}
+ul.filters .ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: .4em; height: .3em; cursor: default; outline:none; }
+ul.filters .ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; border-top:1px solid #00334c; background-position: 0 0; }
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #d3d3d3; background: #e6e6e6 url(http://media.expedia.com/media/content/expus/graphics/promos/common/slider/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #555555; }
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #555555; text-decoration: none; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { background: #dadada url(http://media.expedia.com/media/content/expus/graphics/promos/common/slider/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; }
+.ui-state-hover a, .ui-state-hover a:hover { color: #212121; text-decoration: none; }
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #aaaaaa; background: #ffffff url(http://media.expedia.com/media/content/expus/graphics/promos/common/slider/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; }
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #212121; text-decoration: none; }
+.ui-widget :active { outline: none; }
+
+/* Corner radius */
+.ui-slider.ui-corner-all, .ui-slider .ui-corner-all, .ui-slider-range-min { -moz-border-radius-topleft: 10px; -webkit-border-top-left-radius: 10px; -khtml-border-top-left-radius: 10px; border-top-left-radius: 10px; }
+.ui-slider.ui-corner-all, .ui-slider .ui-corner-all, .ui-slider-range-min { -moz-border-radius-topright: 10px; -webkit-border-top-right-radius: 10px; -khtml-border-top-right-radius: 10px; border-top-right-radius: 10px; }
+.ui-slider.ui-corner-all, .ui-slider .ui-corner-all, .ui-slider-range-min { -moz-border-radius-bottomleft: 10px; -webkit-border-bottom-left-radius: 10px; -khtml-border-bottom-left-radius: 10px; border-bottom-left-radius: 10px; }
+.ui-slider.ui-corner-all, .ui-slider .ui-corner-all, .ui-slider-range-min { -moz-border-radius-bottomright: 10px; -webkit-border-bottom-right-radius: 10px; -khtml-border-bottom-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+ul.filters .ui-slider-horizontal { height: .8em; }
+ul.filters .ui-slider-horizontal .ui-slider-handle { top: -.3em; margin-left: -.6em; }
+ul.filters .ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
+.ie7 ul.filters .ui-slider-horizontal .ui-slider-range {height:10px;}
+ul.filters .ui-slider-horizontal .ui-slider-range-min { left: 0; }
+ul.filters .ui-slider-horizontal .ui-slider-range-max { right: 0; }
+
+#sort-bar	{float:left;width:992px;font-size:12px;padding:0;border-top:1px solid #e0e1e1;border-right:1px solid #eaebeb;border-bottom:1px solid #babcbc;-moz-box-shadow:-2px 1px 2px #ccc;-webkit-box-shadow:-2px 1px 2px #ccc;box-shadow:-2px 1px 2px #ccc;
+	background:#fdfdfd; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #fdfdfd 37%, #f9f9f9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(37%,#fdfdfd), color-stop(100%,#f9f9f9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%,#fdfdfd 37%,#f9f9f9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%,#fdfdfd 37%,#f9f9f9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%,#fdfdfd 37%,#f9f9f9 100%); /* IE10+ */
+	background: linear-gradient(top, #ffffff 0%,#fdfdfd 37%,#f9f9f9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9f9f9',GradientType=0 ); /* IE6-9 */
+}
+#sort-bar p	{margin-left:16px;text-transform:uppercase;display:inline;font-weight:bold;}
+
+/* lob tabs */
+#lob-wrap	    {width:708px;float:left;list-style:none;margin-left:35px;}
+#lob-opts		{}
+#lob-opts li	{position:relative;float:left;margin:0;}
+#lob-opts li a	{position:relative;display:block;color:#999;font-weight:bold;border-top:1px solid #ccc;border-right:1px solid #ccc;padding:5px 16px 5px 16px;text-decoration:none;text-transform:uppercase;}
+.lobTab1		{border-left:1px solid #ccc;}
+#lob-opts li a.selected-lob-tab	{background:#fbfbfb url('../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/120502_pattern_bkgd_78x76.gif');color:#333;}
+.new-tag		{position:absolute;top:-17px;left:68px;}
+.new-pkg-tag	{position:absolute;top:-17px;left:110px;z-index:86;}
+.best-value-tag	{color:#F06601;text-transform:capitalize;text-decoration:none;}
+
+/* sort options */
+#sort-opts	{float:left;z-index:85;}
+ul.filters #dd-sort.dropdown	{border-top:none;border-left:1px solid transparent;border-right:1px solid #bbb;padding-top:1px;background:transparent;}
+ul.filters .dd-open #dd-sort.dropdown {border-top:none;border-left:1px solid #bbb;background:#fbfbfb url('../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/120502_pattern_bkgd_78x76.gif');}
+ul#sort		{z-index:95;margin-top:2px;}
+.ie8 ul#sort, .ie7 ul#sort 	{margin-top:1px;}
+#sort-opts, #sort-opts li		{margin:0;list-style:none;}
+ul.filters ul#sort li a			{width:130px;padding:8px 0 8px 8px;background:#fbfbfb url('../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/120502_pattern_bkgd_78x76.gif');}
+ul.filters ul#sort li a:hover	{background:#e5e5e5;}
+ul#sort li a.sort-selected 		{color:#333;text-decoration:none;}
+ul.filters #dd-sort			    {z-index:85;width:100px;background:#fbfbfb url('../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/120502_pattern_bkgd_78x76.gif');}
+ul.filters #dd-sort.dropdown	{border-bottom:none;}
+#sort-current	{text-transform:uppercase;color:#333;background:transparent;font-weight:bold;border-top:none;margin-left:8px;}
+.dd-spacer	{float:left;position:absolute;z-index:86;width:100%;background:#fbfbfb url('../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/120502_pattern_bkgd_78x76.gif');height:4px;}
+ul.filters #dd-sort.dropdown .dd-spacer {visibility:hidden;}
+ul.filters .dd-open #dd-sort.dropdown .dd-spacer {visibility:visible;}
+
+/* display options */
+#display-opts, #display-opts li		{margin:0;list-style:none;}
+#display-opts {float:left;z-index:85;padding-left:0;margin-left:-1px;}
+ul.filters #dd-display.dropdown	{border-top:none;border-left:1px solid transparent;border-right:none;padding-top:1px;background:transparent;}
+ul.filters .dd-open #dd-display.dropdown {border-top:none;border-right:1px solid #bbb;background:#fbfbfb url('../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/120502_pattern_bkgd_78x76.gif');}
+ul#display		{z-index:95;margin-top:2px;margin-left:0;}
+.ie8 ul#display, .ie7 ul#display 	{margin-top:1px;}
+ul.filters ul#display li a			{width:80px;padding:8px 0 8px 8px;background:#fbfbfb url('../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/120502_pattern_bkgd_78x76.gif');}
+ul.filters ul#display li a:hover	{background:#e5e5e5;}
+ul#display li a.display-active 		{color:#333;text-decoration:none;}
+ul.filters #dd-display			    {z-index:85;width:70px;background:#fbfbfb url('../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/120502_pattern_bkgd_78x76.gif');}
+ul.filters #dd-display.dropdown	{border-bottom:none;}
+#display-current	{text-transform:uppercase;color:#333;background:transparent;font-weight:bold;border-top:none;margin-left:0px;}
+.dd-spacer	{float:left;position:absolute;z-index:86;width:100%;background:#fbfbfb url('../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/120502_pattern_bkgd_78x76.gif');height:4px;}
+ul.filters #dd-display.dropdown .dd-spacer {visibility:hidden;}
+ul.filters .dd-open #dd-display.dropdown .dd-spacer {visibility:visible;}
+
+/* template 1 - grid view */
+/* deals */
+.template1.deal-box	{position:relative;top:0px;height:300px;width:280px;background-color:#fff;border:1px solid #CECECE;font-size:12px;color:#333;margin: 24px 0 0 36px;overflow:hidden;cursor:pointer;-moz-box-shadow:1px 2px 2px #CECECE;-webkit-box-shadow:1px 2px 2px #CECECE;box-shadow:1px 2px 2px #CECECE;}
+.template1 .deal-img-width	{width:255px;}
+.template1 .deal-margin-left {margin-left:12px;}
+.template1 .deal-dest	{font-size:16px;margin-top:8px;margin-bottom:8px;}
+.template1 .deal-img	{position:relative;width:255px;height:144px;background:url('../../../../http://media.expedia.com/media/content/expus/graphics/promos/deals/noPhotosAvail_255x144.gif') no-repeat top left;overflow:hidden;}
+.template1 .deal-savings	{position:absolute;bottom:0;left:180px;width:55px;height:38px;padding-top:4px;text-align:center;font-size:14px;font-weight:bold;text-transform:uppercase;background-color:#fff;opacity:.9;filter: alpha(opacity=90);display:none;float:none;}
+.template1 .deal-urgency	{position:absolute;top:0;left:0;width:255px;height:20px;padding-top:4px;text-align:center;font-size:11px;background-color:#FFCB00;opacity:1.0;filter: alpha(opacity=100);display:none;float:none;}
+.template1 .deal-savings span	{font-size:18px;}
+.template1 .deal-hotel-name	{margin-top:8px;}
+.template1 .deal-stars	{margin-top:4px;}
+.template1 .deal-dates	{float:right;margin-top:2px;text-align:right;}
+.ie8 .template1 .deal-dates	{margin-top:0;}
+.template1 .deal-rating	{float:left;font-size:11px;margin-top:8px;text-align:left;color:#888;}
+.template1 .deal-rating span	{font-weight:bold;}
+.template1 .deal-per-night	{color:#a1a1a1;text-align:right;margin-top:6px;}
+.template1 .deal-price	{font-size:48px;text-align:right;line-height:1em;}
+.ie7 .template1 .deal-price	{margin-top:-5px;}
+.template1 .deal-price a	{text-decoration:none;}
+.template1 .deal-price a span	{font-size:36px;vertical-align:top;}
+.ie7 .template1 .deal-price a span {vertical-align:middle;}
+.template1 .deal-orig-price	{font-size:18px;line-height:1em;color:#959595;text-decoration:line-through;vertical-align:middle;}
+.template1 .deal-promo-tag {
+	background-color:#f8d100;
+	position:absolute;
+	left: 12px;
+	top: 65px;
+	width:5px;
+	height:20px;
+}
+.deep-hotel {
+	clear: both;
+	display: none;
+	color: #006699;
+}
+.deep-hotel:hover {
+	text-decoration: underline;
+	cursor: pointer;
+	color: #02B3FD;
+}
+.deal-promo-tag:before {
+	content: "";
+	background-color:#f8d100;
+	position:absolute;
+	left: 0;
+	height:16px;
+	padding:4px 5px 0 5px;
+	font-size:11px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.deal-promo-tag:after {
+	content:"";
+	position:absolute;
+	right:-10px;
+	background-color:transparent;
+	width: 0;
+	height: 0;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #f8d100;
+	border-bottom: 10px solid #f8d100;
+}
+
+.deep-dive-content {
+	height: 200px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+.deep-dive-list {
+	width: 95%;
+	height: 20px;
+}
+.deep-dive-highlight {
+	padding-top: 5px;
+	background-color: #C2E3FF;
+	margin-bottom: 2px;
+}
+.deep-dive-promo {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 5px;
+}
+.deep-date {
+	margin-left: 11px;
+}
+.deep-price {
+	margin-right: 11px;
+}
+.deep-list {
+	margin-right: 11px;
+}
+.deep-dive-promo .hotel-info {
+	height: 50px;
+}
+.deep-dive-promo .hotel-info h1 {
+	margin: 0 12px 12px 0;
+	white-space: nowrap;
+	font-size: 15px;
+}
+.deep-dive-promo .hotel-info .deal-rating {
+	margin-left: 11px;
+}
+.deep-no-deals {
+	text-align: center;
+}
+/* template - list view */
+/* deals */
+.list-template.deal-box {position:relative;top:0px;width:920px;background-color:#fff;border:1px solid #CECECE;font-size:12px;color:#333;margin: 24px 0 0 36px;overflow:hidden;cursor:pointer;-moz-box-shadow:1px 2px 2px #CECECE;-webkit-box-shadow:1px 2px 2px #CECECE;box-shadow:1px 2px 2px #CECECE;}
+.list-template.hover	{background-color:#eff8fb;}
+.list-template .deal-img	{width:160px;height:90px;margin:14px;overflow:hidden;}
+.list-template .deal-summary	{width:335px;margin:14px 10px 12px 8px;}
+.list-template .deal-dest	{font-size:16px;margin-bottom:8px;}
+.list-template .deal-stars	{margin-top:4px;}
+.list-template .deal-dates	{width:170px;margin-top:12px;padding-top:28px; text-align: center;}
+.list-template .deal-discount-summary	{width:80px;text-align:center;margin-top:24px;}
+.list-template .deal-price-summary	{width:105px;text-align:right;margin-top:24px;}
+.list-template .deal-per-night	{color:#a1a1a1;}
+.list-template .deal-price	{font-size:48px;text-align:right;line-height:1em;}
+.ie7 .list-template .deal-price	{margin-top:-5px;}
+.list-template .deal-price a	{text-decoration:none;}
+.list-template .deal-price a span	{font-size:36px;vertical-align:top;}
+.ie7 .list-template .deal-price a span {vertical-align:middle;}
+.list-template .deal-orig-price	{font-size:18px;color:#959595;text-decoration:line-through;margin-top:8px;}
+.list-template .deal-savings	{font-size:14px;color:#f06601;font-weight:bold;text-transform:uppercase;height:14px;}
+.ie7 .list-template.hover .deal-savings span {background-color:#eff8fb;}
+.list-template .deal-savings span	{display:none;}
+.list-template .deal-promo-tag {
+		background-color:#f8d100;
+		position:absolute;
+		left: 12px;
+		top: 25px;
+		width:5px;
+		height:20px;
+	}
+.list-template .deal-promo-tag:before {
+		content: "";
+		background-color:#f8d100;
+		position:absolute;
+		left: 0;
+		height:16px;
+		padding:4px 5px 0 5px;
+		font-size:11px;
+		font-weight:bold;
+		text-transform:uppercase;
+	}
+.list-template .deal-promo-tag:after {
+		content:"";
+		position:absolute;
+		right:-10px;
+		background-color:transparent;
+		width: 0;
+		height: 0;
+		border-right: 10px solid transparent;
+		border-top: 10px solid #f8d100;
+		border-bottom: 10px solid #f8d100;
+	}
+.list-template .deal-urgency	{font-weight:bold;padding-top:10px;display:none;}
+.list-template .deal-rating	    {float:left;font-size:11px;margin-top:5px;color:#888;clear:both;}
+.list-template .deal-rating span	{font-weight:bold;}
+
+/* Summer Sale 2012 hero styles */
+.summer-hero				{height:196px;}
+.summer-hero .tab-link		{top:124px;width:80px;height:25px;text-align:center;padding-top:8px;color:#888;outline:none;}
+.summer-hero .tab-link:hover	{color:#02B3FD;outline:none;}
+.summer-hero .tab-1			{left:610px;}
+.summer-hero .tab-2			{left:709px;}
+.summer-hero .tab-3			{left:793px;}
+.summer-hero .tab-4			{left:874px;}
+.summer-hero .selected-tab,
+.summer-hero .selected-tab:hover	{color:#fff;font-weight:bold;text-decoration:none;}
+.summer-hero #sponsorship	{bottom:2px;}
+.summer-hero #sponsorship p,
+.summer-hero #sponsorship a	{float:left;padding-top:5px;font-size:14px;}
+.summer-hero #sponsorship a	{padding-left:10px;padding-right:20px;font-weight:bold;}
+
+.secondary-display { padding: 0; position: fixed; z-index: 20000; top: 50%; left: 250px; }
+.secondary-display.interstitial { width: 400px; }
+.secondary-display .title { font-weight: bold; font-size: 16px; margin: 0; padding: 0; margin-bottom: 10px; }
+.map_header
+{
+	text-align: right; float:left;width:952px;font-size:12px;padding:8px 0 3px 0;border-top:1px solid #e0e1e1;border-right:1px solid #eaebeb;border-bottom:1px solid #babcbc;border-left:1px solid #eaebeb;
+	background:#fdfdfd; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #fdfdfd 37%, #f9f9f9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(37%,#fdfdfd), color-stop(100%,#f9f9f9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%,#fdfdfd 37%,#f9f9f9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%,#fdfdfd 37%,#f9f9f9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%,#fdfdfd 37%,#f9f9f9 100%); /* IE10+ */
+	background: linear-gradient(top, #ffffff 0%,#fdfdfd 37%,#f9f9f9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9f9f9',GradientType=0 ); /* IE6-9 */
+}
+#mapHeaderText { float: left; font-size: 13px; color:#1f1f1f; margin-left: 10px; }
+.map_header div { display: inline-block; width: 24px; height: 24px; background-image:url(http://media.expedia.com/media/content/expus/graphics/promos/deals/images/map_assets_sprites.png); margin-right: 5px; vertical-align:top;}
+.ie7 .map_header div {display:inline;}
+.map_header span { font-size: 14px; margin-right: 7px;}
+.starImg3 { background-position: -46px -55px; margin-top:-3px;}
+.starImg4 { background-position: -46px -28px; margin-top:-3px;}
+.starImg5 { background-position: -46px 0px; margin-top:-3px;}
+#mapContainer { width: 952px; padding: 20px; display:none;}
+.map_canvas { width: 952px; height: 660px; clear:both;}
+.infowin{ position: absolute; width:280px;height:300px;}
+.marker2-0,.marker2-5{z-index:999;width:46px;height:28px;background:url(http://media.expedia.com/media/content/expus/graphics/promos/deals/images/map_assets_sprites.png) no-repeat 0px -56px;}
+.marker3-0,.marker3-5{z-index:999;width:46px;height:28px;background:url(http://media.expedia.com/media/content/expus/graphics/promos/deals/images/map_assets_sprites.png) no-repeat 0px -56px;}
+.marker4-0,.marker4-5{z-index:999;width:46px;height:28px;background:url(http://media.expedia.com/media/content/expus/graphics/promos/deals/images/map_assets_sprites.png) no-repeat 0px -28px;}
+.marker5-0{z-index:999;width:46px;height:28px;background:url(http://media.expedia.com/media/content/expus/graphics/promos/deals/images/map_assets_sprites.png) no-repeat 0px 0px;}
+.markerClicked{ background-position: 0 -84px; }
+.markerClicked div{ color: #F06601; }
+.map-icon,.grid-icon, .list-icon { display: inline-block; width:11px;height:16px;background:url(http://media.expedia.com/media/content/expus/graphics/promos/deals/images/map_assets_sprites.png) no-repeat 0px -112px; margin-right: 5px; position: relative; top: 3px;}
+.grid-icon { width: 14px; height: 14px; background-position: -37px -114px; }
+.list-icon { width: 20px; height: 11px; background-position: -22px -155px; margin-bottom:2px;}
+.map-icon {background-position:-12px -112px;}
+.ie7 .map-icon, .ie7 .grid-icon, .ie7 .list-icon {left: 0px; top: 0px;}
+.display-active, .display-active:hover	{color:#333;text-decoration:none;}
+.display-active .grid-icon { background-position: -23px -114px;}
+.display-active .map-icon { background-position:  0px -112px;}
+.display-active .list-icon { background-position: 0px -155px; }
+.chat-bubble-arrow-border {
+  border-color: transparent #cecece transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+  top:40px;
+  left:-21px;
+}
+.chat-bubble-arrow {
+  border-color: transparent #ffffff transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+  top:40px;
+  left:-19px;
+}
+#view-label { float: right; }
+.pin{position: absolute;display:block;z-index: 9999;}
+.pin-text{position: relative; left: -25px; top: -32px; white-space: nowrap; padding: 2px; background-color: transparent;}
+.pin-text a { text-decoration: none; }
+.marker{z-index:999;width:46px;height:28px;background:url(http://media.expedia.com/media/content/expus/graphics/promos/deals/images/map_assets_sprites.png) no-repeat 0px -28px;}
+.marker-link{text-align:center;color:white;font:bold 12px Arial; padding-top:4px;position:relative;left:1px;}
+.marker-link:hover { color: #F06601;}
+#dow_filter { width: 110px; height: 100%;}
+/*Hotel and Car GDE Demo*/
+.template1 .car-deal-savings	{position:absolute;bottom:0;height:38px;text-align:center;opacity:.9;filter:alpha(opacity=90);display:none;float:none;}
+.template1 .car-deal-savings span	{font-size:12px;}
+
+#dealContentHC .deal-box {
+   height: 330px;
+}
+.carDeal {
+    width:255px;
+    height: 33px;
+    z-index:1;
+}
+
+ .rd_label {
+    float:left;
+    width:105px;
+    height:100%;
+    background-color:#FFCC00;
+    margin:0;
+    color:#003561;
+    text-transform:uppercase;
+    font-size:11pt;
+    font-weight:bold;
+    text-align:center;
+    padding-top:11px;
+}
+
+ .rd_text {
+    width:150px;
+    height:100%;
+    background-color:#003561;
+    float:right;
+    margin:0;
+    color:#fff;
+    text-align:center;
+    padding-top:11px;
+}
+.hotel-only-deal {
+    background-color: #F5F5F5;
+    bottom: 0;
+    height: 25px;
+    left: 0;
+    margin-top: 25px;
+    padding-top: 9px;
+    position: absolute;
+    text-align: right;
+    width: 280px;
+}
+
+.hotel-only-deal a {
+    text-decoration:none;
+}
+.hotel-only-deal a:hover {
+
+}
+.car-deal {
+  position:relative;
+  right:11px;
+}
+/* Map Counter */
+.map-counter-bg { background-color: #003366; border-radius: 10px; height: 40px; width: 240px; opacity: .6; position: absolute; top: 20px; right: 20px; z-index: 1;}
+.map-counter-text { text-align: center; line-height: 40px; height: 40px; width: 240px; position: absolute; top: 20px; right: 20px; color: #fff; z-index: 1;}
+.map-counter-text span { font-size: 1.3em; font-weight: bold; color: #FFCB00; }
+.map-counter-bg.nodeals { height: 95px; }
+.map-counter-text.nodeals { border-bottom: 1px solid #036; box-shadow: 0px 1px 2px #BBB; }
+.map-counter-nodeals { text-align: center; height: 40px; width: 240px; position: absolute; top: 60px; right: 20px; color: #fff; font-style: italic; padding: 10px; box-sizing: border-box; opacity: .7; display: none; z-index: 1;}
+.map-counter-nodeals a { color: #FFCB00; }
+.map-counter-nodeals.nodeals { display: block; }
