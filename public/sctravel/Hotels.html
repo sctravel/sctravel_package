@@ -55,7 +55,7 @@ DPDisplay.useAphrodite2 = exp.core.date.datePickerDisplay;
 
 <link rel="stylesheet" href="minify/fusion.v2.3.core-min-2930769375c213.css?v=release-2014-06-r1-6221-1057033-1" /><!-- 0 ms -->
 <!--[if IE 6]>
-<link rel="stylesheet" href="/minify/fusion.v2.3.coreIE6-min-3866661693.css?v=release-2014-06-r1-6221-1057033-1" /><!-- 0 ms -->
+<link rel="stylesheet" href="/minify/fusion.v2.3.coreIE6-min-3866661693.css?v=release-2014-06-r1-6221-1057033-1" />
 <![endif]-->
 <style type="text/css">
 	#divFooter { clear: both; }
@@ -139,8 +139,8 @@ DPDisplay.useAphrodite2 = exp.core.date.datePickerDisplay;
 
 
 <script src="minify/PubWiz.dependencies.skipJquery.js-min-3282630171c213.js?v=release-2014-06-r1-6221-1057033-1"></script><!-- 0 ms -->
-<link rel="stylesheet" type="text/css" href="static/default/default/styles/publishingwizard3860.css?v=1"/>
-<script src="static/default/default/scripts/wizard/publishingwizard3860.js?v=1"></script>
+<link rel="stylesheet" type="text/css" href="static/default/default/styles/publishingwizard3860.css"/>
+<script src="static/default/default/scripts/wizard/publishingwizard3860.js"></script>
 
         <script language="javascript" type="text/javascript" src="static/default/default/scripts/TealeafSDKConfig.js"></script>
         <script language="javascript" type="text/javascript" src="static/default/default/scripts/TealeafSDK.js"></script>
@@ -447,7 +447,7 @@ DPDisplay.useAphrodite2 = exp.core.date.datePickerDisplay;
 
 <!-- jdbk-test (renderAllInLinks): domain: www.expedia.com - request.serverName: www.expedia.com -->
             <li> <a id="sub-menu-header-shop-home" target="_top" href="index.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.ExpediaLogo')"> Home </a> </li>
-            <li> <a id="sub-menu-header-shop-package" target="_top" href="Vacation-Packages.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.VacationPackages')"> Vacation Packages </a> </li>
+            <li> <a id="sub-menu-header-shop-package" target="_top" href="Vacation-Packages.html" > Vacation Packages </a> </li>
             <li class="selected-tab "> <a id="sub-menu-header-shop-hotel" target="_top" href="Hotels.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Hotels')"> Hotels </a> </li>
             <li> <a id="sub-menu-header-shop-flight" target="_top" href="Flights.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Flights')"> Flights </a> </li>
             <li> <a id="sub-menu-header-shop-activity" target="_top" href="Activities.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.ThingsToDo')"> Things to Do </a> </li>
@@ -552,8 +552,8 @@ h4, h5{line-height: normal;}
 			 <div class="us">
 				<div class="base">
 					<div class="banner">Choose from more than<br />
-						<span class="WizpromoNumber">240,000</span><br />
-						hotels worldwide
+						<span class="WizpromoNumber">200</span><br />
+						hotels in CHINA
 					</div>
 				</div>
 			 </div>
@@ -673,7 +673,6 @@ h4, h5{line-height: normal;}
 <label id="H-fromDate-label">
         <span>    Check-in:
 </span>
-
         <input type="text"
  name="InDate" data-canonic="fromDate" id="H-fromDate"  data-type="date" data-end-date="toDate" id="hotelOnly-fromDate"  data-default="" onclick="publishing.wizard.SelectAll('H-fromDate');"/>
 </label>
@@ -4920,14 +4919,14 @@ $(function() {
             div_id: "swTravelTools",
             p: "1,6",
             description: false,
-            label_more_results: "More information and Customer Support »",
+            label_more_results: "More information and Customer Support",
             number_answers: 3,
             search_box: false,
             instance_id: "skw_0",
             module: "KnowledgeSyndication",
             type: 3
         },
-        "../external.html?link=http://expediaus.widget.custhelp.com/ci/ws/get"
+        "http://expediaus.widget.custhelp.com/ci/ws/get"
     );
 </script>
 
