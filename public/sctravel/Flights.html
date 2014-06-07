@@ -272,10 +272,6 @@ DPDisplay.useAphrodite2 = exp.core.date.datePickerDisplay;
     <script>window.scratchpad2ColTrayTestBucket = 0</script>
 
     <li class="user-history-tab scratchpad ab4701" data-control="tooltip" data-trigger="" data-content="This search has been saved in<br>your Scratchpad" data-arrow="true" data-fade="out" data-width="230" data-js-theme="urgency" >
-        <a id="header-history" data-tid="header-history" target="_top" href="scratchpad.html" class="nav-tab" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.SP.Tray.Interaction')" >My Scratchpad
-          <span class="scratchpad-flare"></span>
-          <span id="scratchpad-badge" class="badge badge-urgent badge-secondary badge-notification visuallyhidden" ></span>
-        </a>
         <div class="menu ">
           <ul>
 
@@ -416,26 +412,7 @@ DPDisplay.useAphrodite2 = exp.core.date.datePickerDisplay;
     </script>
 
 <li id="utility-link"> <a id="header-itineraries" data-tid="header-itineraries" target="_top" href="user/itinabbb.html" class="nav-tab" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.MyItineraries'); fillTestOverrideParams()"> My Trips </a> </li><li id="support-menu">
-<a id="header-support-menu" data-tid="header-support-menu" href="#support-menu" class="nav-tab" data-control="menu" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.SupportHeading'); return false;"> Support<span class="icon icon-toggle180" aria-hidden="true"></span> </a>  <div class="menu">
-    <ul>
-      <li>
-<a id="header-support-cs" data-tid="header-support-cs" target="_top" href="../external.html?link=http://support.expedia.com/" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.CustSupport')"> Customer Support </a>      </li>
-      <li>
-        <script>
-          if (typeof $LAB === 'object' && typeof $LAB.queueScript === 'function') {
-            $LAB.queueScript('../media.expedia.com/media/content/shared/scripts/external/opinionlab/oo_engine3860.js?v=1');
-          }
-          else {
-            var head= document.getElementsByTagName('head')[0];
-            var script= document.createElement('script');
-            script.type= 'text/javascript';
-            script.src= '../media.expedia.com/media/content/shared/scripts/external/opinionlab/oo_engine3860.js?v=1';
-            head.appendChild(script);
-          }
-        </script>
-<a id="header-support-feedback" data-tid="header-support-feedback" target="_top" href="p/info-other/feedback.html" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Feedback');headerFeedback();return false;"> Feedback </a>      </li>
-    </ul>
-  </div>
+<a id="header-support-menu" data-tid="header-support-menu" href="#support-menu" class="nav-tab" data-control="menu" rel="nofollow" return false;"> Contact Us<span class="icon icon-toggle180" aria-hidden="true"></span> </a>  
 </li>
         </ul>
       </div> <!-- /.site-navigation -->
@@ -457,7 +434,7 @@ DPDisplay.useAphrodite2 = exp.core.date.datePickerDisplay;
             <li> <a id="sub-menu-header-shop-home" target="_top" href="index.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.ExpediaLogo')"> Home </a> </li>
             <li> <a id="sub-menu-header-shop-package" target="_top" href="Vacation-Packages.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.VacationPackages')"> Vacation Packages </a> </li>
             <li> <a id="sub-menu-header-shop-hotel" target="_top" href="Hotels.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Hotels')"> Hotels </a> </li>
-            <li> <a id="sub-menu-header-shop-flight" target="_top" href="Flights.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Flights')"> Flights </a> </li>
+            <li class="selected-tab "> <a id="sub-menu-header-shop-flight" target="_top" href="Flights.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Flights')"> Flights </a> </li>
             <li> <a id="sub-menu-header-shop-activity" target="_top" href="Activities.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.ThingsToDo')"> Things to Do </a> </li>
             <li> <a id="sub-menu-header-shop-deals" target="_top" href="Deals.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Deals')"> Deals </a> </li>
             <li> <a id="sub-menu-header-shop-mobile" target="_top" href="app.html" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.MobileApp')"> Mobile </a> </li>
