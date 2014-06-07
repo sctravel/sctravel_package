@@ -422,10 +422,14 @@
 
 
 <!-- jdbk-test (renderAllInLinks): domain: www.expedia.com - request.serverName: www.expedia.com -->
-<li id="all-in-home-header-link"> <a id="primary-header-home" target="_top" href="../index.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.ExpediaLogo')"> Home </a> </li><li id="all-in-package-header-link"> <a id="primary-header-package" target="_top" href="../Vacation-Packages.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.VacationPackages')"> Vacation Packages </a> </li><li id="all-in-hotel-header-link"> <a id="primary-header-hotel" target="_top" href="../Hotels.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Hotels')"> Hotels </a> </li><li id="all-in-car-header-link"> <a id="primary-header-car" target="_top" href="../Cars.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Cars')"> Cars </a> </li><li id="all-in-flight-header-link"> <a id="primary-header-flight" target="_top" href="../Flights.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Flights')"> Flights </a> </li><li id="all-in-cruise-header-link"> <a id="primary-header-cruise" target="_top" href="../Cruises.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Cruises')"> Cruises </a> </li><li id="all-in-activity-header-link"> <a id="primary-header-activity" target="_top" href="../Activities.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.ThingsToDo')"> Things to Do </a> </li><li id="all-in-deals-header-link" class=" all-in-full"> <a id="primary-header-deals" target="_top" href="../Deals.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Deals')"> Deals </a> </li><li id="all-in-rewards-header-link" class=" all-in-full"> <a id="primary-header-rewards" target="_top" href="expediarewards.html" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Rewards')"> Rewards </a> </li><li id="all-in-mobile-header-link" class=" all-in-full"> <a id="primary-header-mobile" target="_top" href="../app.html" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.MobileApp')"> Mobile </a> </li>  <li id="all-in-shop-menu-link" class="all-in-collapsed">
-    <a id="all-in-header-shop-menu" data-tid="header-shop-menu" target="_top" href="#more-shop-menu" class="nav-tab" data-control="menu" data-onclick="return false;">
-        More<span class="icon icon-toggle180"></span>
-    </a>
+            <li> <a id="sub-menu-header-shop-home" target="_top" href="index.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.ExpediaLogo')"> Home </a> </li>
+            <li> <a id="sub-menu-header-shop-package" target="_top" href="Vacation-Packages.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.VacationPackages')"> Vacation Packages </a> </li>
+            <li> <a id="sub-menu-header-shop-hotel" target="_top" href="Hotels.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Hotels')"> Hotels </a> </li>
+            <li> <a id="sub-menu-header-shop-flight" target="_top" href="Flights.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Flights')"> Flights </a> </li>
+            <li> <a id="sub-menu-header-shop-activity" target="_top" href="Activities.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.ThingsToDo')"> Things to Do </a> </li>
+            <li> <a id="sub-menu-header-shop-deals" target="_top" href="Deals.html" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Deals')"> Deals </a> </li>
+            <li> <a id="sub-menu-header-shop-mobile" target="_top" href="app.html" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.MobileApp')"> Mobile </a> </li>
+
     <div class="menu">
       <ul>
 <!-- jdbk-test (renderMenuLinks): domain: www.expedia.com - request.serverName: www.expedia.com -->
@@ -641,14 +645,7 @@ if (typeof $LAB === 'undefined') {
 						</fieldset>
 						<fieldset class="remove-margin">
 							<ul class="nobullet">
-									<li>
-										<label class="check remove-margin" id="create-account-expedia-rewards1-label">
-                                            <input type="checkbox" name="create-account-expedia-rewards" id="create-account-expedia-rewards1" checked="checked" />
-                                            <span class="inline-label">
-                                                Earn free travel points with <a href='expediarewards.html'>Expedia Rewards</a>
-											</span>
-										</label>
-									</li>
+
 								<p class="validation-msg error initiallyhidden remove-margin" id="term-and-conditions-id"><span class="icon icon-warn"></span>Please check that you agree to the Terms of Use and Privacy Policy.</p>
 								<li>
 									<label class="check remove-margin" id="create-account-expedia-policy-label"><input type="checkbox" name="create-account-expedia-policy" id="create-account-expedia-policy"  /><span class="inline-label">I have read and agree to the <a href='../p/info-other/legal.html' target='_blank'> Terms of Use</a> and the <a target='_blank' href='../daily/service/privacy.html' ref='NOFOLLOW'>Privacy Policy</a>.</span></label>

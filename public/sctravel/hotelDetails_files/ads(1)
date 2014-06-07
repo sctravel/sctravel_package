@@ -1,0 +1,59 @@
+{
+
+var google_ads = new Array();
+var google_ad;
+var google_radlinks = new Array();
+var google_radlink;
+var google_info = new Object();
+google_ad = {}; 
+google_ad.n = 1; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=C89cgdrGSU6T6JpSB-gOOh4GwBIjxt9kD6M7MkIEBwI23ARABIOnh2xsoA1DCwsyM_f____8BYMn2xI30pNAZoAG4vtD-A8gBAagDAaoEqgJP0EjfuglbVmmigJ-BNJ8caF-pvadq_GNdXF5p0I6vbAJfBSJKiTHbiwG9UzlOKrPKLpA_TdDiy4QyzxlPl_vyq2HMGU5hBtQsPN2k9YPHkR3OGNShFHVeQhS9xRDTWF6rPe-jr1PQyxUmskAjNNLqbfwy5eYMprByOxS9rUKUG3GG9cOzc4iDu5M-_n3DInpd_kQCykMIhuO5kkt4A-5LeYsJuUSV_7aljBHhjsWgpbnf0qkztm8NePJVUgW0kAZsIt-3Wb6pftxzLpbikWpAO15Kk3J2WwV6TXMQBUTyRM1tXJGhfTIbRqjgQZ4QqlG1reiSkhepTwDDPtRu_PdPdLutec6KzvoE0vc7imlrmap63ZFRPbt0FKGM8mndPchWAFmx_j7ygZs3iAYBgAewwa8B&amp;num=1&amp;cid=5GjvoHiCbWjFc-qJjbodtitX&amp;sig=AOD64_0Ekq3G9LXELBHbiOlcrn8EB621Sg&amp;client=ca-expedia-hotels_js&amp;adurl=http://www.travelzoo.com/supersearch/%3FActiveTab%3DHotels%26catid%3D2700%26adid%3D1620702%26mkw%3Ddiscount%2520rooms%26pcrid%3D34657823048%26pmt%3D%26placement%3Dwww.expedia.com%26utm_source%3DGoogle%26utm_medium%3Dsearch%26utm_campaign%3DKCT-Hotels-General_Google%26utm_term%3DDiscount-Rooms:-70-PERCENT--Off_Display_Google"; 
+google_ad.visible_url = "travelzoo.com/Hotels"; 
+google_ad.log_info = "BqtK1drGSU6T6JpSB-gOOh4GwBADozsyQgQEAABABOAHIAQGoE4AB";
+google_ad.activeview_js_immediate_enabled = "true";
+google_ad.line1 = "Discount Rooms: 60% Off"; 
+google_ad.line2 = "Find Hotel Room Discounts Today."; 
+google_ad.line3 = "Compare Rates at up to 60% Off!"; 
+google_ad.regionname = ""; 
+google_ads[0] = google_ad; 
+google_ad = {}; 
+google_ad.n = 2; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=CVK2XdrGSU6T6JpSB-gOOh4GwBKiG_eQG4IfOqY8BwI23ARACIOnh2xsoA1DcyJjc_f____8BYMn2xI30pNAZoAHfgfr1A8gBAakCDig4kenktj6oAwGqBKsCT9BYqboJWFZpooCfgTSfHGhfqb2navxjXVxeadCOr2wCXwUiSokx24sBvVM5Tiqzyi6QP03Q4suEMs8ZT5f78qthzBlOYQbULDzdpPWDx5EdzhjUoRR1XkIUvcUQ01heqz3vo69T0MsVJrJAIzTS6m38MuXmDKawcjsUva1ClBtxhvXDs3OIg7uTPv59wyJ6Xf5EAspDCIbjuZJLeAPuS3mLCblElf-2pYwR4Y7FoKW539KpM7ZvDXjyVVIFtJAGbCLft1m-qX7ccy6W4pFqQDteSpNydlsFek1zEAVE8kTNbVyRoX0yG0ao4EGeEKpRta3okpIXqU8Awz7Ubvz3T3S7rXm2ic76BNrEKI1pa5mqet2RUT27dBShjPJp3T3IVgBZsf4-8oPDuR2IBgGAB4CA9jg&amp;num=2&amp;cid=5GjvoHiCbWjFc-qJjbodtitX&amp;sig=AOD64_1YZbrCdpqWohbRndPnnRp9IxBD_A&amp;client=ca-expedia-hotels_js&amp;adurl=http://www.trivago.com/%3FiPathId%3D34332%26iSemThemeId%3D4245%26cip%3D1010067020101"; 
+google_ad.visible_url = "www.trivago.com/hotel-search"; 
+google_ad.log_info = "BqtK1drGSU6T6JpSB-gOOh4GwBADozsyQgQEAABABOAHIAQGoE4AB";
+google_ad.activeview_js_immediate_enabled = "true";
+google_ad.line1 = "Find Cheap Hotel Deals"; 
+google_ad.line2 = "Compare 190+ sites, save up to 75%"; 
+google_ad.line3 = "trivago: The Hotel Search"; 
+google_ad.regionname = ""; 
+google_ads[1] = google_ad; 
+google_ad = {}; 
+google_ad.n = 3; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=CwGHrdrGSU6T6JpSB-gOOh4GwBPyEoY4FhNqX4h3AjbcBEAMg6eHbGygDUPS95NL8_____wFgyfbEjfSk0BmgAcD-2egDyAEBqAMBqgSrAk_QONGNCVlWaaKAn4E0nxxoX6m9p2r8Y11cXmnQjq9sAl8FIkqJMduLAb1TOU4qs8oukD9N0OLLhDLPGU-X-_KrYcwZTmEG1Cw83aT1g8eRHc4Y1KEUdV5CFL3FENNYXqs976OvU9DLFSayQCM00upt_DLl5gymsHI7FL2tQpQbcYb1w7NziIO7kz7-fcMiel3-RALKQwiG47mSS3gD7kt5iwm5RJX_tqWMEeGOxaClud_SqTO2bw148lVSBbSQBmwi37dZvql-3HMuluKRakA7XkqTcnZbBXpNcxAFRPJEzW1ckaF9MhtGqOBBnhCqUbWt6JKSF6lPAMM-1G789090u615zorO-gSOqA-EaWuZqnrdkVE9u3QUoYzyad09yFYAWbH-PvKz3tM8iAYBgAeogaYX&amp;num=3&amp;cid=5GjvoHiCbWjFc-qJjbodtitX&amp;sig=AOD64_1S5Sxalsez-gsMshtdeuHzxFiOaA&amp;client=ca-expedia-hotels_js&amp;adurl=http://seattle.hotel.net/City/Seattle,Washington,United%2BStates/%3FCampaign%3D13%26Group%3D53552%26Keyword%3D219061"; 
+google_ad.visible_url = "seattle.hotel.net"; 
+google_ad.log_info = "BqtK1drGSU6T6JpSB-gOOh4GwBADozsyQgQEAABABOAHIAQGoE4AB";
+google_ad.activeview_js_immediate_enabled = "true";
+google_ad.line1 = "Seattle Hotels"; 
+google_ad.line2 = "Hotel Deals in Seattle Washington."; 
+google_ad.line3 = "Compare Prices and Save up to 75%."; 
+google_ad.regionname = ""; 
+google_ads[2] = google_ad; 
+google_info.feedback_url = "https://www.google.com/url?ct\x3dabg\x26q\x3dhttps://www.google.com/adsense/support/bin/request.py%3Ftrunc%3D1%26contact%3Dabg_afc%26url%3Dhttp://www.expedia.com/Seattle-Hotels-W-Seattle.h284304.Hotel-Information%253Fchkin%253D06%25252F18%25252F2014%2526chkout%253D06%25252F19%25252F2014%2526rm1%253Da2%2526hwrqCacheKey%253Db7b6db3d-6ffd-491c-ac18-cc690806414cHWRQ1402122422189%2526c%253D6780b440-4043-45c3-8f7f-a63ced0bd2dd%26gl%3DUS%26hl%3Den%26client%3Dca-expedia-hotels_js%26hideleadgen%3D1%26ai0%3DC89cgdrGSU6T6JpSB-gOOh4GwBIjxt9kD6M7MkIEBwI23ARABIOnh2xsoA1DCwsyM_f____8BYMn2xI30pNAZoAG4vtD-A8gBAagDAaoEqgJP0EjfuglbVmmigJ-BNJ8caF-pvadq_GNdXF5p0I6vbAJfBSJKiTHbiwG9UzlOKrPKLpA_TdDiy4QyzxlPl_vyq2HMGU5hBtQsPN2k9YPHkR3OGNShFHVeQhS9xRDTWF6rPe-jr1PQyxUmskAjNNLqbfwy5eYMprByOxS9rUKUG3GG9cOzc4iDu5M-_n3DInpd_kQCykMIhuO5kkt4A-5LeYsJuUSV_7aljBHhjsWgpbnf0qkztm8NePJVUgW0kAZsIt-3Wb6pftxzLpbikWpAO15Kk3J2WwV6TXMQBUTyRM1tXJGhfTIbRqjgQZ4QqlG1reiSkhepTwDDPtRu_PdPdLutec6KzvoE0vc7imlrmap63ZFRPbt0FKGM8mndPchWAFmx_j7ygZs3iAYBgAewwa8B%26ai1%3DCVK2XdrGSU6T6JpSB-gOOh4GwBKiG_eQG4IfOqY8BwI23ARACIOnh2xsoA1DcyJjc_f____8BYMn2xI30pNAZoAHfgfr1A8gBAakCDig4kenktj6oAwGqBKsCT9BYqboJWFZpooCfgTSfHGhfqb2navxjXVxeadCOr2wCXwUiSokx24sBvVM5Tiqzyi6QP03Q4suEMs8ZT5f78qthzBlOYQbULDzdpPWDx5EdzhjUoRR1XkIUvcUQ01heqz3vo69T0MsVJrJAIzTS6m38MuXmDKawcjsUva1ClBtxhvXDs3OIg7uTPv59wyJ6Xf5EAspDCIbjuZJLeAPuS3mLCblElf-2pYwR4Y7FoKW539KpM7ZvDXjyVVIFtJAGbCLft1m-qX7ccy6W4pFqQDteSpNydlsFek1zEAVE8kTNbVyRoX0yG0ao4EGeEKpRta3okpIXqU8Awz7Ubvz3T3S7rXm2ic76BNrEKI1pa5mqet2RUT27dBShjPJp3T3IVgBZsf4-8oPDuR2IBgGAB4CA9jg\x26usg\x3dAFQjCNElcOT15ruC5CW1vGQlL_rRrZpEsA";
+var google_attribution_text = "AdChoices";
+var google_is_rtl = false;
+if (window.google_ad_request_done) {
+google_ad_request_done(google_ads);
+}
+if (window.google_radlink_request_done) {
+google_radlink_request_done(google_radlinks);
+}
+}

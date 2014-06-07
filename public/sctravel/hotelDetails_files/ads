@@ -1,0 +1,87 @@
+{
+
+var google_ads = new Array();
+var google_ad;
+var google_radlinks = new Array();
+var google_radlink;
+var google_info = new Object();
+google_ad = {}; 
+google_ad.n = 1; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=C7WaHdrGSU9b9J4j7-QO9wYLoDuSUgpMClJ3Q_RrAjbcBEAEg6eHbGygFUI2Uw88EYMn2xI30pNAZoAHo5ZTvA8gBAagDAaoEqwJP0F6pYb9xOs0DmfF_BlpysUOCSxCpDl6JQwjPKxpBvd2VNmnAVJBJIJAmSYOoXPflCCE2CsqSF2hOE_4z5bZ1AJxum9roqQiiIH6oblW6GPcZI29_pspT62oAQ72ZqN6THs1viRaU083xcfu8XgAt-FusIFHL3LqMjF3I5E0hVO__BF1ioXyOcUttnWvSNc7JAWlcBfi0dJAavTMzJqVAbG-NOSQHDwMmEhz2CytXLIu8iJ4_iLPsEzoMhyKHBik4GbKWJIYv8JXEZGO0FQeD_UPjKjjs-WMo9jWfykS2Zb1P-kj1U0h04es3SjR3QmWh6SuVGirNtugfQl8DVDWMTJKpup4pjlEY_QFGYLwc8LkttIiI8pAEUfCjPHZA66YO5iDRb9VEzzIAlogGAYAHgJrrEA&amp;num=1&amp;cid=5Gh2SkIIYu-ph11uVDPuHqIL&amp;sig=AOD64_0PuQFEnHyqRPMK7Ry4_J2ByNn9LQ&amp;client=ca-expedia-hotels_js&amp;adurl=http://www.hotelsio.com/%3Fsrc%3DHSA"; 
+google_ad.visible_url = "www.hotelsio.com/"; 
+google_ad.log_info = "BReC2drGSU9b9J4j7-QO9wYLoDgCUndD9GgAAEAE4AcgBAagTgAE";
+google_ad.activeview_js_immediate_enabled = "true";
+google_ad.line1 = "75% Off Hotels"; 
+google_ad.line2 = "Compare All Hotel Booking Sites,"; 
+google_ad.line3 = "Pay up to 75% less for Hotels."; 
+google_ad.regionname = ""; 
+google_ads[0] = google_ad; 
+google_ad = {}; 
+google_ad.n = 2; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=CLxxhdrGSU9b9J4j7-QO9wYLoDq6c0J8Druzy1w_AjbcBEAIg6eHbGygFULbE6ev6_____wFgyfbEjfSk0BmgAdHCvv8DyAEBqAMBqgSqAk_QftBsv3I6zQOZ8X8GWnKxQ4JLEKkOXolDCM8rGkG93ZU2acBUkEkgkCZJg6hc9-UIITYKypIXaE4T_jPltnUAnG6b2uipCKIgfqhuVboY9xkjb3-mylPragBDvZmo3pMezW-JFpTTzfFx-7xeAC34W6wgUcvcuoyMXcjkTSFU7_8EXWKhfI5xS22da9I1zskBaVwF-LR0kBq9MzMmpUBsb405JAcPAyYSHPYLK1csi7yInj-Is-wTOgyHIocGKTgZspYkhi_wlcRkY7QVB4P9Q-MqOOz5Yyj2NZ_KRLZlvU_6SPVTSHTh6zdKNHdCZaHpK5UaKs226B9CXwNUNYxMkqm65iqOURifCEhkvBzwuS20iIjykARR8KM8dkDrpg7mINFv1USOTsKIBgGAB5e9QQ&amp;num=2&amp;cid=5Gh2SkIIYu-ph11uVDPuHqIL&amp;sig=AOD64_1yOxajBnGc84d2W9H6aY0mDXngtg&amp;client=ca-expedia-hotels_js&amp;adurl=http://www.CancunVacations.com%3Fsource%3Dgoogle"; 
+google_ad.visible_url = "cancunvacations.com"; 
+google_ad.log_info = "BReC2drGSU9b9J4j7-QO9wYLoDgCUndD9GgAAEAE4AcgBAagTgAE";
+google_ad.activeview_js_immediate_enabled = "true";
+google_ad.line1 = "Cancun All-Inclusive"; 
+google_ad.line2 = "Discounts \x26amp; deals on all-inclusive"; 
+google_ad.line3 = "air and hotel packages in Cancun."; 
+google_ad.regionname = ""; 
+google_ads[1] = google_ad; 
+google_ad = {}; 
+google_ad.n = 3; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=CkyLTdrGSU9b9J4j7-QO9wYLoDuPQzYUF89qQrrABwI23ARADIOnh2xsoBVDetbWc-_____8BYMn2xI30pNAZoAGb6YnkA8gBAakCzjZ1TR55hT6oAwGqBK8CT9Aulf2maAH1sSr_BwZaK_peil4RpAYRxE8KePD-pdTBlTIj1VTISSDJbVSLvV367UdsOgiI7iFsWxPmOq3TUhuNZ4SEktN2lCRrqHZc8V6tEy9ofKLQNcxxEUr8_Y_WmgPSY5wLktKcrXr4vllTIP5Iu1QmwsGt-PhfyeFfZF_s-x5cK6x6nWY_GpV3xUG6ywBsTlHn6HjMSal9LCOmck5thjQKKRNHeUdJolktBnvCp9iePcGq4RtoQssg1Q88dhnnmS2OJ_aXwWE0nwoCgJ1G5yg77_llLvY2lstb8zu2TvVApwVIcPzyM04zaVtk97k1gER7nP2kSEcPBVVh3krE_7p6046YmivaRFTaj3L-2LN9i_KU8FIFoD12tGtTDcOiQmwRQ2H3JoFalg7KiAYBgAer-8Av&amp;num=3&amp;cid=5Gh2SkIIYu-ph11uVDPuHqIL&amp;sig=AOD64_1z3KNDEszj6eJwH8XQvWna1ifukQ&amp;client=ca-expedia-hotels_js&amp;adurl=http://www.86daigou.com/daigouregister"; 
+google_ad.visible_url = "www.86daigou.com/\u3010\u4EE3\u8D2D\u4E2D\u56FD\u3011"; 
+google_ad.log_info = "BReC2drGSU9b9J4j7-QO9wYLoDgCUndD9GgAAEAE4AcgBAagTgAE";
+google_ad.activeview_js_immediate_enabled = "true";
+google_ad.line1 = "\x26#32654;\x26#22269;\x26#28120;\x26#23542; \x26#38480;\x26#26102;[\x26#20813;]\x26#22269;\x26#38469;\x26#36816;\x26#36153;"; 
+google_ad.line2 = "86\x26#20195;\x26#36141;\x26#8482;-\x26#20840;\x26#29699;\x26#21407;\x26#20215;\x26#20195;\x26#36141;\x26#28120;\x26#23542;,\x26#22825;\x26#29483;,\x26#24403;\x26#24403;."; 
+google_ad.line3 = "\x26#32593;\x26#36141;\x26#20013;\x26#22269;\x26#19968;\x26#31449;\x26#21363;\x26#21487;,\x26#20813;\x26#36153;\x26#39564;\x26#36135;,3-5\x26#22825;\x26#36865;\x26#36798;"; 
+google_ad.regionname = ""; 
+google_ads[2] = google_ad; 
+google_ad = {}; 
+google_ad.n = 4; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://googleads.g.doubleclick.net/aclk?sa=L&amp;ai=CE-O9drGSU9b9J4j7-QO9wYLoDqCv8eEEmPnCwT7AjbcBEAQg6eHbGygFUKm0hf8FYMn2xI30pNAZyAEBqAMBqgSrAk_QDp5sv3Q6zQOZ8X8GWnKxQ4JLEKkOXolDCM8rGkG93ZU2acBUkEkgkCZJg6hc9-UIITYKypIXaE4T_jPltnUAnG6b2uipCKIgfqhuVboY9xkjb3-mylPragBDvZmo3pMezW-JFpTTzfFx-7xeAC34W6wgUcvcuoyMXcjkTSFU7_8EXWKhfI5xS22da9I1zskBaVwF-LR0kBq9MzMmpUBsb405JAcPAyYSHPYLK1csi7yInj-Is-wTOgyHIocGKTgZspYkhi_wlcRkY7QVB4P9Q-MqOOz5Yyj2NZ_KRLZlvU_6SPVTSHTh6zdKNHdCZaHpK5UaKs226B9CXwNUNYxMkqm6nimOURjxWy9-vBzwuS20iIjykARR8KM8dkDrpg7mINFv1UTVUHGLgAfQ_ZML&amp;num=4&amp;sig=AOD64_2lRaTUtpE_FLvR9LR8fbhHzU-5Dw&amp;client=ca-expedia-hotels_js&amp;adurl=http://www.smarter.com/se--qq-last%252Bminute%252Bairfare%252Bdeals.html%3Fsource%3Dgoogle_000%2B888a%2B217%2B000002aa_mtypec_content_last%2520minute%2520airfare%2520deals_adtext_16736622968_s_www.expedia.com_n_d_r_15142392261598021344"; 
+google_ad.visible_url = "smarter.com/LastMinuteAirfareDeals"; 
+google_ad.log_info = "BReC2drGSU9b9J4j7-QO9wYLoDgCUndD9GgAAEAE4AcgBAagTgAE";
+google_ad.activeview_js_immediate_enabled = "true";
+google_ad.line1 = "Last Minute Airfare Cheap"; 
+google_ad.line2 = "Get the Lowest Price Available on"; 
+google_ad.line3 = "Airfares With Last Minute Deals!"; 
+google_ad.regionname = ""; 
+google_ads[3] = google_ad; 
+google_ad = {}; 
+google_ad.n = 5; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://googleads.g.doubleclick.net/aclk?sa=L&amp;ai=CuTADdrGSU9b9J4j7-QO9wYLoDvnTnO4Hyfqb4rABwI23ARAFIOnh2xsoBVDV1JDnA2DJ9sSN9KTQGcgBAagDAaoEqAJP0C6nRb91Os0DmfF_BlpysUOCSxCpDl6JQwjPKxpBvd2VNmnAVJBJIJAmSYOoXPflCCE2CsqSF2hOE_4z5bZ1AJxum9roqQiiIH6oblW6GPcZI29_pspT62oAQ72ZqN6THs1viRaU083xcfu8XgAt-FusIFHL3LqMjF3I5E0hVO__BF1ioXyOcUttnWvSNc7JAWlcBfi0dJAavTMzJqVAbG-NOSQHDwMmEhz2CytXLIu8iJ4_iLPsEzoMhyKHBik4GbKWJIYv8JXEZGO0FQeD_UPjKjjs-WMo9jWfykS2Zb1P-kj1U0h04es3SjR3QmWh6SuVGirNtugfQl8DVDWMTJKputYpXmqcfi6PVkkf9EwusH2K8mUGUQWhv4NCTFJrwsGxnrq5LYAHicOAKg&amp;num=5&amp;sig=AOD64_094DMoKgS41Io-HJZ3kgjVEci4Yw&amp;client=ca-expedia-hotels_js&amp;adurl=http://mls.onlineleads.com/c%3Fpid%3D1327435%26tech%3Dmgo%26kid%3D75855427%26url%3DXhBx5yEVRDSxENuXJNmXlYOmULaSVTNFv%26tech_kw_id%3D75775769"; 
+google_ad.visible_url = "www.sunshinemotelfife.com"; 
+google_ad.log_info = "BReC2drGSU9b9J4j7-QO9wYLoDgCUndD9GgAAEAE4AcgBAagTgAE";
+google_ad.activeview_js_immediate_enabled = "true";
+google_ad.line1 = "Tacoma Discount Motel"; 
+google_ad.line2 = "Offering Spacious \x26amp; Luxurious Motel"; 
+google_ad.line3 = "Rooms. Call Us To Check Our Rates!"; 
+google_ad.regionname = ""; 
+google_ads[4] = google_ad; 
+google_info.feedback_url = "https://www.google.com/url?ct\x3dabg\x26q\x3dhttps://www.google.com/adsense/support/bin/request.py%3Ftrunc%3D1%26contact%3Dabg_afc%26url%3Dhttp://www.expedia.com/Seattle-Hotels-W-Seattle.h284304.Hotel-Information%253Fchkin%253D06%25252F18%25252F2014%2526chkout%253D06%25252F19%25252F2014%2526rm1%253Da2%2526hwrqCacheKey%253Db7b6db3d-6ffd-491c-ac18-cc690806414cHWRQ1402122422189%2526c%253D6780b440-4043-45c3-8f7f-a63ced0bd2dd%26gl%3DUS%26hl%3Den%26client%3Dca-expedia-hotels_js%26hideleadgen%3D1%26ai0%3DC7WaHdrGSU9b9J4j7-QO9wYLoDuSUgpMClJ3Q_RrAjbcBEAEg6eHbGygFUI2Uw88EYMn2xI30pNAZoAHo5ZTvA8gBAagDAaoEqwJP0F6pYb9xOs0DmfF_BlpysUOCSxCpDl6JQwjPKxpBvd2VNmnAVJBJIJAmSYOoXPflCCE2CsqSF2hOE_4z5bZ1AJxum9roqQiiIH6oblW6GPcZI29_pspT62oAQ72ZqN6THs1viRaU083xcfu8XgAt-FusIFHL3LqMjF3I5E0hVO__BF1ioXyOcUttnWvSNc7JAWlcBfi0dJAavTMzJqVAbG-NOSQHDwMmEhz2CytXLIu8iJ4_iLPsEzoMhyKHBik4GbKWJIYv8JXEZGO0FQeD_UPjKjjs-WMo9jWfykS2Zb1P-kj1U0h04es3SjR3QmWh6SuVGirNtugfQl8DVDWMTJKpup4pjlEY_QFGYLwc8LkttIiI8pAEUfCjPHZA66YO5iDRb9VEzzIAlogGAYAHgJrrEA%26ai1%3DCLxxhdrGSU9b9J4j7-QO9wYLoDq6c0J8Druzy1w_AjbcBEAIg6eHbGygFULbE6ev6_____wFgyfbEjfSk0BmgAdHCvv8DyAEBqAMBqgSqAk_QftBsv3I6zQOZ8X8GWnKxQ4JLEKkOXolDCM8rGkG93ZU2acBUkEkgkCZJg6hc9-UIITYKypIXaE4T_jPltnUAnG6b2uipCKIgfqhuVboY9xkjb3-mylPragBDvZmo3pMezW-JFpTTzfFx-7xeAC34W6wgUcvcuoyMXcjkTSFU7_8EXWKhfI5xS22da9I1zskBaVwF-LR0kBq9MzMmpUBsb405JAcPAyYSHPYLK1csi7yInj-Is-wTOgyHIocGKTgZspYkhi_wlcRkY7QVB4P9Q-MqOOz5Yyj2NZ_KRLZlvU_6SPVTSHTh6zdKNHdCZaHpK5UaKs226B9CXwNUNYxMkqm65iqOURifCEhkvBzwuS20iIjykARR8KM8dkDrpg7mINFv1USOTsKIBgGAB5e9QQ\x26usg\x3dAFQjCNEINK6Ww5_wfFwvDBVxv9z6Iw9zfg";
+var google_attribution_text = "AdChoices";
+var google_is_rtl = false;
+if (window.google_ad_request_done) {
+google_ad_request_done(google_ads);
+}
+if (window.google_radlink_request_done) {
+google_radlink_request_done(google_radlinks);
+}
+}
