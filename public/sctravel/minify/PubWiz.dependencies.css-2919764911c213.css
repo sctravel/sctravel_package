@@ -1,0 +1,2082 @@
+/*BASIC ELEMENT*/
+body{margin:0;padding:0;}
+#widgetcatalogWizard a,#widgetcatalogWizard a:visited {color:#069;text-decoration: none;}
+#widgetcatalogWizard .xp-b-right {float:right}
+#widgetcatalogWizard .xp-l-il a:hover {text-decoration: none;}
+#widgetcatalogWizard .xp-l-text:hover {color: #02b3fd; text-decoration: underline;cursor:pointer;}
+#widgetcatalogWizard .xp-l-icn:hover {cursor:pointer;}
+#widgetcatalogWizard .xp-l-il .xp-l-icn {display:inline-block; background-color:transparent; background-image:url(../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/iconsSprites.png);overflow:hidden; margin-left:5px;}
+#widgetcatalogWizard .xp-l-il .xp-l-left .xp-l-icn {margin-right:5px; margin-left:0px;}
+#widgetcatalogWizard .xp-l-more-2nd .xp-l-icn{width:6px; height:6px; margin-top:3px; background-position:-59px -74px;}
+#widgetcatalogWizard .xp-l-more-2nd:hover .xp-l-icn{background-position:-66px -74px;}
+#widgetcatalogWizard .xp-b-clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+#widgetcatalogWizard .xp-b-clearfix {display: block;}
+#widgetcatalogWizard .rooms{margin-top:8px;}
+/* Reset for Pub Wiz */
+#widgetcatalogWizard { font:11px/1 arial, helvetica, clean, sans-serif;color:#333; }
+#widgetcatalogWizard.tabbed-wiz {font-weight:bold;text-transform:uppercase;color:#666}
+#widgetcatalogWizard.tabbed-wiz input,#widgetcatalogWizard.tabbed-wiz select,
+#widgetcatalogWizard.original-recipe input, #widgetcatalogWizard.original-recipe select {font-weight:normal;text-transform:none;}
+#widgetcatalogWizard.tabbed-wiz .flight-type,#widgetcatalogWizard.tabbed-wiz .section-infants-pref h5 {font-size:13px;}
+#widgetcatalogWizard.original-recipe {font-size: 12px;}
+#widgetcatalogWizard fieldset,img {border:0;}
+#widgetcatalogWizard h5 {font-size:100%}
+#widgetcatalogWizard .airlineLink {clear:both; margin-top:10px;display:block;}
+#widgetcatalogWizard.currLob-flightOnly .packageSelectionChange,#widgetcatalogWizard.currLob-hotelOnly .packageSelectionChange {
+  display:none;
+}
+#widgetcatalogWizard.currLob-flightOnly .addFlightCB {
+  display:none;
+}
+#widgetcatalogWizard.currLob-hotelOnly .addHotelCB {
+  display:none;
+}
+#widgetcatalogWizard.currLob-carOnly .addCarCB {
+  display:none;
+}
+#widgetcatalogWizard.currLob-package .LOBCheckBoxes,
+#widgetcatalogWizard.currLob-flightAndHotel .LOBCheckBoxes,
+#widgetcatalogWizard.currLob-flightAndCar .LOBCheckBoxes,
+#widgetcatalogWizard.currLob-hotelAndCar .LOBCheckBoxes,
+#widgetcatalogWizard.currLob-flightHotelAndCar .LOBCheckBoxes  {
+  display:none;
+}
+/*
+    8th June 2011: This file is a work in progress to support the
+    Publishing Wizard team's development. It should be merged into Fusion before release.
+*/
+
+/* A LITTLE UI TOOLKIT THIEVERY HERE, REMOVE WHEN PW CONVERTS TO UI TOOLKIT */
+.expand:after, .collapse:after, .tooltip:after{
+	content: '';
+	width: 16px;
+	height: 14px;
+	display: inline-block;
+	position: relative;
+	right: -2px;
+	background-position: 100% 50%;
+}
+
+.expand:after, .collapse:after {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAALCAYAAAAA2L+yAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOZJREFUeNrclVEOwyAIhmXpjbyTPZOeqZ6JDTsWZFrRrC8jITSUP361iOB9QGe0nBNQnNEcRwR3g20FyPthoc+5/ogFzS/twQ8YQ3FprVzPrupgT1gcwH28leu5qqvAXy8rAI6ct0B34dN+rhYiVpHzV6Y1esdb8DPQWjuEn4HW2larMADFUatIaKn90tCC5AxAkXMWaKl954EmBB80DSJ3kg6anCrycEpQ+ZdIQ1Ol9KUGmd11UY+If9AqGn4F2gy/Aq3gt874Mo3AVl0rR79WljjbiD1B61qoLqCVi+LOy8ViTwEGAG3OvM8IHYOrAAAAAElFTkSuQmCC');
+}
+
+.expand:after {
+	background-position: -24px 50%;
+}
+
+.collapse:after {
+	background-position: -35px 50%;
+}
+
+.expand:hover:after {
+	background-position: 0 50%;
+}
+
+.collapse:hover:after {
+	background-position: -13px 50%;
+}
+
+.tooltip:after {
+	background-image: url('data:image/gif;base64,R0lGODlhDgAOAJEDAP/+/////wBmmf///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MENGNzQ5MzE1NjQzMTFFMEJCNkE5MjUxMTQzMDQ2QUEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MENGNzQ5MzI1NjQzMTFFMEJCNkE5MjUxMTQzMDQ2QUEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowQ0Y3NDkyRjU2NDMxMUUwQkI2QTkyNTExNDMwNDZBQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowQ0Y3NDkzMDU2NDMxMUUwQkI2QTkyNTExNDMwNDZBQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAEAAAMALAAAAAAOAA4AAAIpnI+pyy0PnxKhWjFD1GfXxxmU9pGYWI7UOajW1X0RFL8hMlbA3c1SUgAAOw==');
+}
+
+.expand:after, .collapse:after {
+	width: 11px;
+	height: 11px;
+	top: 1px;
+}
+
+.tooltop{
+	font-weight: bold;
+}
+
+/* IE7 SUCKS UPGRADE NOW! */
+.ie6 .tooltip, .ie7 .tooltip {
+	padding-right: 14px; 
+	background: url(../../external.html?link=http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-commonicons.png) 100% -144px no-repeat;
+}
+
+.ie7 #widgetcatalogWizard.tabbed-wiz .fields br {
+  display:none;
+}
+
+.ie7 #widgetcatalogWizard.tabbed-wiz .errors {
+  height:0px;
+  margin-top:0px;
+}
+
+.no-datauri .expand:after, .ie6 .expand, .ie7 .expand {
+	background: url(../../external.html?link=http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-sprite.png) -45px 136px no-repeat;
+}
+
+.no-datauri .collapse:after, .ie6 .collapse, .ie7 .collapse {
+	background: url(../../external.html?link=http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-sprite.png) -56px -136px no-repeat;
+}
+	
+.ie6 .expand, .ie7 .expand, .ie6 .collapse, .ie7 .collapse { 
+	padding-right: 14px; background-image: url(../../external.html?link=http://www.expedia.com/static/ui_toolkit/v1.0/images/uitk-commonicons.png); background-repeat: no-repeat;
+}
+
+.ie6 .expand, .ie7 .expand {
+	background-position: 100% -91px;
+}
+
+.ie6 .expand:hover, .ie7 .expand:hover {
+	background-position: 100% -40px
+}
+
+.ie6 .collapse, .ie7 .collapse {
+	background-position: 100% -115px;
+}
+
+.ie6 .collapse:hover, .ie7 .collapse:hover {
+	background-position: 100% -63px;
+}
+
+/* OVERALL LAYOUT */
+#widgetcatalogWizard.tabbed-wiz {
+  width:524px;
+  background-color:white;
+}
+.wizard-wrapper {
+  background:#FFF;
+  padding:26px 0 12px 42px;
+  margin-bottom:32px;
+  border-bottom:2px solid #E6E6E6;
+}
+#widgetcatalogWizard.horizontal-wizard {
+  width:auto;
+  background-image:url(../../external.html?link=http://www.expedia.com/static/default/default/images/wizard/greyStripe.png);
+  background-repeat:repeat-y;
+}
+.wizTitle {
+  color:#069;
+  font-size:24px;
+  font-weight:normal;
+  margin-bottom:26px;
+}
+#widgetcatalogWizard.horizontal-wizard .lobSelectSection {
+  float:left;
+  width:246px;
+}
+#widgetcatalogWizard.horizontal-wizard .allLobForms {
+  float:right;
+  width:584px;
+  margin-right:42px;
+}
+#widgetcatalogWizard.tabbed-wiz .allLobForms {
+  padding:0 20px;
+}
+#widgetcatalogWizard.tabbed-wiz .fields {
+  padding:6px 0 7px 0;
+}
+#widgetcatalogWizard.tabbed-wiz .trip-type {
+  vertical-align:bottom;
+  margin-right:5px;
+}
+#widgetcatalogWizard.tabbed-wiz .fields fieldset.oneway {
+  margin-left:35px;
+}
+#widgetcatalogWizard.tabbed-wiz .fields fieldset.multidest {
+  margin-left:35px;
+}
+
+#widgetcatalogWizard h3 {
+/*core.css has a top margin of 16px which creates problems in our wizard hence it is overridden here.*/
+    margin-top: 0;
+}
+
+#widgetcatalogWizard .outer {
+    padding: 4px;
+    background: #FFF;
+    border: solid 1px #CCC;
+}
+
+#widgetcatalogWizard .background {
+    padding: 0 7px 7px;
+}
+
+#widgetcatalogWizard .background h3 {
+    padding: 10px;
+    font-weight: normal;
+    margin-left: 3px;
+    text-transform: uppercase;
+}
+
+#widgetcatalogWizard .lobHeading {
+    padding-bottom: 10px;
+    margin-left: 5px;
+}
+
+#widgetcatalogWizard br {
+    display: block;
+    height: 1px;
+    clear: both;
+}
+
+#widgetcatalogWizard .hidden {
+    display: none;
+}
+
+#widgetcatalogWizard .flightField {
+  clear:both;
+}
+
+/* ORIGINAL RECIPE LOB SELECT RADIO BUTTONS */
+#widgetcatalogWizard.original-recipe .large .lobSelect fieldset.lob-flightAndHotel, #widgetcatalogWizard.original-recipe .large .lobSelect fieldset.lob-flightHotelAndCar, #widgetcatalogWizard.original-recipe .large .lobSelect fieldset.lob-flightAndCar, #widgetcatalogWizard.original-recipe .large .lobSelect fieldset.lob-hotelAndCar {
+	width: 140px !important;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobSelect .lobLeftList,
+#widgetcatalogWizard.original-recipe .large .lobSelect  .xp-w-lob-pac {
+	float: left; 
+}
+
+#widgetcatalogWizard.original-recipe .large .lobSelect  .xp-w-lob-pac {
+	width: 398px;
+	text-align: left;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobSelect  .xp-w-lob-pac ul,
+#widgetcatalogWizard.original-recipe .large .lobSelect  .xp-w-lob-pac ul li{
+	float:left;	
+}
+
+#widgetcatalogWizard.original-recipe .large .lobSelect label { 
+	padding-top: 5px; 
+}
+
+#widgetcatalogWizard.original-recipe .large .lobSelect fieldset{ 
+	width: 92px !important; margin-bottom: 0 !important;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobSelect ul {
+	margin: 0; 
+	padding: 0;
+	width: 90px;
+}
+	
+#widgetcatalogWizard.original-recipe .large .lobSelect ul li {
+	 list-style: none;
+}
+	 
+#widgetcatalogWizard.original-recipe .large .lobSelect ul li span,
+#widgetcatalogWizard.original-recipe .large .lobSelect ul li input 
+{
+	vertical-align: middle;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobSelect { 
+	width: 488px !important; 
+}
+
+#widgetcatalogWizard.original-recipe .large .lobSelect fieldset { 
+	width: 85px !important; margin-left: 0 !important;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobSelect { 
+	padding-top: 6px !important
+}
+
+/* LOB SELECT RADIO BUTTONS */
+#widgetcatalogWizard .lobSelect fieldset {
+    float: left;
+    clear: left;
+    margin: 0 10px 4px 5px;
+    width: 130px;
+}
+
+#widgetcatalogWizard .lobSelect {
+    font-weight: bold;
+    padding-top: 10px;
+    float: left;
+    z-index: 1;
+    position: relative;
+}
+
+#widgetcatalogWizard .lob-wrapper {
+    font-weight: bold;
+    float: left;
+    z-index: 1;
+    position: relative;
+    background:#F2F2F2;
+    height:86px;
+    width:100%;
+    margin-bottom:13px;
+}
+#widgetcatalogWizard.horizontal-wizard .lob-wrapper {
+  height:auto;
+  margin:32px 0 0 8px;
+  padding:0px;
+  width:238px;
+}
+#widgetcatalogWizard .lobSelect input,
+#widgetcatalogWizard .lobSelect label {
+    float: left;
+    margin-right: 4px;
+}
+#widgetcatalogWizard .lobSelect .horzRadio {
+  vertical-align:middle;
+}
+#widgetcatalogWizard .large .lobSelectSection {
+    height: 125px;
+}
+
+#widgetcatalogWizard .large .lobSelect {
+    width: 280px;
+}
+
+#widgetcatalogWizard .large .lobSelect fieldset {
+    margin: 0 5px 4px 5px;
+    width: 130px;
+    position: relative;
+}
+
+#widgetcatalogWizard .change-lob {
+  float:left;
+  width:100px;
+  background:#F2F2F2;
+  margin-right:6px;
+}
+
+#widgetcatalogWizard .lob-carrot {
+  width:100px;
+  height:13px;
+  background: white url(../../external.html?link=http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) 0px -546px no-repeat;
+}
+#widgetcatalogWizard .lob-link {
+  display:block;
+  height:26px;
+  width:100px;
+  background: url(../../external.html?link=http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) top left no-repeat;
+  text-align:center;
+  padding-top:60px;
+  text-decoration:none;
+  text-transform:uppercase;
+  color:#069;
+}
+#widgetcatalogWizard.horizontal-wizard .lob-link {
+  width:auto;
+  height:auto;
+  background:transparent;
+  display:inline;
+  padding:0px;
+  color:#666;
+  font-size:14px;
+  text-transform:uppercase;
+  display:block;
+  padding:5px 0 5px 24px;
+  font-weight:normal;
+  text-align:left;
+} 
+#widgetcatalogWizard.horizontal-wizard .current-lob .lob-link {
+  color:#069;
+  background:transparent;
+}
+#widgetcatalogWizard.horizontal-wizard .change-lob {
+  float:none;
+  width:auto;
+  background:transparent;
+  list-style:none;
+  margin:0px;
+  padding:0px;
+}
+#widgetcatalogWizard.horizontal-wizard .current-lob {
+  background:#FFF;
+}
+#widgetcatalogWizard.horizontal-wizard .change-lob:hover {
+  background:#FFF;
+}
+#widgetcatalogWizard .current-lob {
+  background-color:#069;
+}
+
+#widgetcatalogWizard .current-lob .lob-link {
+  color:white;
+}
+
+#widgetcatalogWizard .change-lob:hover {
+  background-color:#FFEEB3;
+}
+
+#widgetcatalogWizard .current-lob:hover {
+  background-color:#069;
+}
+
+#widgetcatalogWizard .current-lob .lob-carrot {
+  background-color:#069;
+}
+
+#widgetcatalogWizard .lob-flightOnly {
+  background-position:0px -180px;
+}
+
+#widgetcatalogWizard .current-lob .lob-flightOnly {
+  background-position:0px -453px;
+}
+
+#widgetcatalogWizard .lob-hotelOnly {
+  background-position:0px -90px;
+}
+
+#widgetcatalogWizard .current-lob .lob-hotelOnly {
+  background-position:0px -363px;
+}
+
+#widgetcatalogWizard .lob-package,#widgetcatalogWizard .lob-flightAndHotel {
+  background-position:0px 0px;
+}
+
+#widgetcatalogWizard .current-lob .lob-package,#widgetcatalogWizard .current-lob .lob-flightAndHotel {
+  background-position:0px -273px;
+}
+
+#widgetcatalogWizard .lob-carOnly {
+  background-position:0px -773px;
+}
+
+#widgetcatalogWizard .current-lob .lob-carOnly {
+  background-position:0px -854px;
+}
+
+#widgetcatalogWizard .lob-cruise {
+  background-position:0px -600px;
+}
+
+#widgetcatalogWizard .current-lob .lob-cruise {
+  background-position:0px -689px;
+}
+
+
+#widgetcatalogWizard .medium .lobSelect {
+    width: 140px;
+}
+
+#widgetcatalogWizard .small .lobSelect fieldset {
+    margin: 0 4px 4px;
+}
+
+#widgetcatalogWizard .last-lob {
+  margin-right:0px;
+}
+
+/* PACKAGE SELECTION */
+.packageSelectionItem {
+  float:left;
+  width:200px;
+  margin-bottom:5px;
+  font-size:13px;
+}
+
+.packageSelectionItem input {
+  margin-right:5px;
+  vertical-align:top;
+}
+
+/* ORIGINAL RECIPE BASIC LAYOUT */
+#widgetcatalogWizard.original-recipe .large .section-children-ages {
+	float: none;
+	width: 310px;
+	margin-left: 81px;
+	clear: both;
+}
+
+#widgetcatalogWizard.original-recipe .large .flightOnly .section-children-ages,
+#widgetcatalogWizard.original-recipe .large .flightAndCar .section-children-ages{	
+	width: 468px;
+	margin-left: 94px;
+} 
+
+#widgetcatalogWizard.original-recipe .lobForm .datetime {
+    clear: both;
+	height: 50px;
+}
+
+#widgetcatalogWizard.original-recipe .lobForm .flightAndCar .carOptions,
+#widgetcatalogWizard.original-recipe .lobForm .activities .datetime{
+	float: none;
+	clear: both;
+}
+
+/* BASIC FORM LAYOUT */
+#widgetcatalogWizard .lobForm {
+    clear: both;
+    margin: 0 0 10px 0;
+}
+
+#widgetcatalogWizard .lobForm .search2DestLink{
+    padding: 18px 0 0 5px;
+    font-size: 11px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .lobForm .search2DestLink{
+    padding-left:0px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .fields fieldset.section-returning-time-details {
+	margin-left:20px;
+}
+
+#widgetcatalogWizard .lobForm .fields,
+#widgetcatalogWizard .lobForm h4,
+#widgetcatalogWizard .lobForm h5,
+#widgetcatalogWizard .lobForm .note,
+#widgetcatalogWizard .lobForm .additionalOptionsLink,
+#widgetcatalogWizard .lobForm .moreInfoLink,
+#widgetcatalogWizard .lobForm .section,
+#widgetcatalogWizard .lobForm .section-inline-labels,
+#widgetcatalogWizard .lobForm .section-infants-pref,
+#widgetcatalogWizard .lobForm .room {
+    clear: both;
+}
+
+#widgetcatalogWizard.tabbed-wiz .section-infants-pref {
+  background-color:#F2F2F2;
+}
+#widgetcatalogWizard.tabbed-wiz .section-infants-pref feildset {
+  margin-bottom:5px;
+}
+#widgetcatalogWizard.tabbed-wiz .section-infants-pref span{
+  text-transform:none;
+  font-weight:normal;
+}
+
+#widgetcatalogWizard.tabbed-wiz .infantSeatWrapper .section-infants-pref {
+  padding:0 0 20px 20px;
+}
+
+#widgetcatalogWizard .lobForm fieldset,
+#widgetcatalogWizard .lobForm h4,
+#widgetcatalogWizard .lobForm h5,
+#widgetcatalogWizard .lobForm .note,
+#widgetcatalogWizard .lobForm .additionalOptionsLink,
+#widgetcatalogWizard .lobForm .moreInfoLink {
+    margin: 0 0 10px 5px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .lobForm fieldset {
+  margin-left:0px;
+  margin-top:6px;
+}
+
+#widgetcatalogWizard .lobForm fieldset {
+    float: left;
+}
+
+#widgetcatalogWizard .lobForm label span {
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* SHOW DAY NAME */
+
+#widgetcatalogWizard .lobForm span#H-fromDate-day, #widgetcatalogWizard .lobForm span#H-toDate-day {
+    float:left;
+    width:135px;
+    margin-top:-5px;
+}
+
+#widgetcatalogWizard #FH-fromDate-day, #widgetcatalogWizard #FH-toDate-day {
+	margin-top: 5px;
+	width: 92px;
+}
+
+#widgetcatalogWizard #FH-fromDate-date, #widgetcatalogWizard #FH-toDate-date {
+	margin-top: 5px;
+	width: 92px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .lobForm label span {
+    margin-bottom: 6px;
+}
+
+#widgetcatalogWizard.original-recipe .lobForm .fields input {
+    border: solid 1px #CCC;
+    padding: 2px 0 2px 3px;
+}
+
+#widgetcatalogWizard .lobForm .fields input {
+    border: solid 1px #CCC;
+    padding: 2px 3px;
+}
+
+#widgetcatalogWizard .lobForm .fields input[type='radio'] {
+    border: none
+}
+
+#widgetcatalogWizard .lobForm .fields .packageSelectionChange input {
+  border: none;
+}
+
+#widgetcatalogWizard .lobForm .fields input[type='checkbox'] {
+    border: none;
+}
+
+#widgetcatalogWizard .lobForm .fields .presetValue {
+    float: left;
+    padding: 5px 3px 3px 0;
+    font-size: 12px;
+}
+
+#widgetcatalogWizard .lobForm .buttons {
+    clear: both;
+    padding-top: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+#widgetcatalogWizard .lobForm .buttons .submitWrapper {
+    float: right;
+    padding-left: 2px;
+}
+
+#widgetcatalogWizard .lobForm .buttons input {
+    overflow: visible; /* IE7 fix */
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#widgetcatalogWizard .lobForm .buttons input:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#widgetcatalogWizard .section-inline-labels fieldset {
+    float: none;
+}
+
+#widgetcatalogWizard .section-inline-labels label span {
+    display: inline;
+}
+
+#widgetcatalogWizard .directOnly-labels label span {
+    display: inline;
+}
+
+#widgetcatalogWizard .lobForm .datetime {
+    clear: left;
+}
+
+#widgetcatalogWizard .lobForm .datetime select {
+    width: 70px;
+}
+
+#widgetcatalogWizard .lobForm .additionalOptions {
+    margin-top: 10px;
+    clear: both;
+    float: left;
+}
+
+#widgetcatalogWizard .lobForm .note {
+    text-align: left;
+    padding-right: 5px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .roomNumberTitle {
+  float:left;
+  margin-top:20px;
+  margin-right:30px;
+}
+#widgetcatalogWizard.horizontal-wizard .roomNumberTitle {
+  margin-top:10px;
+}
+#widgetcatalogWizard.tabbed-wiz .section-number-of-travellers fieldset {
+  margin-top:0px;
+  margin-right:30px;
+}
+#widgetcatalogWizard.tabbed-wiz .section-number-of-travellers-pac fieldset {
+  margin-top:0px;
+}
+
+#widgetcatalogWizard .numOfRoomsDropDown {
+  position:absolute;
+  visibility:hidden;
+}
+#widgetcatalogWizard .roomLinks {
+  margin-top:10px;
+  clear:both;
+}
+#widgetcatalogWizard .addRoomLink {
+  float:left;
+}
+#widgetcatalogWizard .removeRoomLink {
+  float:right;
+}
+
+#widgetcatalogWizard .small .lobForm .section-children-ages {
+    clear: both;
+}
+
+#widgetcatalogWizard .medium .section-children-ages {
+    width: 220px;
+    float: left;
+    clear: both;
+}
+
+#widgetcatalogWizard .large .section-children-ages {
+    width: 200px;
+    float: left;
+    clear: right;
+    margin-left: 20px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .section-children-ages {
+  clear:both;
+  background:#F2F2F2;
+  border-top:2px solid #E6E6E6;
+  display:none;
+  padding-left:20px;
+  padding-bottom:20px;
+}
+
+#widgetcatalogWizard .medium .lobForm .section-children-ages select,
+#widgetcatalogWizard .large .section-number-of-travellers .smallSelect select,
+#widgetcatalogWizard .medium .section-number-of-travellers .smallSelect select {
+    width: 65px;
+}
+
+#widgetcatalogWizard .small .section-number-of-travellers fieldset.smallSelect select {
+    width: 53px;
+}
+
+#widgetcatalogWizard .large .hotelOnly .room h4,
+#widgetcatalogWizard .medium .hotelOnly .room h4 {
+    float: left;
+    margin-top: 2.25em;
+    margin-right: 5px;
+}
+
+/* ORIGINAL RECIPE BASIC FORM LAYOUT */
+#widgetcatalogWizard.original-recipe .lobForm label span,
+#widgetcatalogWizard.original-recipe .lobForm label input {
+	vertical-align: middle;	
+	margin: 0;
+} 
+
+#widgetcatalogWizard.original-recipe .lobForm .rooms{ 
+	float: left;
+}
+
+#widgetcatalogWizard.original-recipe .lobForm .rooms h4 {
+	clear:none; 
+	float: left; 
+	margin: 20px 10px 10px 25px;
+}
+
+#widgetcatalogWizard.original-recipe .lobForm .search2DestLink {
+	font-size: 12px;
+	padding-left: 0;
+}
+
+#widgetcatalogWizard.original-recipe .lobForm .mediumSelect {
+	margin-top: 18px !important; float: left;
+}
+
+#widgetcatalogWizard.original-recipe .lobForm fieldset, #widgetcatalogWizard.original-recipe .lobForm h4, 
+#widgetcatalogWizard.original-recipe .lobForm h5, #widgetcatalogWizard.original-recipe .lobForm .note, 
+#widgetcatalogWizard.original-recipe .lobForm .additionalOptionsLink, 
+#widgetcatalogWizard.original-recipe .lobForm .moreInfoLink {
+	margin: 0 0 10px 0;
+}
+
+#widgetcatalogWizard.original-recipe .lobForm .note{
+	color: #666666;
+}
+
+/* VALIDATION / ERRORS */
+#widgetcatalogWizard ul.errors {
+    clear: both;
+    margin: 10px 0 10px 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#widgetcatalogWizard ul.errors,
+#widgetcatalogWizard .lobForm .error {
+    color: #D80505;
+}
+
+#widgetcatalogWizard .lobForm .fields input.error,
+#widgetcatalogWizard .lobForm .fields select.error {
+    border-color: #C00;
+    background-color: #FCEBEB;
+}
+#widgetcatalogWizard .fieldOuter.error,#widgetcatalogWizard .fieldOuterDate.error,#widgetcatalogWizard .fieldOuterDrop.error {
+  border:1px solid #CC0000;
+}
+
+#widgetcatalogWizard.tabbed-wiz .error .fieldInner {
+  border:1px solid #FFCCCC;
+  border-top:1px solid #FF9999;
+}
+
+#widgetcatalogWizard ul.errors li .icon {
+    background: url("../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/iconsSprites.png") no-repeat scroll -92px -45px transparent;
+    display: block;
+    float: left;
+    height: 15px;
+    width: 15px;
+}
+
+#widgetcatalogWizard ul.errors li {
+    list-style: none;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#widgetcatalogWizard.tabbed-wiz ul.errors li {
+  font-weight:normal;
+  text-transform:none;
+}
+
+/* ORIGINAL RECIPE BANNER */
+#widgetcatalogWizard.original-recipe .bannerUpsell {
+	z-index: 2; 
+	margin-right: 0;
+}
+
+#widgetcatalogWizard.original-recipe .bannerUpsell {
+	position:absolute;
+	top:11px;
+	right:18px;
+	width:237px;
+	height:157px;
+}
+
+#widgetcatalogWizard.original-recipe .bannerUpsell span {
+	color: transparent; 
+	line-height: 1000;
+	display: block; 
+	overflow: hidden; 
+	height: 0px;
+}
+
+#widgetcatalogWizard.original-recipe .bannerUpsell{
+	background:url(../../external.html?link=http://media.expedia.com/media/content/expus/graphics/launch/home/2011-wizard_yellowtag.png) no-repeat left center;
+}
+
+* html #widgetcatalogWizard.original-recipe .bannerUpsell {
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/homepage/Wizard_YellowTag.png',sizingMethod='scale');
+}
+
+/* BANNERS */
+#widgetcatalogWizard .bannerUpsell {
+    float: right;
+    margin: 0 10px 10px 5px;
+}
+
+#widgetcatalogWizard .medium .bannerUpsell {
+    margin-top: 7px;
+    width: 129px;
+}
+
+#widgetcatalogWizard .bannerSearchButton {
+    clear:both;
+    float: left;
+    margin-left: 4px;
+}
+
+/* ORIGINAL RECIPE LARGE SIZE */
+#widgetcatalogWizard.original-recipe .large .lobForm .halfWidth input,
+#widgetcatalogWizard.original-recipe .large .lobForm .halfWidth select,
+#widgetcatalogWizard.original-recipe .large .lobForm .smallhalfWidth input[type="text"],
+#widgetcatalogWizard.original-recipe .large .lobForm .smallhalfWidth select,
+#widgetcatalogWizard.original-recipe .large .lobForm .labelTextDrop select{
+    width: 82px;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobForm .halfWidth label,
+#widgetcatalogWizard.original-recipe .large .lobForm .largehalfWidth label,
+#widgetcatalogWizard.original-recipe .large .lobForm .standardWidth label,
+#widgetcatalogWizard.original-recipe .large .lobForm .variable-width label,
+#widgetcatalogWizard.original-recipe .large .lobForm .labelTextDrop {
+	margin-right: 12px; 
+}
+
+#widgetcatalogWizard.original-recipe .large .lobForm .variable-width input,
+#widgetcatalogWizard.original-recipe .large .lobForm .variable-width select,
+#widgetcatalogWizard.original-recipe .large .lobForm .standardWidth input,
+#widgetcatalogWizard.original-recipe .large .lobForm .standardWidth select,
+#widgetcatalogWizard.original-recipe .large .lobForm .carOptions .labelTextDrop select, 
+#widgetcatalogWizard.original-recipe .large .lobForm .searchType .labelTextDrop select {
+    width: 233px;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobForm .variable-width select,
+#widgetcatalogWizard.original-recipe .large .lobForm .standardWidth select,
+#widgetcatalogWizard.original-recipe .large .lobForm .carOptions .labelTextDrop select, 
+#widgetcatalogWizard.original-recipe .large .lobForm .searchType .labelTextDrop select{}
+	padding-left: 3px;
+}
+
+/* IE SUCKS*/
+.ie8 #widgetcatalogWizard.original-recipe .halfWidth label,
+.ie8 #widgetcatalogWizard.original-recipe .largehalfWidth label,
+.ie8 #widgetcatalogWizard.original-recipe .large .lobForm .standardWidth label,
+.ie7 #widgetcatalogWizard.original-recipe .halfWidth label,
+.ie7 #widgetcatalogWizard.original-recipe .largehalfWidth label,
+.ie7 #widgetcatalogWizard.original-recipe .large .lobForm .standardWidth label {
+	margin-right: 8px; 
+}
+
+#widgetcatalogWizard.original-recipe .halfWidth select {
+	height: 21px; 
+}
+
+#widgetcatalogWizard.original-recipe .large .lobForm label span{    	
+	margin-bottom: 5px;	
+}
+
+#widgetcatalogWizard.original-recipe .large .lobForm .fullWidth input,
+#widgetcatalogWizard.original-recipe .large .lobForm .fullWidth select {
+    width: 486px;
+}
+
+/* LARGE SIZE */
+#widgetcatalogWizard .large {
+    width: 524px;
+}
+
+#widgetcatalogWizard .large .lobForm .fullWidth input,
+#widgetcatalogWizard .large .lobForm .fullWidth select {
+    width: 482px;
+}
+
+#widgetcatalogWizard .large .lobForm .halfWidth input,
+#widgetcatalogWizard .large .lobForm .halfWidth select {
+    width: 110px;
+}
+
+#widgetcatalogWizard .large .lobForm .mediumSelect label {
+    width: 80px;
+}
+
+#widgetcatalogWizard .large .lobForm label {
+    font-weight: bold;
+}
+
+#widgetcatalogWizard .large .lobForm .variable-width input,
+#widgetcatalogWizard .large .lobForm .variable-width select,
+#widgetcatalogWizard .large .lobForm .standardWidth input,
+#widgetcatalogWizard .large .lobForm .standardWidth select {
+    width: 230px;
+}
+
+#widgetcatalogWizard .large .lobForm .datetime {
+    clear: none;
+}
+
+#widgetcatalogWizard .large .mediumOnly, #widgetcatalogWizard .large .smallOnly {
+    display: none;
+}
+
+
+
+/*
+removing border from radio buttons
+*/
+#widgetcatalogWizard .flightOnly .flight-type input {
+    border: 0;
+}
+
+/* MEDIUM SIZE */
+#widgetcatalogWizard .medium {
+    width: 308px;
+}
+
+#widgetcatalogWizard .medium .inner {
+    width: 285px;
+}
+
+#widgetcatalogWizard .medium .lobForm .fullWidth input,
+#widgetcatalogWizard .medium .lobForm .fullWidth select,
+#widgetcatalogWizard .medium .lobForm .standardWidth input,
+#widgetcatalogWizard .medium .lobForm .standardWidth select {
+    width: 268px;
+}
+
+#widgetcatalogWizard .medium .lobForm .halfWidth input{
+    width: 127px;
+}
+
+#widgetcatalogWizard .medium .lobForm .largehalfWidth input{
+    width: 177px;
+}
+
+#widgetcatalogWizard .medium .lobForm .largehalfWidth select{
+    width: 275px;
+}
+
+#widgetcatalogWizard .medium .lobForm .nightsWidth input
+{
+    width: 86px;
+}
+#widgetcatalogWizard .medium .lobForm .nightsWidth select
+{
+    width: 71px;
+}
+
+#widgetcatalogWizard .medium .lobForm .smallhalfWidth input
+{
+    width: 77px;
+}
+
+#widgetcatalogWizard .medium .lobForm .halfWidth select {
+    width: 137px;
+}
+#widgetcatalogWizard .medium .lobForm .mediumSelect label {
+    width: 80px;
+}
+
+#widgetcatalogWizard .medium .lobForm .variable-width input,
+#widgetcatalogWizard .medium .lobForm .variable-width select {
+    width: 268px;
+}
+
+#widgetcatalogWizard .medium .largeOnly, #widgetcatalogWizard .medium .smallOnly {
+    display: none;
+}
+
+/* SMALL SIZE */
+#widgetcatalogWizard .small {
+    width: 200px;
+}
+
+#widgetcatalogWizard .small .background {
+    padding: 5px 6px 4px;
+    width: 178px;
+}
+
+#widgetcatalogWizard .small .bannerUpsell,
+#widgetcatalogWizard .small .bannerFooter,
+#widgetcatalogWizard .small .bannerSearchButton {
+    display: none;
+}
+
+#widgetcatalogWizard .small ul.errors {
+    margin: 10px 4px;
+}
+
+#widgetcatalogWizard .small .lobForm .buttons {
+    padding-right: 4px;
+}
+
+#widgetcatalogWizard .small .lobForm fieldset,
+#widgetcatalogWizard .small .lobForm h4,
+#widgetcatalogWizard .small .lobForm h5,
+#widgetcatalogWizard .small .lobForm .note,
+#widgetcatalogWizard .small .lobForm .additionalOptionsLink,
+#widgetcatalogWizard .small .lobForm .moreInfoLink {
+    margin: 0 0 6px 4px;
+}
+
+#widgetcatalogWizard .small .lobForm .note {
+    padding-right: 4px;
+}
+
+#widgetcatalogWizard .small .lobForm .fullWidth input,
+#widgetcatalogWizard .small .lobForm .fullWidth select,
+#widgetcatalogWizard .small .lobForm .standardWidth input,
+#widgetcatalogWizard .small .lobForm .standardWidth select {
+    width: 162px;
+}
+
+#widgetcatalogWizard .small .lobForm .halfWidth input,
+#widgetcatalogWizard .small .lobForm .halfWidth select {
+    width: 75px;
+}
+
+#widgetcatalogWizard .small .lobForm .halfWidth input,
+#widgetcatalogWizard .small .lobForm .halfWidth select {
+    width: 75px;
+}
+
+#widgetcatalogWizard .small .lobForm .mediumSelect label {
+    width: 140px
+}
+
+#widgetcatalogWizard .small .lobForm .variable-width input,
+#widgetcatalogWizard .small .lobForm .variable-width select {
+    width: 154px;
+}
+
+#widgetcatalogWizard .small .largeOnly, #widgetcatalogWizard .small .mediumOnly {
+    display: none;
+}
+
+/* PACKAGES ONLY FORM */
+#widgetcatalogWizard .package-title {
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+/* HOTEL ONLY FORM */
+#widgetcatalogWizard .large .hotelOnly .section-children-ages {
+    margin-top: 1em;
+}
+
+#widgetcatalogWizard .room {
+    padding-top: 10px;
+}
+
+#widgetcatalogWizard .section-multiple-destination {
+    padding-top: 10px;
+}
+
+/* FLIGHTS ONLY FORM AND CARS ONLY FORM*/
+#widgetcatalogWizard .flightOnly .section-inline-labels fieldset, 
+#widgetcatalogWizard .carOnly .section-inline-labels fieldset {
+    display: inline;
+}
+
+#widgetcatalogWizard .large .flightOnly .section-inline-labels fieldset{
+    margin-right: 20px;	
+}
+
+#widgetcatalogWizard .medium .cruise .section-inline-labels fieldset {
+    margin-bottom: 10px;	
+    font-weight:bold;
+    line-height:200%;
+}
+
+#widgetcatalogWizard .medium .cruise .fields .section-inline-labels fieldset {
+    margin-bottom: 4px;
+    font-weight:normal;
+}
+
+#widgetcatalogWizard .medium .cruise .fields
+{
+    margin-bottom:10px;
+}
+
+#widgetcatalogWizard .small .flightOnly .section-inline-labels fieldset,
+#widgetcatalogWizard.original-recipe .small .carOnly .section-inline-labels fieldset {
+    display: block;
+}
+
+/* ORIGINAL RECIPE SKIN */
+#widgetcatalogWizard.original-recipe .buttons input{
+	text-transform:uppercase;
+}
+
+#widgetcatalogWizard.original-recipe .large .carOnly .section-inline-labels fieldset {
+    margin-right: 20px;	
+}
+
+#widgetcatalogWizard.original-recipe .large .carOnly .section-inline-labels fieldset{
+	width: 184px;
+}
+
+#widgetcatalogWizard.original-recipe .gradient .background {
+	padding-left: 5px; padding-right: 5px;
+}
+
+#widgetcatalogWizard.original-recipe .gradient .title { 
+	padding: 0;
+}
+
+#widgetcatalogWizard.original-recipe .gradient .inner { 
+	padding: 0 0 0 12px; 
+}
+
+#widgetcatalogWizard.original-recipe .background h3 { 
+	font-size: 18px; padding: 8px 0 8px 12px;
+}
+
+#widgetcatalogWizard.original-recipe .large .flightField .largehalfWidth input,
+#widgetcatalogWizard.original-recipe .large .flightField  .variable-width input {
+	width: 384px;
+}
+
+#widgetcatalogWizard.original-recipe .section-flight-age-group{
+	padding-top: 4px; 
+}
+
+#widgetcatalogWizard.original-recipe .section-flight-age-group h5 {
+	padding-bottom: 5px !important; margin-bottom: 0 !important;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobForm .carOnly .section-inline-labels img {
+	vertical-align: bottom;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobForm .carOptions fieldset{
+	float: none;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobForm .flightOnly .additionalOptions .standardWidth {
+	margin-top: 10px;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobForm .carOnly .searchType,
+#widgetcatalogWizard.original-recipe .large .lobForm .carOnly .carLocationTime {
+	clear: both;
+	float: none;
+}
+
+#widgetcatalogWizard.original-recipe .large .lobForm .carOnly #zip label,
+#widgetcatalogWizard.original-recipe .large .lobForm .carOnly #C-DropTime-label,
+#widgetcatalogWizard.original-recipe .large .lobForm .carOnly #C-discode-label,
+#widgetcatalogWizard.original-recipe .large .lobForm .carOnly #C-dropOffLocation-label,
+#widgetcatalogWizard.original-recipe .large .lobForm .cruise #cruise-duration-label,
+#widgetcatalogWizard.original-recipe .large .lobForm .hotelOnly #H-LodgingType-label,
+#widgetcatalogWizard.original-recipe .large .lobForm .flightOnly #F-Class-label{
+	margin-right: 0;
+}
+
+#widgetcatalogWizard.original-recipe #rentalCompany, #widgetcatalogWizard.original-recipe #discountCode {
+	float: left;
+	clear: none;	
+}
+
+#widgetcatalogWizard.original-recipe .flightHotelAndCar .section-partial-hotel-booking-date,
+#widgetcatalogWizard.original-recipe .flightAndHotel .section-partial-hotel-booking-date{
+	height: 48px;
+}
+
+/* GRADIENT SKIN */
+#widgetcatalogWizard .gradient .outer {
+    background: url("../../external.gif?link=http://www.expedia.com/static/fusion/v2.3/images/wizard/wizard_out_bg.gif") repeat-x scroll left center #00355D;
+    border: 1px solid #00355D;
+    padding: 0; 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#widgetcatalogWizard .gradient .background {
+    background: url("../../external.gif?link=http://www.expedia.com/static/fusion/v2.3/images/wizard/wizard_out_bg.gif") repeat-x scroll left center #00355D;    
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    padding: 0 10px 7px;
+}
+
+#widgetcatalogWizard .gradient .inner {
+    background: #FFF;
+    color: #333;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+ 
+#widgetcatalogWizard .gradient .medium {
+    width: 308px;
+}
+
+#widgetcatalogWizard .gradient .title {
+    color: #FFFFFF;
+    font-weight: normal;
+    padding: 6px 0px 6px 0;
+    font-size: 16px;
+    margin: 0;
+    text-transform: uppercase;
+}
+    
+#widgetcatalogWizard .background h3 {
+    font-weight: normal;
+    font-size: 16px;
+    margin-left: 0px;
+    padding-left: 0px;
+    text-transform: uppercase;
+	width: 282px;
+}
+#widgetcatalogWizard .gradient .bannerFooter {
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#widgetcatalogWizard .gradient .lobForm .buttons {
+    height: 32px;
+}
+
+#widgetcatalogWizard .gradient .lobForm .buttons .submitWrapper {
+    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat scroll left top transparent;
+}
+
+#widgetcatalogWizard .gradient .lobForm .buttons input {
+    border: none;
+    height: 32px;
+    padding: 0 32px 6px 16px;
+    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top right;
+    color: #036;
+} 
+
+#widgetcatalogWizard .gradient .lobForm .buttons {
+    padding-right: 4px;
+}
+
+/* AARP SKIN */
+#widgetcatalogWizard .aarp .outer {
+    background: #2B7A99;
+    border: 1px solid #2B7A99;
+    padding: 0; 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#widgetcatalogWizard .aarp .background {
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    padding: 0 10px 7px;
+}
+
+#widgetcatalogWizard .aarp .inner {
+    background: #FFF;
+    color: #333;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+ 
+#widgetcatalogWizard .aarp .medium {
+    width: 308px;
+}
+
+#widgetcatalogWizard .aarp .title {
+    color: #FFFFFF;
+    font-weight: normal;
+    padding: 6px 0px 6px 0;
+    font-size: 16px;
+    margin: 0;
+    text-transform: uppercase;
+}
+    
+#widgetcatalogWizard .aarp .background h3 {
+    font-weight: normal;
+    font-size: 16px;
+    margin-left: 0px;
+    padding-left: 0px;
+    text-transform: uppercase;
+	width: 282px;
+}
+#widgetcatalogWizard .aarp .bannerFooter {
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#widgetcatalogWizard .aarp .lobForm .buttons {
+    height: 32px;
+}
+
+#widgetcatalogWizard .aarp .lobForm .buttons .submitWrapper {
+    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat scroll left top transparent;
+}
+
+#widgetcatalogWizard .aarp .lobForm .buttons input {
+    border: none;
+    height: 32px;
+    padding: 0 32px 6px 16px;
+    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top right;
+    color: #036;
+} 
+
+#widgetcatalogWizard .aarp .lobForm .buttons {
+    padding-right: 4px;
+}
+
+/* BLUE SKIN */
+#widgetcatalogWizard .blue .outer {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#widgetcatalogWizard .blue .background {
+    background: #00355D;
+    color: #FFF;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+#widgetcatalogWizard .blue .inner {
+    background: #FFF;
+    color: #333;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#widgetcatalogWizard .blue .bannerFooter {
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#widgetcatalogWizard .blue .lobForm .buttons {
+    height: 32px;
+}
+
+#widgetcatalogWizard .blue .lobForm .buttons .submitWrapper {
+    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top left;
+}
+
+#widgetcatalogWizard .blue .lobForm .buttons input {
+    border: none;
+    height: 32px;
+    padding: 0 36px 3px 20px;
+    background: url('../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/fusion/wizard/wizard_daily_search_button.gif') no-repeat top right;
+    color: #036;
+}
+
+/* WHITE SKIN */
+#widgetcatalogWizard .white .outer {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#widgetcatalogWizard .white .background {
+    padding: 2px 0 7px;
+}
+
+#widgetcatalogWizard .white .inner {
+    padding: 10px 4px 0 4px;
+    background: #FFF;
+    color: #333;
+}
+
+#widgetcatalogWizard .white h3 {
+    padding: 10px;
+    margin: 0 3px;
+    background: #D4E9EE;
+}
+
+#widgetcatalogWizard .white .bannerUpsell {
+    margin-right: 0;
+}
+
+#widgetcatalogWizard .white .lobForm .buttons {
+    height: 19px;
+    padding-right: 0;
+}
+
+#widgetcatalogWizard .white .lobForm .buttons .submitWrapper {
+    background: url('../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/buttonBG.png') no-repeat left 50%;
+}
+
+#widgetcatalogWizard .white .lobForm .buttons input {
+    border: none;
+    height: 19px;
+    padding: 0 12px 0 10px;
+    background: url('../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/buttonBG.png') no-repeat right 50%;
+    color: #FFF;
+}
+
+/* upsell banner for com - start */
+#widgetcatalogWizard .large .bannerUpsell .com .default .largeOnly {
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+#widgetcatalogWizard .large .blue .bannerUpsell .com .default .largeOnly .base {
+    position: absolute;
+    left: -365px;
+    top: 5px;
+    width: 370px;
+    height: 85px;
+    background-color: #FDEFB0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#widgetcatalogWizard .large .blue .bannerUpsell .com .default .largeOnly .base .banner {
+    position: absolute;
+    top: -32px;
+    left: 140px;
+    background: url('../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/homepage/Wizard_YellowTag.png');
+    height: 150px;
+    width: 230px;
+}
+
+/* Hiding default Upsell banner for small */
+#widgetcatalogWizard .small .bannerUpsell .com .default {
+    display: none;
+}
+
+
+#widgetcatalogWizard .medium .bannerUpsell .com .default .mediumOnly {
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+#widgetcatalogWizard .medium .bannerUpsell .com .default .mediumOnly .base {
+    background-color: #FDEFB0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#widgetcatalogWizard .medium .bannerUpsell .com .default .mediumOnly .base .banner {
+    background: url('../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/wizard/promo_bg.png');
+    height: 92px;
+    width: 129px;
+    text-align: center;
+}
+
+#widgetcatalogWizard .medium .bannerUpsell .com .default .mediumOnly .base .banner span {
+    display: inline-block;
+    margin-top: 65px;
+    color: #FFF;
+}
+/* upsell banner for com - end */
+
+/* footer banner for com - start */
+#widgetcatalogWizard .bannerFooter .com .default {
+    height: 57px;
+    background: #D4E9EE url('../../external.gif?link=http://www.expedia.com/static/fusion/v2.3/images/customersupport/lady78x78.gif') no-repeat left top;
+    padding: 10px 5px 5px 95px;
+}
+
+#widgetcatalogWizard .bannerFooter .com .default h4 {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#widgetcatalogWizard .bannerFooter .com .default h5 {
+    font-size: 18.5px;
+    font-weight: bold;
+    margin-bottom: 5px
+}
+
+#widgetcatalogWizard .bannerFooter .com .default a {
+    font-size: 13px;
+    font-weight: bold;
+}
+/* footer banner for com - end */
+
+/* button is too wide for older IE version  */
+#widgetcatalogWizard .xp-b-submit, 
+#widgetcatalogWizard .xp-b-leftSide, 
+#widgetcatalogWizard .xp-b-submit-large, 
+#widgetcatalogWizard .xp-b-submit-large .xp-b-leftSide, 
+#widgetcatalogWizard .xp-b-rightSide{
+	background: url(../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/buttonBG.png) no-repeat; 
+	display: inline-block; 
+	cursor:pointer;
+}
+
+#widgetcatalogWizard .xp-b-submit a,#widgetcatalogWizard .xp-b-submit input,#widgetcatalogWizard .xp-b-submit-large a,#widgetcatalogWizard .xp-b-submit-large input{
+	text-decoration: none; 
+	text-align:center; 
+	float:left;
+	text-transform:uppercase
+}
+
+#widgetcatalogWizard.tabbed-wiz .uw-submit-button {
+	margin-top:18px
+}
+
+#widgetcatalogWizard.original-recipe .uw-submit-button,
+#widgetcatalogWizard.original-recipe .uw-submit-button2 {
+	padding-right: 12px;	
+}
+
+#widgetcatalogWizard.original-recipe .uw-submit-button2{
+	padding-top: 12px;
+}
+
+#widgetcatalogWizard .xp-b-submit2,
+#widgetcatalogWizard .xp-b-submit1,
+#widgetcatalogWizard .xp-b-leftSubmit2,
+#widgetcatalogWizard .xp-b-leftSubmit1,
+#widgetcatalogWizard .xp-b-rightSubmit2,
+#widgetcatalogWizard .xp-b-rightSubmit1 {
+	background: url(../../external.html?link=http://www.expedia.com/static/fusion/v2.3/images/buttonBG2.png) no-repeat; 
+	display: block;
+	height:29px;
+	float:left;
+}
+
+#widgetcatalogWizard .xp-b-leftSubmit1,
+#widgetcatalogWizard .xp-b-leftSubmit2 {
+	background-position: right 0px;
+	width:7px
+}
+
+#widgetcatalogWizard .xp-b-rightSubmit1,	
+#widgetcatalogWizard .xp-b-rightSubmit2 {
+	background-position: right -29px;
+	width:7px
+}
+
+#widgetcatalogWizard .xp-b-submit1,	
+#widgetcatalogWizard .xp-b-submit2 {
+	height:15px;
+	background-position: left -58px;
+	background-repeat:repeat-x;
+	color:#036; 
+	font-size:12px; 
+	padding:7px 10px 7px 7px; 
+	font-weight:bold; 
+	min-width:109px;
+	text-decoration: none; 
+	text-align:center; float:left;
+	text-transform:uppercase
+}
+
+#widgetcatalogWizard a.xp-b-submit2:hover {
+	text-decoration:none;
+}
+
+#widgetcatalogWizard button.xp-b-submit1,
+#widgetcatalogWizard button.xp-b-submit2 {
+	height:29px;
+	margin:0px;
+	border:none;
+	cursor:pointer;
+	line-height:12px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .xp-b-submit2,#widgetcatalogWizard.tabbed-wiz .xp-b-leftSubmit2,#widgetcatalogWizard.tabbed-wiz .xp-b-rightSubmit2 {
+	background: url(../../external.html?link=http://www.expedia.com/static/default/default/images/buttonBG2.png) no-repeat; 
+	display: block;
+	height:45px;
+	float:left;
+}
+
+#widgetcatalogWizard.tabbed-wiz .xp-b-rightSubmit2 {
+	background-position: right -90px;
+	width:7px
+}
+
+#widgetcatalogWizard.tabbed-wiz .xp-b-submit2 {
+	height:15px;
+	background-position: left -45px;
+	background-repeat:repeat-x;
+	color:#765A23 !important; 
+	font-size:12px; 
+	padding:7px 10px 7px 7px; 
+	font-weight:bold; 
+	min-width:109px;
+	text-decoration: none; 
+	text-align:center; 
+	float:left;
+	text-transform:uppercase;
+}
+
+#widgetcatalogWizard.tabbed-wiz button.xp-b-submit2 {
+	height:45px;
+	margin:0px;
+	border:none;
+	cursor:pointer;
+	line-height:12px;
+	overflow:visible;
+}
+
+#widgetcatalogWizard.tabbed-wiz .xp-b-right:hover button.xp-b-submit2 {
+	background-position: right -180px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .xp-b-right:hover .xp-b-leftSubmit2 {
+	background-position: right -135px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .xp-b-right:hover .xp-b-rightSubmit2 {
+	background-position: right -225px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .interstitial .xp-b-right button.xp-b-submit2 {
+  background-position: right -486px;
+  height:44px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .interstitial .xp-b-right .xp-b-leftSubmit2 {
+  background-position: right -398px;
+  height:44px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .interstitial .xp-b-right .xp-b-rightSubmit2 {
+  background-position: right -442px;
+  height:44px;
+}
+
+.ie8 #widgetcatalogWizard .xp-b-submit2 {
+  padding:4px 3px 7px 3px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .section-inline-labels {
+  padding-top:2px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .section-inline-labels input {
+  position:relative;
+  top:3px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .section-inline-labels fieldset {
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+#widgetcatalogWizard .fieldOuter,#widgetcatalogWizard .fieldOuterDate,#widgetcatalogWizard .fieldOuterDrop {
+  border:1px solid #DCDCDC;
+  background-color:#FFF;
+  width:484px;
+  position:relative;
+}
+#widgetcatalogWizard .fieldOuter .icon,#widgetcatalogWizard .dropDest .dropDestIcon {
+  position:absolute;
+  top:7px;
+  left:10px;
+  display:block;
+  height:20px;
+  width:13px;
+  background: #CCC url(../../external.html?link=http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) 0px -559px no-repeat;
+}
+#widgetcatalogWizard .fieldOuterDate .icon {
+  position:absolute;
+  top:10px;
+  left:200px;
+  display:block;
+  height:17px;
+  width:21px;
+  background: #CCC url(../../external.html?link=http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) -13px -558px no-repeat;
+}
+#widgetcatalogWizard .fieldOuterDrop .icon {
+  position:absolute;
+  top:14px;
+  right:6px;
+  display:block;
+  height:8px;
+  width:13px;
+  background: #CCC url(../../external.html?link=http://www.expedia.com/static/default/default/images/publishing/wizard/nav.png) -34px -559px no-repeat;
+}
+#widgetcatalogWizard .fieldOuterDate,#widgetcatalogWizard.tabbed-wiz .lobForm .halfWidth .fieldOuterDrop,#widgetcatalogWizard.tabbed-wiz .lobForm .halfWidth .fieldOuter {
+  width:230px;
+}
+#widgetcatalogWizard .fieldOuterDrop {
+  width:50px;
+  overflow:hidden;
+  float:left;
+}
+#widgetcatalogWizard.tabbed-wiz .labelTextDrop {
+  float:left;
+}
+#widgetcatalogWizard.tabbed-wiz .labelTextDrop .labelTextDropSpan {
+  float:left;
+  margin:10px 10px 0px 10px;
+  text-align:right;
+}
+#widgetcatalogWizard.tabbed-wiz .halfWidth .labelTextDrop .labelTextDropSpan {
+text-align:left;
+float:none;
+margin:0 0 6px 0;
+}
+#widgetcatalogWizard.tabbed-wiz .section-children-ages .labelTextDrop {
+	margin-right:20px;
+}
+#widgetcatalogWizard.tabbed-wiz .section-children-ages .labelTextDrop .labelTextDropSpan {
+  float:none;
+  margin:10px 0px;
+  text-align: left;
+}
+#widgetcatalogWizard .fieldInner {
+  border:1px solid #F8F8F8;
+  border-top:1px solid #C0C0C0;
+}
+#widgetcatalogWizard .lobForm .fields .fieldText,#widgetcatalogWizard .lobForm .fields .fieldDate,#widgetcatalogWizard .lobForm .fields .fieldDrop {
+  border:none;
+  outline-width: 0;
+  font-size:16px;
+  padding:0px;
+  color:#666;
+}
+#widgetcatalogWizard .lobForm .fields .fieldText {
+  width:446px;
+  padding:9px 5px 8px 5px;
+}
+#widgetcatalogWizard .lobForm .fields .dest.fieldText {
+  padding-left:30px;
+}
+#widgetcatalogWizard .lobForm .fields .fieldDate {
+  width:192px;
+  padding:8px 30px 9px 5px;
+  background:transparent;
+  position:relative;
+}
+#widgetcatalogWizard.tabbed-wiz .lobForm .halfWidth .fieldDrop {
+  width:246px;
+  background:transparent;
+  position:relative;
+}
+#widgetcatalogWizard.tabbed-wiz .lobForm .halfWidth .fieldText  {
+  width:192px;
+}
+#widgetcatalogWizard .lobForm .fields .fieldDrop {
+  width:66px;
+  height:32px;
+  padding:6px 0px 6px 5px;
+  -webkit-appearance: none;
+  position: relative;
+  z-index: 100;
+  background: transparent;
+}
+#widgetcatalogWizard .lobForm .fields .fieldDropOld {
+  width:66px;
+  margin-right:10px;
+}
+#widgetcatalogWizard .lobForm .fields .halfWidth .fieldDropOld {
+  width:232px;
+  margin-right:0px;
+}
+#widgetcatalogWizard .lobForm .fields .full-width .fieldDropOld {
+  width:482px;
+  margin-right:0px;
+}
+#widgetcatalogWizard.tabbed-wiz .lobForm .fields .fieldOuter.fieldFocus {
+  border:5px solid #FFEEB3;
+  width:476px;
+}
+#widgetcatalogWizard.horizontal-wizard .lobForm .fields .fieldOuter.fieldFocus {
+  width:576px;
+}
+#widgetcatalogWizard.tabbed-wiz .lobForm .fields .fieldOuterDate.fieldFocus,#widgetcatalogWizard.tabbed-wiz .lobForm .fields .halfWidth .fieldOuterDrop.fieldFocus,#widgetcatalogWizard.tabbed-wiz .lobForm .fields .halfWidth .fieldOuter.fieldFocus {
+  border:5px solid #FFEEB3;
+  width:222px;
+}
+#widgetcatalogWizard.tabbed-wiz .lobForm .fields .fieldOuterDrop.fieldFocus {
+  border:5px solid #FFEEB3;
+  width:42px;
+  height:26px;
+}
+#widgetcatalogWizard.tabbed-wiz .lobForm .fields .fieldFocus .fieldDrop {
+  top:-3px;
+  left:-3px;
+}
+#widgetcatalogWizard .fieldFocus .fieldInner {
+  border:none;
+}
+#widgetcatalogWizard .fieldOuter.fieldFocus .icon,#widgetcatalogWizard .dropDest.fieldFocus .dropDestIcon {
+  top:3px;
+  left:6px;
+}
+#widgetcatalogWizard .fieldOuterDate.fieldFocus .icon {
+  top:6px;
+  left:196px;
+}
+#widgetcatalogWizard.tabbed-wiz .lobForm .fields .fieldOuterDrop.fieldFocus .icon {
+  top:10px;
+  right:2px;
+}
+#widgetcatalogWizard .lobForm .fields .fieldFocus .fieldText {
+  padding:6px 2px 5px 2px;
+}
+#widgetcatalogWizard .lobForm .fields .fieldFocus .dest.fieldText {
+  padding:6px 2px 5px 27px;
+}
+#widgetcatalogWizard .lobForm .fields .fieldFocus .fieldDate {
+  padding:5px 27px 6px 2px;
+}
+#widgetcatalogWizard .lobForm .fields .fieldDefaultText {
+  color:#B6B6B6;
+}
+#widgetcatalogWizard.tabbed-wiz .lobForm .full-width .fieldDrop {
+  width:500px;
+}
+#widgetcatalogWizard .lobForm .fields .dropDest .fieldDrop {
+  margin-left:30px;
+}
+#widgetcatalogWizard.tabbed-wiz .lobForm .full-width {
+  display:block;
+  float:none;
+}
+#widgetcatalogWizard.tabbed-wiz .lobForm .full-width .labelTextDropSpan {
+  float:none;
+  text-align:left;
+  margin:0 0 6px 0;
+}
+
+#widgetcatalogWizard.tabbed-wiz .lobForm .full-width .fieldOuterDrop {
+  width:484px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .lobForm .full-width .fieldOuterDrop.fieldFocus {
+  width:476px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .lobForm .fields .cruise-dest {
+  width:480px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .showHideFieldSet {
+  width:auto;
+}
+
+#widgetcatalogWizard.tabbed-wiz .showHideDropOff {
+  float:left;
+}
+
+#widgetcatalogWizard.tabbed-wiz .showHideDropOffText {
+  float:left;
+  margin-left:6px;
+}
+
+
+#widgetcatalogWizard.tabbed-wiz .carsDropOff {
+  display:none;
+  clear:left;
+}
+
+#widgetcatalogWizard.horizontal-wizard .carsDropOff {
+  margin-top:20px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .lobForm .secondHalf {
+  margin-left:20px;
+}
+
+#widgetcatalogWizard.tabbed-wiz .specialEquipmentLink {
+  clear:both;
+}
+
+#widgetcatalogWizard.tabbed-wiz .specilEquipmentItem {
+  float:left;
+  width:160px;
+  margin-bottom:5px;
+}
+#widgetcatalogWizard.tabbed-wiz .specilEquipmentItem span {
+  vertical-align:top;
+}
+
+#widgetcatalogWizard.tabbed-wiz .LOBCheckBoxes {
+  background:#F2F2F2;
+  padding:18px 0;
+  color:#069;
+  text-transform:uppercase;
+  font-size:12px;
+}
+
+#widgetcatalogWizard.horizontal-wizard {
+  position: relative;
+}
+
+#widgetcatalogWizard.horizontal-wizard .bestPriceGuaranteeLink {
+  position: absolute;
+  bottom:10px;
+  left:45px;
+}
+
+
+@-moz-document url-prefix() { 
+ #widgetcatalogWizard.tabbed-wiz .showHideDropOffText { 
+   position: relative;
+   top: 4px;
+   }
+   #widgetcatalogWizard.tabbed-wiz .specilEquipmentItem span {
+      vertical-align:bottom;
+    }
+}
+
+#widgetcatalogWizard.tabbed-wiz .LOBCheckBox {
+  vertical-align:middle;
+  margin-right:8px;
+  margin-left:18px;
+}
+#widgetcatalogWizard.horizontal-wizard .fieldOuter {
+  width:584px;
+}
+#widgetcatalogWizard.horizontal-wizard .lobForm .fields .fieldText {
+  width:546px;
+}
+#widgetcatalogWizard.horizontal-wizard .lobForm .fields .carDiscountFields .fieldText {
+  width:220px;
+}
+/* Typeahead */
+#type-ahead.thick {
+  border:5px solid #FFEEB3;
+  width:476px;
+}
+.ui-autocomplete {
+    border: solid 1px #CCC;
+    width: 240px;
+    background: #F2F2F2;
+}
+.ui-autocomplete li {
+    list-style: none;
+}
+.ui-autocomplete a {
+    display: block;
+    padding: 5px;
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.ui-autocomplete a:hover {
+    text-decoration: none;
+    color: #069;
+}
+.ui-autocomplete a.ui-state-hover {
+    background-color: #D4E9EE;
+}
+.ui-autocomplete li.airport a {
+    padding-left: 20px;
+    background-image: url(../../external.html?link=http://www.expedia.com/static/default/default/images/flight.png);
+}
+
+/* jqueryui calendar css */
+
+/* STYLES FOR POP UP CALENDAR */
+.ui-datepicker .ui-datepicker-prev { position: absolute; right:121px; top: 3px; cursor: pointer !important; height: 16px; width: 15px; text-indent: -99999px; overflow: hidden; background: url('../../external.gif?link=http://www.expedia.com/static/default/default/images/bubble_left_onblue.gif') no-repeat top left;}
+.ui-datepicker .ui-datepicker-next { position: absolute; right:6px; top: 3px; cursor: pointer !important; height: 16px; width: 15px; text-indent: -99999px; overflow: hidden; background: url('../../external.gif?link=http://www.expedia.com/static/default/default/images/bubble_right_onblue.gif') no-repeat top left; }
+.ui-datepicker .ui-datepicker-prev-hover { right:120px; top: 4px;  }
+.ui-datepicker .ui-datepicker-next-hover { right:5px; top: 4px; }
+.ui-datepicker .ui-datepicker-title { margin: 0 2.3em; line-height: 1.8em; text-align: center; }
+.ui-datepicker table {width: 136px; font-size: 11px; border-collapse: collapse; margin:0; }
+.ui-datepicker th { padding: 4px 0; text-align: center; font-weight: bold; border: 0;  }
+.ui-datepicker td { border: 0; padding: 0; width:20px; height:20px; line-height:20px; text-align:center; }
+.ui-datepicker td span, .ui-datepicker td a { display: block; padding: 0; text-align: center; text-decoration: none; }
+.ui-datepicker-calendar th span { color: #3266af; }
+.ui-datepicker-calendar { margin: 6px !important; }
+
+.ui-datepicker { border: 1px solid #369; display: none; background: #ffffff; color: #000; width: 300px !important; font-family: Arial, Helvetica, sans-serif, Tahoma, Geneva; font-size: 11px; font-weight: bold; padding: 0; margin: 0; }
+.ui-datepicker a { color: #000; }
+.ui-datepicker .ui-widget-header { background: #7694bf; color: #fff; font-weight: bold; position:relative; padding: 2px 0; }
+.ui-datepicker .ui-widget-header a { color: #fff; }
+.ui-datepicker .ui-state-disabled { color: #999; }
+.ui-datepicker .ui-state-highlight { color: #f00 !important; }
+.ui-datepicker .ui-state-active { background: #ccc; }
+.ui-datepicker .ui-state-hover { background: #fd9; }
+.ui-datepicker .ui-datepicker-group-first { border-right: 1px solid #D7DCE8; width: 149px !important; float:left;  }
+.ui-datepicker .ui-datepicker-group-last { width: 150px !important; float:left;  }
+.ui-datepicker .ui-datepicker-current {display:none;}
+.ui-datepicker .ui-datepicker-close {background:none; width:100%; display:inline-block; text-align: center; border:none; border-top: 1px solid #D7DCE8; font-size:11px; color:#339; cursor:pointer; padding:4px 0; }
+.ui-datepicker .ui-datepicker-close:hover {color:#02B3FD}
+
+/* IE6 IFRAME FIX */
+.ui-datepicker-cover { display: none; display: block; position: absolute; z-index: -1; filter: mask(); top: -4px; left: -4px; height: 200px; }
+
+/* IE7 WIDTH FIX*/
+.additionalOptions { width: 100%; }
+
+/* FIREFOX HEIGHT FIX*/
+@-moz-document url-prefix() { 
+  #widgetcatalogWizard input {
+     height: 18px;
+  }
+}
+
+/*  generated on 2014-06-05 18:27:26.168 PDT(-0700) in 0 ms  */
+
+/*  served in 0 ms  */

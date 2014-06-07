@@ -1,0 +1,231 @@
+#belowColWide { width: 992px; margin:0; padding:1px 18px 0; clear:both; }
+@import url(../../../../../external.html?link=http://fonts.googleapis.com/css?family=Signika+Negative:400,700);
+
+#subCol1,#subCol2 { width: 972px; height: auto; margin:0; padding: 27px 0 0 18px; margin-bottom: 0px; }
+#subColDeal,#subColValue { display: inline-block; }
+#dealsleftarrow,#dealsrightarrow,#valueleftarrow,#valuerightarrow { position: relative; float: left; display: inline-block; background: url('../../../../../external.html?link=http://media.expedia.com/media/content/expus/graphics/launch/home/homepagespritesv2.png') no-repeat; width: 36px; height: 79px; margin: 36px 16px 0 16px; padding-bottom: 4px; cursor: pointer; }
+#dealsleftarrow,#valueleftarrow { background-position: 0px 0px; }
+#dealsrightarrow,#valuerightarrow { background-position: -36px 0px; }
+
+div.inner_adcontainer { position: absolute; width: 615px; height: 135px; left: 0px; }
+div.inner_adcontainer .adBox { width : 135px; height : 135px; margin: 0 10px 0 0; position: absolute; }
+div.adcontainer { position: relative; float: left; display: inline-block; overflow: hidden; width: 635px; height: 147px;}
+div.home_adcontainer { position: relative; float: left; display: inline-block; overflow: hidden; width: 635px; height: 147px;}
+div.adcontent { width : 146px; height : 146px; border: 1px solid #eeeeee; }
+div.adcontent img{ width : 146px; height : 146px;}
+div#DealCol1 { display: inline-block; position: relative; float: left; width: 140px; height: 135px; margin-right: 25px; }
+div#everyday_adcontainer {  }
+
+span.offertext { min-width: 70px; font-size: 12px; position: relative; top: -35px; padding: 0px 0px 0px 5px; font-family: 'Signika Negative', Arial, serif; color: #fdd41a; float: left; clear:both;}
+span.offertext a{ color: #ffffff; font-size: 12px; font-family: 'Signika Negative', Arial, serif; /*font-weight: normal;*/}
+span.offerline2 { font-size: 12px; position: relative; top: -33px; padding: 0px 0px 0px 5px; font-family: 'Signika Negative', Arial, serif; color: #fdd41a; font-weight: bold; margin: 0; float: left;}
+span.offerline2 a { color: #fdd41a; font-size: 12px; font-family: 'Signika Negative', Arial, serif; font-weight: bold;}
+/* For use by this page: http://www.expedia.com */
+
+.dividerLine { margin: 25px 0px 25px 0px; border-top:1px solid #ddd; width:956px;}
+.bottomTextLinkList li { width: 25%;}
+
+.HPDealCol1 { display: inline-block; position: relative; float: left; width: 182px; height: auto;}
+.HPMobileCol1 { display: inline-block; position: relative; float: left; width: 212px; height: auto;}
+.HPsocial1 {text-align:center;width:200px; margin-left:27px;}
+img.HPsocial {height:46px; width:46px; margin-bottom: 10px;}
+
+.HPWhyCol {width:232px;}
+.HPWhyCol1 {width:220px; color: #333; font-size: 12px;}
+.HPWhyBook {padding-left:37px; }
+.HPWhyCol2 {height: 118px; width:221px; color: #333; font-size: 12px;}
+.HPWhyCol3 {width:190px;color: #333; font-size: 12px;}
+.HPWhyCol3 ul,.HPWhyCol2 ul,.HPWhyCol1 ul{margin-left:0px;}
+.HPWhyCol3 a,.HPWhyCol2 a,.HPWhyCol1 a{color:#333;}
+
+.HPmiddleSocial {height: 117px; width:236px; border-left:1px solid #ddd; border-right:1px solid #ddd; text-align:center;}
+.HPmiddleSocialRT {width:200px;text-align:center;}
+
+h1.ExpediaHeadings, h2.ExpediaHeadings {display: block;font-size:30px; font-weight:600; font-family: 'Signika Negative', Arial, serif; line-height:30px;margin-bottom:8px;letter-spacing: -1px; margin-top:0;}
+.ExpediaHeadingsColorA {color:#00436e; clear:both;}
+.ExpediaHeadingsColorB {color:#068;}
+h3.HPSectionInfo {font-family: 'Signika Negative', Arial, serif; font-size:18px; font-weight:400; line-height:18px; padding-bottom:6px; color: #00355f;}
+	.HPSectionInfo a:link, .HPSectionInfo a:visited, .HPSectionInfo a:hover, .HPSectionInfo a:active {color: #00355f;text-decoration: none;}
+h4.HPSectionInfo {font-family: 'Signika Negative', Arial, serif; font-size:16px; font-weight:400; margin-top:0;}
+.EverywhereIcons {margin-bottom:14px; border:0;}
+
+.HPfindyours {height: 80px; width: 162px; margin-bottom: 3px;}
+
+.HPmobilecolumn {text-align:center;width:200px;}
+.HPFacebookcolumn {height: 117px; width:236px; border-left:1px solid #eee; border-right:1px solid #eee; }
+.HPgreyline {color:#ddd;}
+.HPcheckmark {height:16px; width:16px; margin-left:16px; margin-right:8px; border:0;}
+
+.HPETravel {width:956px; height: 128px;}
+.HPETravelCol1, .HPETravelMap1, .HPETravelMap2 {float:left;}
+.HPETravelCol1 {width:390px;padding-right:40px;}
+.HPETravelMap1 {width:195px; margin-right:0;}
+.HPETravelMap2 {width:275px;}
+
+p.legaltext {margin:16px 0 16px 0; width:830px; font-size: 11px; font-style: italic; color: #999;}
+
+.bottomText {margin-top: 0px;}
+
+.bottomTextHeaderInline { display: block; font-family: 'Signika Negative', Arial, serif; font-size:18px; font-weight:400; line-height:18px; padding-bottom:6px; }
+.seotopsection {margin-top:0px !important; font-size: 12px; color: #333;}
+.column {float:left; margin-right: 16px;}
+.clear{clear:both;}
+
+p.HPDealSubCol { color:#333; font-size: 12px; line-height: 16px;}
+div.HPEverywhere {margin-top:16px; height: 120px;}
+div.bottomTextSection { margin-top: 9px; }
+
+/*newsletter modue*/
+.HPnewsLetterText { float: left; margin-top: 7px; display: inline-block; font-size:18px; font-weight:600; font-family: 'Signika Negative', Arial, serif; letter-spacing: -1px; color:#00436E; top: -8px; margin-right: 16px; }
+#HPnewsLetterIcon { float: left; height: 30px; width: 42px; background-image:url('../../../../../external.html?link=http://media.expedia.com/media/content/expus/graphics/launch/home/20120511_hp_mail.png'); margin-right: 11px; }
+.HPnewsLetterForm { float: left; display: inline-block; }
+.HPnewsLetterForm .emailField {font-weight:normal; font-size: 14px; float:left;display:inline-block;border:1px solid #ccc;color:#8f8f8f;padding:3px 3px 3px 7px;width:600px; height:28px;margin-right: 6px;}
+.HPnewsLetterForm .submitButton {float:right; display:inline-block; height:36px; width: 78px; background:url('../../../../../external.html?link=http://media.expedia.com/media/content/expus/graphics/launch/home/homepagespritesv2.png') no-repeat -216px -36px; margin:0; padding:2px 0 4px 6px; border:0; color:#fff; text-transform:uppercase; font-size:11px; cursor:pointer; outline:none; font-weight:bold;}
+.HPnewsLetterForm .submitButton:hover { background-position: -216px 0px; }
+.HPnewsLetterForm .errorMsg { position: relative; display:none;padding-left:20px;color:#df3400; background:url(../../../../../external.gif?link=http://media.expedia.com/media/content/shared/graphics/home/graphics/travelAlert.gif) no-repeat left center}
+.HPnewsLetterForm .errorEmail {border:1px solid red;background-color:#ffe8ed;color:#df3400}
+#HPnewsLetterContent { width: 954px; height: 36px; }
+
+
+#below-wizard-content-wrap { margin: 10px 0 0 20px; }
+
+#below-wizard-content-wrap li { display: none; }
+
+#below-wizard-content-wrap li .why-bullet {
+	color: #068;
+	display: inline-block;
+	margin-right: 3px;
+	}
+
+#below-wizard-content-wrap .HPWhyBook,
+#below-wizard-content-wrap .HPcheckmark {
+	margin: 0;
+	padding-left: 0;
+}
+
+#below-wizard-content-wrap .HPcheckmark { margin-right: 5px; }
+#below-wizard-content-wrap .HPWhyBook {
+	margin: 3px 0 10px 10px;
+	list-style-type: disc;
+	list-style-position: outside;
+	padding-left: 12px;
+	position: relative;
+}
+
+#below-wizard-content-wrap .column {
+	float: none;
+	width: auto;
+	height: auto;
+	margin: 0;
+}
+
+.adBar .coreAd {
+	width:472px;
+	float:left;
+	margin-left:42px;
+}
+.adBar .secondAd {
+	width:420px;
+	float:left;
+	margin-left:42px;
+}
+
+body.homepage #xp_hp_bCol {
+  z-index: 1 !important;
+}
+
+body.homepage #xp_hp_aCol {
+	z-index: 2;
+}
+
+.ie6 .homepage-feedback-msg,
+.ie7 .homepage-feedback-msg {
+	display: none;
+}
+
+.homepage-feedback-msg {
+	position: absolute;
+	z-index: 1000;
+	width: 992px;
+	background-color: rgb(215, 229, 245);
+	border-bottom-color: rgb(59, 76, 91);
+	border-left-color: rgb(31, 31, 31);
+	border-left-style: none;
+	border-left-width: 0px;
+	border-right-color: rgb(59, 76, 91);
+	border-top-color: rgb(59, 76, 91);
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	color: rgb(31, 31, 31);
+	font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	font-size: 17px;
+	line-height: 24px;
+	margin: 0;
+	padding: 12px 20px;
+}
+
+.homepage-feedback-msg p {
+	display: inline-block;
+	position: relative;
+	top: -8px;
+	margin-right: 8px;
+}
+
+.homepage-feedback-msg .btn.btn-sub-action {
+	background-color: rgb(0, 89, 162);
+	background-image: -webkit-linear-gradient(top, rgb(0, 101, 184) 0%, rgb(0, 89, 162) 100%);
+	background: -moz-linear-gradient(top, rgb(0, 101, 184) 0%, rgb(0, 89, 162) 100%);
+	border-radius: 4px;
+	border-bottom-color: rgb(0, 60, 110);
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-left-color: rgb(0, 60, 110);
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: rgb(0, 60, 110);
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: rgb(0, 84, 153);
+	border-top-style: solid;
+	border-top-width: 1px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 21px;
+	margin: 0;
+	padding: 7px 12px 8px 12px;
+	position: relative;
+	text-decoration: none;
+	vertical-align: bottom;
+}
+
+.homepage-feedback-msg .btn-close {
+	float: right;
+	display: inline-block;
+	font-size: 13px;
+	position: relative;
+	top: 10px;
+	padding-right: 20px;
+	background: url(../../../../../external.html?link=http://www.expedia.com/static/default/default/images/icon-feedback-banner-close.png) 100% 6px no-repeat;
+
+}
+
+.homepage-feedback-msg + .wpOuter {
+	padding-top: 70px;
+}
+
+.ie7 .homepage-feedback-msg + .wpOuter {
+	padding-top: 0;
+}
+
+#type-ahead .bottom .close .cx {
+	width: 14px;
+	height: 12px;
+	position: relative;
+	top: 2px;
+}

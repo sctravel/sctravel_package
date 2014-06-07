@@ -1,0 +1,72 @@
+/**********CORE TEMPLATE STYLES**********/
+.page-wrapper {
+	width:992px; font-size:14px;
+}
+
+#Breadcrumbs { /* This can be phased out */
+    clear: both; float: left;font-size: 11px; margin: 8px 0 8px 18px;width: 900px;
+}
+
+/* overwrite UI toolkit breadcrumb margin */
+.uitk-depth-navigation h4 {margin-top:0px;}
+
+.acolposition {float:left; margin:0 18px 16px 18px; position: relative;z-index: 2 !important;}
+.ie6 .acolposition {float:left; margin:0 18px 16px 18px; padding-bottom:16px;}
+.acolsmall {width:200px; } /*instead use span-4 */
+.acolmedium {width:308px;} /*instead use span-6 */
+.acolarge {width:524px;} /*instead use span-10 */	
+
+.acol-ad	{width:100%;text-align:center;}
+
+.bcolposition {float:left; margin: -16px 18px 0 0;}
+.bcolheroposition {float:left; margin: 0 18px 0 0;}
+.bcolwidest {width:736px;}
+.ie6 .bcolwidest {width:700px;} 
+.bcolmedium {width:628px;}
+.ie6 .bcolmedium {width:610px;}
+.bcolthin {width:412px;}
+.ie6 .bcolthin {width:400px;}
+
+h1, .h1 {
+    font-size: 22px; 
+    margin-top:9px;
+}
+
+h2, h3 {
+    margin: 0 0 0 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h1.nohero {margin-top:11px;}
+
+h1.primary, h2.primary {font-size: 22px;}
+h1.secondary, h2.secondary {font-size: 18px;}
+
+p {padding:12px 0px 0px 0px;margin:0;} /* p reset styles */
+p, li {line-height:19px;}
+
+
+/* SET FIRST P AND UL TOP MARGIN AND PADDING TO 0PX FOLLOWING HEADERS AND INSIDE CONTENT DIV */
+.page-wrapper h5 + p {margin-top:0;padding-top:0;}
+.page-wrapper h5 + ul {margin-top:0px;}
+div.content>p:first-child {padding-top:0px; margin-top:0px;}
+
+em {font-style:italic;}
+
+.size11 {font-size:11px;} /* instead use span class="small" */ 
+.size21 {font-size:21px;}
+
+.lineh15 {line-height:15px;}
+
+.top16 {margin-top:16px;}
+.bottom16 {margin-bottom:16px;}
+.ptop16 {padding-top:16px}
+
+
+/* DON'T USE BELOW STYLES - USE UI TOOLKIT STYLES INSTEAD */
+.floatL {float:left;} /* instead use float_left */
+.floatR {float:right;} /* instead use float_right */
+.colorc60 {color:#c60;} /* instead use hot */ 
+.bold {font-weight:bold;} /* can also use span class="strong" */ 

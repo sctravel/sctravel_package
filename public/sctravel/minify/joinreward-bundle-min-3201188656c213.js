@@ -1,0 +1,4 @@
+(function join_Reward_Modal_js(d,f){var e=d.document;var a;function b(){var g;g={content:"joinrewardmodule",modalId:"joinRewardModalModuleWrapper"};a=uitk.modal.create(g);}function c(k){function j(){k.ajax({type:"GET",url:"/loyalty/user/registerpopup",dataType:"json",crossDomain:true,success:function(m){i(m);},error:function(m){console.log("Error: "+m);}});}function i(m){if(m==true){b();}}function g(){a.close();}function l(){k.ajax({type:"POST",url:"/user/RegRewardsJson",async:false,dataType:"json",success:function(m){h(m);},error:function(m){console.log("Error: "+m);}});}function h(m){if(m==null){console.log("no response for ajax call");}if(m=="success : true"){g();}else{console.log(m);}}k(e.body).on("click","#rwdRedux_join_popup",function(){l();});j();}if(typeof d.define==="function"){d.define("JoinRewardsModal",["jQuery"],c);}else{c(d.jQuery);}})(window);
+/*!  generated on 2014-06-05 19:21:00.017 PDT(-0700) in 0 ms  */
+
+/*!  served in 0 ms  */

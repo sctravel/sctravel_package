@@ -1,0 +1,4 @@
+var formatHelper=function(e,q){if(!e||isNaN(+q)){return q;}var q=e.charAt(0)=="-"?-q:+q;var a=q<0?q=-q:0;var s=e.match(/[^\d\-\+#]/g);var b=(s&&s[s.length-1])||".";var n=(s&&s[1]&&s[0])||",";var e=e.split(b);q=q.toFixed(e[1]&&e[1].length);q=+(q)+"";var p=e[1]&&e[1].lastIndexOf("0");var c=q.split(".");if(!c[1]||c[1]&&c[1].length<=p){q=(+q).toFixed(p+1);}var d=e[0].split(n);e[0]=d.join("");var r=e[0]&&e[0].indexOf("0");if(r>-1){while(c[0].length<(e[0].length-r)){c[0]="0"+c[0];}}else{if(+c[0]==0){c[0]="";}}q=q.split(".");q[0]=c[0];var h=(d[1]&&d[d.length-1].length);if(h){var k=q[0];var o="";var g=k.length%h;for(var j=0,f=k.length;j<f;j++){o+=k.charAt(j);if(!((j-g+1)%h)&&j<f-h){o+=n;}}q[0]=o;}q[1]=(e[1]&&q[1])?b+q[1]:"";return(a?"-":"")+q[0]+q[1];};
+/*!  generated on 2014-06-05 15:28:23.325 PDT(-0700) in 0 ms  */
+
+/*!  served in 0 ms  */

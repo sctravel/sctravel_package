@@ -1,0 +1,118 @@
+.fixed-site-header {width:992px;}
+#modal-overlay {display:none;height: 100%; width: 100%; position: fixed; top: 0; left: 0; background-color: black; opacity: .3; z-index: 1000; filter: alpha(opacity = 30);}
+.guarantees-template {width:100%; max-width:992px;}
+.guarantees-template [role=complementary] {width: 33.333333333333336%; min-width:308px; padding-top:20px; padding-bottom:20px;}
+.guarantees-template [role=main] { width: 66.66666666666667%;}
+@media screen and (max-width: 992px) {.guarantees-template [role=complementary] { display: none !important; }}
+.ie8 .guarantees-template [role=main], .ie7 .guarantees-template [role=main] {padding-left:16px;}
+.ie8 .guarantees-template [role=complementary], .ie7 .guarantees-template [role=complementary] { padding-left:16px;}
+span.asterick {display:inline;color:#CC0000;padding-left:5px;}
+.no-buffer {padding-left:0;}
+.clear-left {clear:left;margin-right:1.411764705882353em;}
+.col [role=left-col] {width: 60%;}
+.col [role=right-col] {width: 40%;}
+.col fieldset {margin-bottom:1.411764705882353em;}
+.block {display:block;}
+.no-display {display:none;}
+.hpg_text {font-style:italic;margin-top:16px;}
+.required-text {color:#b80000;font-size:12px;font-style:italic;}
+.terms-modal {font-size:12px;margin:0;padding:16px;width:575px;height:auto;background:#fff;}
+.terms-modal h3, .terms-modal .txt_numberList {width:525px;}
+.bpg-modal-hdr, .bpg-modal-intro {padding:0 20px;}
+.bpg-modal-intro {font-size:12px;padding-top:10px;}
+.ie7 .bpg-modal-intro, .ie8 .bpg-modal-intro {font-size:12px;padding-top:10px;width:400px;}
+#screen1_alert, #screen2_alert, #upload_alert, #upload_alert_pack {display:none;}
+#bpg-modal {margin:0;width:100%;}
+#bpg-modal, #bpg_claim_form {background:#fff;}
+#bpg_claim_form #screen1, #bpg_claim_form #screen2,#bpg_claim_form #screen-success,#bpg_claim_form #screen-flight-success {background:whiteSmoke;padding:16px 20px 20px 20px;}
+#bpg_claim_form #screen1 label.text input {width:300px;}
+/*#bpg_claim_form label {display:inline;}*/
+#bpg_claim_form hr {margin-top:0;margin-bottom:0;}
+#bpg_claim_form .button-right {width:100%;max-width:580px;text-align:right;clear:both;}
+#bpg_claim_form .icon-warn {color:#CC0000;}
+#screen2, #screen-success, #screen-flight-success {display:none;}
+#bpg_claim_form #screen2 label.text input, #bpg_claim_form #screen2 select {width:240px;}
+#bpg_claim_form #screen2 select.packages {width:150px;}
+#bpg_claim_form #screen2 label.text input.packages {width:330px;}
+#bpg_claim_form #pTypePackage .menu-src {margin-right:10px; font-size: 0.764706em;}
+#bpg_claim_form #pTypePackage .source {margin-top:15px;}
+#bpg_claim_form #screen2 label.two-col-width input, #bpg_claim_form #screen2 label.two-col-width textarea	{width:504px;clear:both;}
+#bpg_claim_form input[type='file'] {width: 112px; height: 38px; z-index: 1}
+#bpg_claim_form .file-wrapper {width: 112px; height: 38px; float: left;}
+#bpg_claim_form .file-wrapper .btn-secondary{margin: 0px;}
+#bpg_claim_form .bpg-uploads {padding-top: 1em;}
+#bpg_claim_form .bpg-uploads input {padding: 0.35em; margin: 0em 0.35em 0em 0.35em; -webkit-border-radius: 0.23em; -moz-border-radius: 0.23em; -ms-border-radius: 0.23em; -o-border-radius: 0.23em; border-radius: 0.23em; display: none;}
+#bpg_claim_form .bpg-uploads p + p {padding-top: 1em; margin-top: 0em;}
+#bpg_claim_form .bpg-uploads p:last-of-type {padding-bottom: 1em;}
+#bpg_claim_form .image-guidlines {float: right; padding-top:5px;}
+#bpg_claim_form .image-guidlines-pack {float: right; padding-top:5px; font-size:14px !important; padding-left:5px;}
+#bpg_claim_form .clear-fix:after { content:"."; visibility: hidden; height:0; display:block; clear:both; }
+#bpg_claim_form .file-name {padding-top: 5px; height: 40px;}
+#bpg_claim_form #file_name {padding-left: 5px;}
+#bpg_claim_form .upload-row-wrapper {padding: 15px 0px; clear: both;max-width:575px;}
+#bpg_claim_form .upload-row-wrapper-packages {padding:0px;max-width:250px;}
+.ie8 .upload-row-wrapper {display: none;}
+.ie8 .upgrade-row-wrapper,.ie7 .upgrade-row-wrapper { display: block; clear: both; }
+/*#bpg_claim_form #screen2 .select {margin-bottom:0;}*/
+/*#bpg_claim_form #screen2 .select::after {margin-top:-8px;}*/
+/*.select-box {margin-bottom:-24px;}*/
+h2.title{display:none;}
+h4.headline {font-size:22px;margin:12px 0px;}
+ul.tab1 {margin-bottom:12px;}
+ul.tab1 li {padding:0px;}
+p.txt_coda, .txt_list {font-size:12px;}
+.mar_top_0 {margin-top:0px !important;}
+.txt_list {margin-top:0;}
+/* ---- Pre-load ---- */
+#preloaded_images{display:none;}
+.bpg_header{font-size:20px;font-weight:700;margin-top:14px;}
+/* ---- Coda Slider ---- */
+.coda-slider-wrapper{float:left;margin:0;padding:0;width:628px;display:block;}
+.coda-slider{background:#ebebeb;}
+/* Use this to keep the slider content contained in a box even when JavaScript is disabled */
+.coda-slider-no-js .coda-slider{height:200px;overflow:auto !important;padding-right:20px;}
+/* Change the width of the entire slider (without dynamic arrows) */
+.coda-slider, .coda-slider .panel{width:628px;background:whiteSmoke;}
+/* Change margin and width of the slider (with dynamic arrows) */
+.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel{width:620px;}
+.coda-slider-wrapper.arrows .coda-slider{margin:0 10px;}
+/* Arrow styling */
+.coda-nav-left a, .coda-nav-right a{background:#eee;color:#444;padding:5px 10px;width:auto;}
+/* Tab nav */
+/* Panel padding */
+.coda-slider .panel-wrapper{margin:0;padding:0 0 16px 0;height:auto;overflow:visible;background:whiteSmoke;}
+/* Preloader */
+.coda-slider p.loading{margin:0;padding:20px 0;text-align: center;}
+/* Don't change anything below here unless you know what you're doing */
+.coda-nav{clear:both;position:relative;top:270px;margin:0;padding:0;width:628px;z-index:100;}
+/* Tabbed nav */
+.coda-nav ul{clear:both;display:block;margin:auto;padding:0;overflow:hidden;}
+.coda-nav ul li{display:inline;text-align:center;font-size:14px;}
+.coda-nav ul li a, .coda-nav ul li a:hover, .coda-nav ul li a.current {display:block;float:left;margin-left:1px;padding:5px 0 0 0;width:156px;text-decoration:none;}
+.coda-nav ul li a {color:#006699;height:30px;background-color:whiteSmoke; text-align:center;}
+.coda-nav ul li a:hover{color:#006699;background-color:#D4E9EE;}
+.coda-nav ul li a.current{color:#fff;background-color:#003366;}
+.coda-nav ul li a:focus {outline:none;}
+.coda-navx ul li a{display:block;float:left;margin-left:1px;padding:8px 0;width:149px;font-size:.75em;color:#444;text-decoration:none;background:#eee;}
+/* Miscellaneous */
+.coda-slider-wrapper{clear:both;overflow:hidden;}
+.coda-slider{float:left;overflow:hidden;position:relative;float:none;}
+.coda-slider .panel{display:none;float:left;height:auto;overflow:visible;}
+.coda-slider .panel-container{position:relative;}
+.coda-nav-left, .coda-nav-right{float:left;}
+.coda-nav-left a, .coda-nav-right a{display:block;text-align:center;text-decoration:none;}
+img.heroSlide{clear:both;margin:0 0 66px 0;padding:0;width:628px;height:220px;background:#eee;}
+.cntr_terms{margin:0;padding:20px 30px;}
+a.link_terms, a.link_terms:link, a.link_terms:active, a.link_terms:visited{font-size:12px;color:#069;}
+a.link_terms:hover{font-size:12px;color:#008bd0;}
+.bpg-terms {margin-top:10px;}
+.hidden{display:none;}
+.unhidden{display:block;}
+.toggler{display:none;}
+.alert{margin-top:12px;}
+
+/* WIZARD OVERRIDES NEEDED DUE TO UITK2 */
+#widgetcatalogWizard .blue .background h3 {color:#fff;}
+#widgetcatalogWizard h3 {margin-bottom:0;}
+#widgetcatalogWizard label {display:inline;}
+#widgetcatalogWizard .text input, select, .text textarea {border:1px solid #cecece;}
